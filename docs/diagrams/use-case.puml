@@ -1,0 +1,74 @@
+@startuml
+left to right direction
+skinparam shadowing false
+
+actor "게스트" as guest
+actor "회원" as member
+actor "관리자" as admin
+admin --|> member
+
+actor "MCP 호스트" as host
+actor "GitHub" as github
+actor "AI 제공자" as ai
+
+rectangle "Terminal-World 시스템 경계" {
+    usecase "UC-01 접속 및 공개 정보 둘러보기" as uc01
+    usecase "UC-02 가입 및 인증 관리" as uc02
+    usecase "UC-03 공간 탐색 및 방문" as uc03
+    usecase "UC-04 프로필과 개인 공간 구성" as uc04
+    usecase "UC-05 방명록 작성·수정·삭제" as uc05
+    usecase "UC-06 게시글과 댓글 이용" as uc06
+    usecase "UC-07 실시간 채팅" as uc07
+    usecase "UC-08 Lobby 조회 및 공지 운영" as uc08
+    usecase "UC-09 집중 시간 관리" as uc09
+    usecase "UC-10 자리 비움과 복귀" as uc10
+    usecase "UC-11 계정 복구 및 복구 코드 재발급" as uc11
+    usecase "UC-12 회원 탈퇴" as uc12
+    usecase "UC-13 콘텐츠 신고 및 검토" as uc13
+    usecase "UC-14 삭제 이력 조회" as uc14
+    usecase "UC-15 CLI로 커뮤니티 이용" as uc15
+    usecase "UC-16 MCP로 커뮤니티 이용" as uc16
+    usecase "UC-17 오픈소스 이슈 탐색" as uc17
+    usecase "UC-18 프로젝트·공모전 모집 이용" as uc18
+}
+
+guest -- uc01
+guest -- uc02
+guest -- uc03
+guest -- uc05 : 공개 방명록 조회만
+guest -- uc06 : 공개 조회만
+guest -- uc08 : 공지와 접속자 조회
+guest -- uc09 : 공개 랭킹 조회만
+member -- uc01
+member -- uc02
+member -- uc03
+member -- uc04
+member -- uc05
+member -- uc06
+member -- uc07
+member -- uc08
+member -- uc09
+member -- uc10
+guest -- uc11 : 분실 계정 복구
+member -- uc11 : 코드 재발급
+member -- uc12
+member -- uc13 : 사유를 포함한 신고
+admin -- uc13 : 접수된 신고 검토
+admin -- uc14
+admin -- uc08 : 공지 운영
+admin -- uc05 : 부적절한 글 삭제
+admin -- uc06 : 부적절한 글과 댓글 삭제
+admin -- uc07 : 부적절한 메시지 삭제
+guest -- uc15
+member -- uc15
+guest -- uc16
+member -- uc16
+host -- uc16
+guest -- uc17
+member -- uc17
+github -- uc17
+ai -- uc17
+guest -- uc18
+member -- uc18
+admin -- uc18
+@enduml

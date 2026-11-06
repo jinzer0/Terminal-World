@@ -1,0 +1,254 @@
+[
+  {
+    "theme": "dark",
+    "fg": "text",
+    "bg": "bg",
+    "ratio": 16.42079700540953,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "muted",
+    "bg": "bg",
+    "ratio": 8.688923783791031,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "accentText",
+    "bg": "bg",
+    "ratio": 12.963271407554947,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "cyan",
+    "bg": "bg",
+    "ratio": 11.745630531783355,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "orange",
+    "bg": "bg",
+    "ratio": 10.892366925367854,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "violet",
+    "bg": "bg",
+    "ratio": 10.14961530309899,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "text",
+    "bg": "panel",
+    "ratio": 15.06582014980099,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "muted",
+    "bg": "panel",
+    "ratio": 7.971949411395773,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "accentText",
+    "bg": "panel",
+    "ratio": 11.893595390950974,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "cyan",
+    "bg": "panel",
+    "ratio": 10.77642924880954,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "orange",
+    "bg": "panel",
+    "ratio": 9.993573457437684,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "violet",
+    "bg": "panel",
+    "ratio": 9.312110654299124,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "text",
+    "bg": "panel2",
+    "ratio": 13.606244296786693,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "muted",
+    "bg": "panel2",
+    "ratio": 7.199627377372388,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "accentText",
+    "bg": "panel2",
+    "ratio": 10.741344503475494,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "cyan",
+    "bg": "panel2",
+    "ratio": 9.732409357633077,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "orange",
+    "bg": "panel2",
+    "ratio": 9.025396593598424,
+    "pass": true
+  },
+  {
+    "theme": "dark",
+    "fg": "violet",
+    "bg": "panel2",
+    "ratio": 8.409953870501882,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "text",
+    "bg": "bg",
+    "ratio": 13.747552510352127,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "muted",
+    "bg": "bg",
+    "ratio": 5.795220569824556,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "accentText",
+    "bg": "bg",
+    "ratio": 6.7214730606990445,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "cyan",
+    "bg": "bg",
+    "ratio": 6.514270841164886,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "orange",
+    "bg": "bg",
+    "ratio": 6.49626011555056,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "violet",
+    "bg": "bg",
+    "ratio": 6.322612298396083,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "text",
+    "bg": "panel",
+    "ratio": 15.072511349481255,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "muted",
+    "bg": "panel",
+    "ratio": 6.353751167391651,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "accentText",
+    "bg": "panel",
+    "ratio": 7.369273833748313,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "cyan",
+    "bg": "panel",
+    "ratio": 7.1421019205503375,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "orange",
+    "bg": "panel",
+    "ratio": 7.122355360860538,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "violet",
+    "bg": "panel",
+    "ratio": 6.931971749457518,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "text",
+    "bg": "panel2",
+    "ratio": 13.092685811603129,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "muted",
+    "bg": "panel2",
+    "ratio": 5.519164380170032,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "accentText",
+    "bg": "panel2",
+    "ratio": 6.40129469653744,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "cyan",
+    "bg": "panel2",
+    "ratio": 6.203962585400949,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "orange",
+    "bg": "panel2",
+    "ratio": 6.1868098033672165,
+    "pass": true
+  },
+  {
+    "theme": "light",
+    "fg": "violet",
+    "bg": "panel2",
+    "ratio": 6.021433725686315,
+    "pass": true
+  }
+]

@@ -1,0 +1,58 @@
+<section class="section hero" id="overview" aria-labelledby="overview-title">
+  <div class="hero-grid"><div><p class="eyebrow">TERMINAL WORLD · PRODUCT STRATEGY / 2026.10</p>
+    <h1 id="overview-title">왜 사람들은<br>Terminal World를<br>사용해야 할까?</h1>
+    <p class="lead">한 번의 신기함을 넘어, 다음 주에도 다시 열 이유를 찾는다. 공간과 기능에서 출발하지 않고 사용자가 이미 겪는 문제에서 제품을 다시 설계한다.</p>
+    <div class="hero-actions"><a class="button primary" href="#recommendation">추천 방향 보기 <span aria-hidden="true">↗</span></a><a class="button secondary" href="#ideas">10개 후보 살펴보기</a></div></div>
+    <aside class="decision-card" aria-label="핵심 권고"><p class="card-kicker">THE DECISION <span class="badge inference">분석</span></p><div class="decision-symbol" aria-hidden="true">↗</div>
+      <h2>공개 공간에서<br>작업 재개 데스크로</h2><p>반복적으로 중단되는 개인 Git 프로젝트에서 마지막 맥락과 다음 행동을 빠르게 되찾도록 돕는다. 혼자서 가치를 얻고, 필요할 때만 공유한다.</p>
+      <p class="decision-bottom">단, 독립 제품의 수요는 아직 검증 전이다. 메모보다 전체 비용을 줄이지 못한다면 중단한다.</p></aside></div>
+  <div class="metrics" aria-label="이번 보고서의 범위"><div><strong>1인</strong><span>혼자서 얻는 첫 가치가 우선</span></div><div><strong>10개</strong><span>서로 다른 제품 후보</span></div><div><strong><span id="product-count">24</span>개</strong><span>비교한 서비스·도구</span></div><div><strong>2단계</strong><span>저비용 검증 후 구현</span></div></div>
+  <p class="small">위 숫자는 이 보고서의 분석 범위와 설계 원칙이다. 시장 규모, 이용자 수 또는 유지율 통계가 아니다.</p>
+  <div class="legend" aria-label="근거 유형 안내"><span><b class="badge fact">확인</b> 코드·공식 자료·연구에서 확인한 내용</span><span><b class="badge inference">분석</b> 자료를 바탕으로 한 판단</span><span><b class="badge hypothesis">가설</b> 사용자 행동으로 확인해야 할 주장</span></div>
+</section>
+<section class="section" id="diagnosis" aria-labelledby="diagnosis-title">
+  <header class="section-head"><div><p class="eyebrow">02 / THE DIAGNOSIS</p><h2 id="diagnosis-title">기능보다 먼저,<br>존재 이유를 검증해야 한다</h2></div><p class="section-summary">현재 가장 큰 위험은 기능이 적다는 사실이 아니다. 특정 사용자가 어떤 일을 해결하기 위해 SSH 진입을 감수하고 기존 도구에서 옮겨 올지 설명하지 못하는 것이다.</p></header>
+  <div class="problem-grid">
+    <article class="panel"><p class="card-kicker">01 <span class="badge inference">분석</span></p><h3>선택해야 할 이유가 약하다</h3><p>채팅·게시판·타이머는 이미 익숙한 대안이 있다. 터미널이라는 형태만으로는 대체 비용과 습관을 넘기 어렵다.</p></article>
+    <article class="panel"><p class="card-kicker">02 <span class="badge inference">분석</span></p><h3>첫날 혼자 할 일이 없다</h3><p>공개 채팅과 커뮤니티가 핵심이면 다른 사람의 접속과 지속적인 운영이 가치의 전제다. 빈 방에서는 약속한 경험이 나타나지 않는다.</p></article>
+    <article class="panel"><p class="card-kicker">03 <span class="badge hypothesis">가설</span></p><h3>터미널의 이익이 불분명하다</h3><p>작업 중인 저장소에서 바로 맥락을 기록하고 읽는다면 전환 비용을 줄일 수 있다. 반대로 범용 채팅에 SSH가 필요한지는 입증되지 않았다.</p></article>
+    <article class="panel"><p class="card-kicker">04 <span class="badge inference">분석</span></p><h3>공간이 과업보다 앞선다</h3><p>방 이름은 활동의 외형을 설명하지만 사용자가 해결해야 할 문제와 완료 후 얻는 결과를 구체화하지 않는다.</p></article></div>
+  <div class="split"><article class="panel"><p class="card-kicker"><span class="badge fact">코드에서 확인</span></p><h3>오늘의 구현은 로컬 프로토타입</h3><p>Node.js 22 이상에서 실행하는 React·Ink TUI다. 로비, Rooftop, 개인 프로필과 예시 터미널을 표시하며 프로필, 로컬 채팅 및 방명록을 기기에 저장한다. Mina·Jun·Sol은 고정 예시 사용자이고 메시지는 원격으로 전달되지 않는다.</p><p>저장소는 로컬 상태 검증, 잠금과 임시 파일 교체를 사용한다. 이는 원격 공유 또는 다중 사용자 일관성이 구현되었다는 뜻은 아니다.</p><p class="code-ref"><a href="../../src/cli.tsx">src/cli.tsx:60</a> · <a href="../../src/model.ts">src/model.ts:5</a> · <a href="../../src/storage.ts">src/storage.ts:48</a> · <a href="../../package.json">package.json</a></p></article>
+    <article class="panel"><p class="card-kicker"><span class="badge fact">기획 문서에서 확인</span></p><h3>SSH 커뮤니티는 아직 계획</h3><p>요구사항은 SSH 접속, 계정·인증, 다중 사용자 데이터 공유, Cafe 게시판, Focus Room, Living Room을 기본 범위로 정의한다. 공동 터미널 기반 페어 프로그래밍은 확장 범위다.</p><p>화면의 로컬 기록이나 예시 사용자만으로 접속자·실시간 통신·협업이 실현되었다고 판단하면 안 된다.</p><p class="code-ref"><a href="../../docs/requirements-analysis.md">docs/requirements-analysis.md:30</a> · <a href="../../src/cli.tsx">src/cli.tsx:60</a></p></article></div>
+  <details class="detail"><summary>제기된 7가지 우려를 하나씩 평가하기</summary><div class="responsive-table"><table><thead><tr><th scope="col">우려</th><th scope="col">판단과 한계</th></tr></thead><tbody>
+    <tr><th scope="row">터미널만으로는 지속 이용이 어렵다</th><td><strong>대체로 타당.</strong> 화면 스타일은 최초 관심을 줄 수 있지만 반복 과업이 있어야 다시 사용할 이유가 생긴다. 터미널에서 이미 일하는 사용자에게는 전환을 줄일 가능성이 있다. 그것은 측정할 가설이다.</td></tr>
+    <tr><th scope="row">감성과 개발자 친화성에 의존한다</th><td><strong>현재 계획의 위험.</strong> 익숙한 환경은 편의성이지만 저장소에서 맥락을 얻는 등 과업과 직접 연결되지 않으면 선택 이유가 약하다.</td></tr>
+    <tr><th scope="row">채팅·게시판·타이머는 흔하다</th><td><strong>타당.</strong> Discord, GitHub Discussions와 여러 코워킹 서비스가 이미 해당 기능을 제공한다. 조합 자체가 차별화는 아니며, 특정 상황에서 기존 조합보다 나은 결과가 필요하다. <a data-source="c01" href="https://support.discord.com/hc/en-us/articles/6208479917079-Forum-Channels-FAQ">Discord</a> · <a data-source="c06" href="https://www.focusmate.com/features/">Focusmate</a></td></tr>
+    <tr><th scope="row">SSH의 진입 장벽이 크다</th><td><strong>타당하나 보편적이지는 않다.</strong> 숙련 개발자에게 SSH가 이미 일상이라면 추가 설치 없이 원격 서비스로 이어지는 장점이 있다. 그러나 접속·신뢰·인증을 거칠 가치가 있어야 한다. 개인 로컬 재개 기능에 서버 접속이 필수인지는 별개의 문제다. <a data-source="t02" href="https://tilde.club/wiki/ssh.html">tilde.club SSH 안내</a></td></tr>
+    <tr><th scope="row">사람이 없으면 가치가 없다</th><td><strong>사회적 기능에는 타당.</strong> 공동 집중과 실시간 대화는 다른 사람을 필요로 한다. 개인용 작업 재개처럼 단독으로 완결되는 핵심 과업까지 사람 수에 의존할 필요는 없다.</td></tr>
+    <tr><th scope="row">일주일 뒤 돌아올 이유가 부족하다</th><td><strong>현재 기획으로는 미입증.</strong> 채팅 관계나 예정된 집중 세션이 복귀를 만들 수도 있지만 실제 참여와 반복성은 자료만으로 확인되지 않는다. 순위와 배지는 과업 가치의 증거가 아니다.</td></tr>
+    <tr><th scope="row">기능을 추가하면 복잡해진다</th><td><strong>타당.</strong> 각 기능은 데이터·운영·접근 제어 비용을 늘린다. 단, 중요한 한 과업을 완결하는 기능은 가치가 있을 수 있으므로 개수보다 사용자가 얻는 결과로 판단한다.</td></tr>
+  </tbody></table></div></details>
+  <div class="callout"><strong>JTBD의 기준:</strong> 사용자가 터미널을 원해서가 아니라, 중단된 일을 다시 시작하고 다음 행동을 결정하기 위해 제품을 선택하는가? 이 질문의 답이 없으면 방을 더 만드는 것은 문제를 미룰 뿐이다.</div>
+</section>
+<section class="section" id="market" aria-labelledby="market-title">
+  <header class="section-head"><div><p class="eyebrow">03 / MARKET LANDSCAPE</p><h2 id="market-title">대안은 이미 많다.<br>불편도, 경쟁도 함께 봐야 한다.</h2></div><p class="section-summary">커뮤니티, 터미널 문화, 협업, 집중, 작업 도구를 같은 질문으로 비교한다. 사용자가 왜 선택하고, 어떤 순간에 다시 열며, 무엇을 포기하는지 살펴본다.</p></header>
+  <div class="notice"><p><span class="badge fact">확인</span> 2026년 10월 29일 공식 제품 페이지와 공개 저장소를 확인했다. 페이지에 접근할 수 있었다는 것은 운영 신호이며, 직접 가입·SSH 접속·유료 서비스 사용이나 사용자 수·유지율까지 검증했다는 뜻은 아니다. 제품의 한계와 시사점은 별도 표시한 해석이다.</p></div>
+  <div class="two-grid">
+    <article class="panel"><p class="card-kicker">THE COMMUNITY GAP <span class="badge inference">분석</span></p><h3>검색 문제는 존재하지만 바뀌고 있다</h3><p>일부 사용자는 Discord에 흩어진 정보를 찾기 어렵다고 말한다. Discord는 2026년 12월 중순부터 일부 Discoverable 서버 공개 메시지의 웹 검색 노출을 단계적으로 계획했다. 한국 사용자 메시지 설정은 기본 비활성이다. 이 문제를 영구적인 절대 차별점으로 볼 수 없다.</p><p><a data-source="c12" href="https://www.reddit.com/r/discordapp/comments/1kxutns/discord_is_destroying_the_internet/">사용자 의견</a> · <a data-source="c02" href="https://discord.com/blog/making-content-from-discoverable-servers-easier-to-discover">Discord 정책 공지</a></p></article>
+    <article class="panel"><p class="card-kicker">THE RESUMPTION GAP <span class="badge inference">분석</span></p><h3>작업 재개도 빈 시장이 아니다</h3><p>Atuin은 셸 기록과 에이전트 세션을 다루고, TaCoS 연구는 개발 활동을 요약한다. README, 이슈, 수동 메모와 AI 인계도 대안이다. Git 상태와 다음 행동을 한 화면에 조합했다는 사실만으로는 우월하지 않다.</p><p><a data-source="t17" href="https://atuin.sh/">Atuin</a> · <a data-source="t18" href="https://blog.atuin.sh/threads-agent-sessions/">Atuin Threads</a> · <a data-source="c26" href="https://hasel.dev/publication/tacos-generated-context-summaries-for-task-resumption/">TaCoS 연구</a></p></article></div>
+  <h3>서비스 탐색 및 비교</h3><p class="section-lead">분류를 선택하고 비교할 서비스를 고른다. 각 카드의 공식 링크와 한계를 함께 확인할 수 있다.</p>
+  <div class="filterbar" id="market-filters" role="group" aria-label="서비스 분류 필터"><button type="button" class="chip active" data-market="all" aria-pressed="true">전체</button><button type="button" class="chip" data-market="community" aria-pressed="false">커뮤니티</button><button type="button" class="chip" data-market="terminal" aria-pressed="false">SSH·터미널</button><button type="button" class="chip" data-market="collaboration" aria-pressed="false">실시간 협업</button><button type="button" class="chip" data-market="focus" aria-pressed="false">집중·코워킹</button><button type="button" class="chip" data-market="productivity" aria-pressed="false">생산성</button></div>
+  <p class="list-meta" id="market-results" aria-live="polite"></p><div class="card-grid" id="market-grid"></div><div class="compare-panel" id="market-compare" hidden></div>
+  <details class="detail"><summary>실제 사용자 의견과 연구 결과 보기</summary><p>의견은 공개적으로 글을 쓴 개인의 사례다. 불만의 발생률이나 시장 전체의 필요를 대표하지 않는다. 연구 표본과 상황은 사이드 프로젝트 사용자에게 그대로 일반화할 수 없다.</p><div class="card-grid" id="voice-grid"></div></details>
+  <noscript><p class="notice">서비스 필터와 비교를 보려면 JavaScript를 활성화하세요. 자료는 리포트와 함께 제공되는 JSON 파일에서도 확인할 수 있습니다.</p></noscript>
+</section>
+<section class="section" id="audience" aria-labelledby="audience-title">
+  <header class="section-head"><div><p class="eyebrow">04 / AUDIENCE &amp; JTBD</p><h2 id="audience-title">모든 개발자를 위한<br>제품은 만들지 않는다</h2></div><p class="section-summary">전공이나 경력보다 실제 행동을 기준으로 첫 사용자를 좁힌다. 집중 동반자, 코드 리뷰, 개발 환경 공유는 각각 다른 과업이며 한 제품이 동시에 해결한다고 가정하지 않는다.</p></header>
+  <div class="target-card"><p class="card-kicker">FIRST TARGET <span class="badge hypothesis">검증할 가설</span></p><h3>최근 2주간 개인 Git 프로젝트를 여러 번 중단하고 다시 시작한 사람</h3><p>다시 열 때 마지막에 하던 일이나 다음 행동을 잊어 불편을 겪고, README·메모·이슈 같은 현재 대안에도 마찰을 느끼며, 기본적인 터미널과 Git 사용이 가능한 사람. 학생은 접근하기 쉬운 모집 집단이지만 ‘컴퓨터공학 전공’만으로 적합성이 입증되지는 않는다.</p><p><strong>초기 제외:</strong> 다음에 무엇을 해야 하는지 자체를 배우는 단계의 초보자. 이들의 문제는 맥락 복원보다 학습과 문제 분해에 가까울 수 있다. 원격 작업을 자주 한다는 사실만으로도 적합하다고 보지 않는다.</p></div>
+  <div class="responsive-table"><table><thead><tr><th scope="col">집단</th><th scope="col">상황과 기존 대안</th><th scope="col">장벽·반복 가능성</th><th scope="col">우선순위</th></tr></thead><tbody>
+    <tr><th scope="row">개인 프로젝트 개발자</th><td>학업이나 본업 사이에서 프로젝트를 중단한다. README·TODO·이슈·AI 인계를 쓴다.</td><td>기록을 귀찮아하거나 기존 방식에 만족할 수 있다. 실제 중단 빈도가 높다면 반복성이 있다.</td><td><span class="tag">1순위 가설</span></td></tr>
+    <tr><th scope="row">컴퓨터공학 전공 학생</th><td>과제와 개인 개발을 병행한다. LMS, GitHub, 노트와 스터디를 사용한다.</td><td>과제는 학기와 마감에 종속될 수 있고, 다음 행동을 모르는 학습 문제일 수도 있다.</td><td>행동 조건 충족 시</td></tr>
+    <tr><th scope="row">터미널 선호 숙련 개발자</th><td>셸과 편집기에서 여러 저장소를 다룬다. 기존 셸 기록, tmux, Git 도구를 쓴다.</td><td>마찰에 민감하고 대체재가 강하다. 빈번한 업무 전환은 반복 가능성이 있다.</td><td>후속 비교군</td></tr>
+    <tr><th scope="row">함께 공부할 사람을 찾는 사용자</th><td>책임감을 얻기 위해 Discord나 Focusmate에서 세션을 만든다.</td><td>사람·시간을 맞춰야 하며 카메라·낯선 사람에 대한 부담은 개인마다 다르다.</td><td>별도 가설</td></tr>
+    <tr><th scope="row">오픈소스 기여자</th><td>이슈·PR·Discussions와 프로젝트 문서를 통해 기여 맥락을 파악한다.</td><td>유지관리자의 반응 및 권한에 의존하며 개인 재개와 협업 요구가 다르다.</td><td>확장 대상</td></tr>
+    <tr><th scope="row">원격 협업 개발자</th><td>공유 터미널·화면 공유·IDE 협업으로 문제를 함께 푼다.</td><td>보안과 권한 요구가 높고 Live Share, tmate 같은 강력한 대안이 있다.</td><td>초기 제외</td></tr>
+  </tbody></table></div>
+  <div class="jtbd"><p class="card-kicker">JOB TO BE DONE · 사용자가 이루려는 진전</p><h3>“며칠 만에 프로젝트를 다시 열었을 때,<br>어디서 멈췄고 바로 무엇을 할지 알고 싶다.”</h3><div class="three-grid"><div><strong>상황</strong><p>수업과 다른 일정 때문에 개인 프로젝트를 중간에 내려놓았다.</p></div><div><strong>과업</strong><p>최근 상태, 중요한 파일과 다음 행동을 신속히 재구성한다.</p></div><div><strong>기대 진전</strong><p>이전 상태를 헤매며 되짚는 대신, 자신이 정한 첫 작업을 시작한다.</p></div></div><p class="small">이 진전은 인터페이스와 독립적이다. 터미널은 현재 디렉터리와 Git 정보를 안전하게 연결할 때 유용할 수 있으나, 별도 SSH 서버가 필요하다는 결론은 아니다.</p></div>
+  <div class="callout"><span class="badge fact">연구</span> 프로그래머의 작업 재개와 맥락 탐색은 관찰된 문제다. 그러나 오래된 업무 환경의 관찰은 이 집단이 새 도구를 설치하고 계속 쓸 의향이 있다는 증거는 아니다. <a data-source="c24" href="https://ieeexplore.ieee.org/document/5090030/">2009년 재개 연구</a> · <a data-source="c25" href="https://ieeexplore.ieee.org/document/9069309/">작업 전환 현장 연구</a></div>
+</section>

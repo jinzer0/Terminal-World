@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light">
+<meta name="description" content="실존 커뮤니티의 첫 가치, 교환 구조와 재방문 원인을 비교하고 Terminal World의 커뮤니티 방향을 결정하는 리서치 지도">
+<title>Terminal World / Community Atlas</title>
+<script>try{const m=localStorage.getItem('tw-atlas-theme')||'system';document.documentElement.dataset.theme=m==='light'||m==='dark'?m:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}</script>
+<style>/* INLINE_CSS */</style>
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="#overview"><span class="brand-mark">tw<span>_</span></span><span>Terminal World<small>COMMUNITY ATLAS</small></span></a>
+<p class="nav-caption">사람들은 무엇을 주고받고,<br>왜 다시 돌아오는가?</p>
+<nav aria-label="리서치 목차">
+<a href="#overview"><span>01</span> 핵심 진단</a><a href="#landscape"><span>02</span> 커뮤니티 지도</a><a href="#mechanisms"><span>03</span> 반복을 만드는 구조</a><a href="#directions"><span>04</span> 제품 방향 후보</a><a href="#recommendation"><span>05</span> 최종 추천</a><a href="#mvp"><span>06</span> 커뮤니티 MVP</a><a href="#validation"><span>07</span> 검증과 실행</a><a href="#sources"><span>08</span> 근거와 조사 범위</a>
+</nav>
+<div class="sidebar-foot"><span class="status-dot"></span> 조사 → 해석 → 검증 가설<small>2026.10.30 · 한국어 리서치<br>단일 HTML · 외부 의존성 없음</small></div>
+</aside>
+<button class="nav-shade" id="nav-shade" aria-label="목차 닫기" tabindex="-1" hidden></button>
+<div class="page">
+<header class="topbar"><div class="topbar-left"><button class="icon-button menu-toggle" id="menu-toggle" aria-label="목차 열기" aria-controls="sidebar" aria-expanded="false">☰</button><span class="breadcrumb">FIELD NOTES <span>/</span> <b id="current-section">핵심 진단</b></span></div><div class="topbar-actions"><button class="quiet-button" id="print-button">인쇄 <span class="desktop-label">/ PDF</span></button><label class="theme-control"><span class="sr-only">화면 테마</span><select id="theme-select" aria-label="화면 테마"><option value="system">◐ 시스템</option><option value="dark">☾ 다크</option><option value="light">☀ 라이트</option></select></label></div></header>
+<main id="main"><!-- CONTENT --></main>
+<footer><span>TERMINAL WORLD / COMMUNITY ATLAS</span><p>커뮤니티의 존재를 확인한 것과, Terminal World의 수요를 확인한 것은 다르다.</p></footer>
+</div>
+<div class="compare-tray" id="compare-tray" hidden><div><strong id="compare-count">0개 선택</strong><span id="compare-names"></span></div><div class="tray-actions"><button class="quiet-button" id="compare-reset">초기화</button><button class="button primary" id="compare-open">같은 기준으로 비교 <span>↗</span></button></div></div>
+<dialog id="compare-dialog" aria-labelledby="compare-title"><div class="dialog-head"><div><p class="eyebrow">SIDE BY SIDE</p><h2 id="compare-title">같은 질문으로 비교하기</h2></div><button class="icon-button" id="compare-close" aria-label="비교 닫기">✕</button></div><p class="small">재방문·콜드스타트·이식 가능성은 조사자가 도출한 해석과 가설이다.</p><div id="compare-content"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><div class="notice">분석 본문은 읽을 수 있습니다. 커뮤니티 지도·비교·출처 탐색은 JavaScript를 허용하면 작동합니다.</div></noscript>
+<script type="application/json" id="atlas-data">/* INLINE_DATA */</script>
+<script>/* INLINE_JS */</script>
+</body>
+</html>

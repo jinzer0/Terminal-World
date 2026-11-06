@@ -1,0 +1,547 @@
+{
+  "products": [
+    {
+      "id": "tilde",
+      "name": "tilde.club",
+      "category": "terminal",
+      "audience": "Unix를 배우고 개인 웹페이지를 만들며 지식을 나누려는 사람",
+      "problem": "공동으로 사용할 셸과 개인 창작 공간이 필요하다.",
+      "why": "SSH로 접속하는 공유 Unix 컴퓨터와 배움의 공동체를 함께 제공한다.",
+      "ux": "공개키로 가입해 셸에 접속하고 개인 페이지·위키·채팅을 이용한다.",
+      "repeat": "해석: 개인 페이지와 동료의 활동이 쌓이면 다시 작업할 이유가 생긴다.",
+      "strength": "SSH가 실제 공유 컴퓨팅 자원에 접근하는 경로이며 혼자서도 페이지를 만들 수 있다.",
+      "limitation": "해석: 키 설정과 공용 서버 운영이 부담이며 공동체 가치는 참여자 수에 영향을 받는다.",
+      "implication": "해석: 방을 둘러보는 경험만으로는 공유 자원과 창작 활동을 제공하는 기존 대안보다 약하다.",
+      "status": "공식 페이지와 2026년 서버 업그레이드 공지를 확인했다. 실제 SSH 접속과 가입은 시험하지 않았다.",
+      "sources": [
+        "t01",
+        "t02"
+      ]
+    },
+    {
+      "id": "sdf",
+      "name": "SDF Public Access UNIX",
+      "category": "terminal",
+      "audience": "공용 Unix 셸과 개인 프로젝트 자원을 원하는 사용자",
+      "problem": "항상 접근할 수 있는 셸과 기술 커뮤니티가 필요하다.",
+      "why": "셸 계정, IRC, 튜토리얼과 여러 인터넷 서비스를 제공한다.",
+      "ux": "사이트에서 셸 계정 가입을 시작하고 SSH 등 공용 서비스를 이용한다.",
+      "repeat": "해석: 서버에서 이어지는 작업과 개인 자산, 관계가 재방문을 만든다.",
+      "strength": "사회적 교류와 별개로 실제 컴퓨팅 자원을 이용할 수 있다.",
+      "limitation": "해석: 셸 학습과 가입 부담이 있고 운영자는 공용 서버를 안전하게 관리해야 한다.",
+      "implication": "해석: 공간형 커뮤니티에는 이용자가 접속해 수행할 실질적인 작업이 필요하다.",
+      "status": "공식 사이트의 가입 안내와 서비스 목록을 확인했다. 실제 가입 및 SSH 연결은 시험하지 않았다.",
+      "sources": [
+        "t03"
+      ]
+    },
+    {
+      "id": "sshchat",
+      "name": "ssh-chat",
+      "category": "terminal",
+      "audience": "SSH로 채팅하거나 채팅 서버를 직접 운영하려는 사람",
+      "problem": "별도 채팅 클라이언트 없이 텍스트 대화를 하고 싶다.",
+      "why": "기존 SSH 클라이언트로 접속하는 자체 채팅 서버를 제공한다.",
+      "ux": "서버에 SSH로 접속하면 셸 대신 채팅 프롬프트를 사용한다.",
+      "repeat": "해석: 함께 대화할 사람이 있거나 특정 대화에 참여할 때 돌아올 이유가 생긴다.",
+      "strength": "허용 목록, 공지와 로그를 지원하는 기존 SSH 채팅 대안이다.",
+      "limitation": "해석: 혼자 접속했을 때 가치는 작고 SSH만으로 채팅의 필요가 생기지는 않는다.",
+      "implication": "해석: 터미널 채팅을 구현했다는 사실은 수요나 차별화의 증거가 아니다.",
+      "status": "저장소와 릴리스 페이지를 확인했다. 공개 데모의 현재 접속 가능성은 확인하지 않았다.",
+      "sources": [
+        "t04",
+        "t05"
+      ]
+    },
+    {
+      "id": "terminalshop",
+      "name": "Terminal Shop",
+      "category": "terminal",
+      "audience": "터미널 사용에 익숙하면서 커피를 주문하려는 사람",
+      "problem": "원두를 구매하고 반복 주문을 관리하고 싶다.",
+      "why": "실제 상품 주문을 SSH 인터페이스와 주문 API로 제공한다.",
+      "ux": "SSH 상점에서 상품을 탐색하거나 API로 주문을 연결한다.",
+      "repeat": "해석: 소모품 재구매가 목적이 되어 재방문을 유도한다.",
+      "strength": "터미널의 독특함을 실제 구매라는 명확한 과업에 연결한다.",
+      "limitation": "해석: 커피의 수요는 SSH 때문에 생기지 않으며 결제·배송 운영이 필요하다.",
+      "implication": "해석: 인터페이스보다 먼저 반복되는 실질적 과업이 있어야 한다.",
+      "status": "공식 상점과 프로덕션 API 문서를 확인했다. 실제 주문·결제는 시험하지 않았다.",
+      "sources": [
+        "t06",
+        "t07"
+      ]
+    },
+    {
+      "id": "tmate",
+      "name": "tmate",
+      "category": "collaboration",
+      "audience": "터미널을 공유하며 원격 디버깅하거나 페어 프로그래밍하는 개발자",
+      "problem": "원격 동료가 같은 셸 세션을 빠르게 보고 도와야 한다.",
+      "why": "SSH 연결 문자열로 상대를 초대하고 읽기 전용 공유도 지원한다.",
+      "ux": "호스트가 공유 세션을 시작해 상대에게 연결 문자열을 전달한다.",
+      "repeat": "해석: 원격 디버깅이나 협업 문제가 다시 생길 때 이용한다.",
+      "strength": "SSH가 원격 셸 접속과 공유 권한에 직접적인 의미를 가진다.",
+      "limitation": "해석: 공유 화면에 비밀이 나타날 수 있으며 중계 서버의 상태가 연결에 영향을 준다.",
+      "implication": "해석: 직접 재구현하기 전에 기존 터미널 공유 도구로 협업을 연결하는 방식을 검토할 수 있다.",
+      "status": "저장소와 패키지 매뉴얼은 접근 가능했다. 공식 사이트는 조사 중 502 응답이어서 호스팅 서비스 가용성은 불명이다.",
+      "sources": [
+        "t08",
+        "t09",
+        "t25"
+      ]
+    },
+    {
+      "id": "liveshare",
+      "name": "VS Code Live Share",
+      "category": "collaboration",
+      "audience": "기존 개발 환경을 사용하면서 함께 편집하고 디버깅하려는 개발자",
+      "problem": "원격 동료가 같은 프로젝트를 보며 문제를 해결해야 한다.",
+      "why": "공동 편집과 디버깅을 IDE 안에 제공하고 터미널 권한을 선택할 수 있다.",
+      "ux": "확장과 계정을 준비해 초대 링크로 참가한다. 터미널은 기본 읽기 전용으로 공유된다.",
+      "repeat": "해석: 페어 리뷰와 공동 디버깅이 발생할 때마다 기존 작업 흐름에서 재사용한다.",
+      "strength": "편집기·코드 탐색·디버깅이 통합된 강력한 대안이다.",
+      "limitation": "해석: 계정·확장·네트워크 설정이 장벽이며 실시간 협업에는 다른 사람의 시간이 필요하다.",
+      "implication": "해석: 라이브 코딩 자체보다 협업 전후에 혼자 얻는 가치를 먼저 검증해야 한다.",
+      "status": "공식 서비스 및 연결 문서를 확인했다. 실제 계정으로 세션을 시작하지 않았다.",
+      "sources": [
+        "t10",
+        "t11",
+        "t12",
+        "t26"
+      ]
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "category": "collaboration",
+      "audience": "각자의 편집기에서 같은 프로젝트를 보며 협업하는 개발자",
+      "problem": "코드와 진행 맥락을 공유하며 동시에 작업해야 한다.",
+      "why": "공유 프로젝트, 음성, 채널별 협업 메모와 사용자 따라가기를 통합한다.",
+      "ux": "로그인한 뒤 채널을 만들고 프로젝트를 공유하며 Markdown 메모를 함께 편집한다.",
+      "repeat": "해석: 지속되는 프로젝트와 채널 메모가 팀의 반복 작업을 뒷받침한다.",
+      "strength": "코드와 지속적인 노트, 공간형 채널을 이미 결합한다.",
+      "limitation": "공식 문서는 터미널 따라가기의 대안으로 화면 공유를 제시하고 프로젝트 공유 시 로컬 파일 접근을 경고한다.",
+      "implication": "해석: 방과 공동 코딩, 메모의 단순 결합만으로 독자적 차별화를 주장하기 어렵다.",
+      "status": "공식 협업 문서를 확인했다. 실제 계정과 협업 세션은 시험하지 않았다.",
+      "sources": [
+        "t13",
+        "t14"
+      ]
+    },
+    {
+      "id": "tuple",
+      "name": "Tuple",
+      "category": "collaboration",
+      "audience": "원격에서 함께 프로그래밍하는 개발팀",
+      "problem": "상대의 화면과 개발 환경을 제어하면서 명확하게 소통해야 한다.",
+      "why": "페어링에 맞춘 화면 공유, 음성 및 원격 제어를 제공한다.",
+      "ux": "데스크톱 앱에서 통화하고 수락 후 화면 공유와 제어를 시작한다.",
+      "repeat": "해석: 정기 페어링과 문제 해결을 반복하는 팀이 다시 사용한다.",
+      "strength": "수신자가 공유 및 원격 제어 요청을 수락하도록 명시한다.",
+      "limitation": "해석: 별도 앱과 비용, 신뢰할 수 있는 동시 참여자가 필요하다.",
+      "implication": "해석: 공동 작업의 핵심은 방의 표현보다 제어권과 작업 맥락의 전달이다.",
+      "status": "공식 제품 및 보안 페이지를 확인했다. 실제 통화나 결제는 시험하지 않았다.",
+      "sources": [
+        "t15",
+        "t16"
+      ]
+    },
+    {
+      "id": "atuin",
+      "name": "Atuin History + Threads",
+      "category": "productivity",
+      "audience": "과거 셸 명령이나 여러 도구·기기의 에이전트 세션을 찾는 개발자",
+      "problem": "흩어진 명령과 에이전트 세션의 맥락을 다시 찾기 어렵다.",
+      "why": "명령을 풍부한 조건으로 검색하고 에이전트 세션을 선택적으로 기록·재개한다.",
+      "ux": "셸 이력 검색을 사용하고 18.24 이상에서 지원되는 에이전트 세션을 검색·재개할 수 있다.",
+      "repeat": "해석: 과거 명령이나 작업을 되찾을 때마다 누적된 이력이 가치를 제공한다.",
+      "strength": "종단간 암호화 동기화와 2026년 발표된 기기·지원 에이전트 간 세션 재개가 있다.",
+      "limitation": "공식 문서는 비밀정보 탐지가 완전하지 않으며 일부 IDE 셸에서 기록 훅이 설치되지 않을 수 있다고 설명한다.",
+      "implication": "해석: 재개 자체는 차별화가 아니다. 비에이전트 학생의 다음 행동 기록이 나은지는 Markdown과 직접 비교해야 한다.",
+      "status": "공식 제품 페이지와 2026-10-27 Threads 발표, 18.24.2 릴리스 이력을 확인했다. 설치나 동기화는 시험하지 않았다.",
+      "sources": [
+        "t17",
+        "t18",
+        "t19",
+        "t20",
+        "t32"
+      ]
+    },
+    {
+      "id": "tmux",
+      "name": "tmux + tmux-resurrect",
+      "category": "productivity",
+      "audience": "여러 터미널 프로그램과 프로젝트를 오가며 작업하는 사람",
+      "problem": "연결을 끊거나 재부팅한 뒤 터미널 환경을 다시 구성해야 한다.",
+      "why": "tmux가 실행 중 세션 재연결을 지원하고 플러그인이 재부팅 후 배치를 복원한다.",
+      "ux": "터미널 세션을 분리·재연결하거나 플러그인으로 창, 패널과 작업 디렉터리를 복원한다.",
+      "repeat": "해석: 터미널을 열고 프로젝트 작업으로 돌아올 때마다 환경이 누적 자산이 된다.",
+      "strength": "실제 프로세스 재연결과 패널 배치 복원이라는 직접적인 과업을 해결한다.",
+      "limitation": "해석: 패널을 복원해도 이전 판단이나 다음 행동까지 자동으로 이해할 수 있는 것은 아니다.",
+      "implication": "해석: 작업 의도의 최소 기록이라는 가설을 단순한 패널 복원과 비교해야 한다.",
+      "status": "공식 홈페이지와 플러그인 저장소를 확인했다. 현재 환경에서 설치·복원은 시험하지 않았다.",
+      "sources": [
+        "t21",
+        "t22"
+      ]
+    },
+    {
+      "id": "atuindesktop",
+      "name": "Atuin Desktop",
+      "category": "productivity",
+      "audience": "명령과 운영 절차를 기록하고 반복 실행·공유하려는 기술팀",
+      "problem": "실제 운영 절차가 개인의 기억이나 흩어진 기록에 남는다.",
+      "why": "문서 안에 명령과 쿼리를 넣는 실행 가능한 런북을 제공한다.",
+      "ux": "명령 블록과 문서를 작성하고 파일 또는 협업 공간으로 공유한다.",
+      "repeat": "해석: 반복 작업과 장애 대응 절차가 유용하게 유지될 때 재사용할 수 있다.",
+      "strength": "터미널 명령과 문서·협업을 결합한 직접적인 선례다.",
+      "limitation": "2026년 9월 제작자는 기존 형태는 동작하지만 앞으로 지원과 유지보수 가능성이 낮다고 밝혔다.",
+      "implication": "해석: 실행 가능한 기록을 구현하는 것과 사용자가 계속 기록을 유지하는 것은 별개의 문제다.",
+      "status": "공식 발표와 2026년 제작자 답변을 확인했다. 현재 유지보수 축소 상태로 보며 실제 실행은 시험하지 않았다.",
+      "sources": [
+        "t23",
+        "t24"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "t01",
+      "title": "tilde.club 공식 홈페이지",
+      "url": "https://tilde.club/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "공유 Unix와 2026년 유지보수 공지",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t02",
+      "title": "tilde.club SSH 안내",
+      "url": "https://tilde.club/wiki/ssh.html",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "계정 및 SSH 키 설정",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t03",
+      "title": "SDF Public Access UNIX",
+      "url": "https://english.sdf.org/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "공용 셸과 서비스 목록",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t04",
+      "title": "ssh-chat 저장소",
+      "url": "https://github.com/shazow/ssh-chat",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "SSH 채팅과 서버 기능",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t05",
+      "title": "ssh-chat 릴리스",
+      "url": "https://github.com/shazow/ssh-chat/releases",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "안정판 및 시험 릴리스 이력",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t06",
+      "title": "Terminal Shop",
+      "url": "https://www.terminal.shop/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "SSH 커피 주문",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t07",
+      "title": "Terminal Shop API",
+      "url": "https://www.terminal.shop/api",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "주문 API와 프로덕션 환경",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t08",
+      "title": "tmate 저장소",
+      "url": "https://github.com/tmate-io/tmate",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "터미널 공유 클라이언트",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t09",
+      "title": "tmate 매뉴얼",
+      "url": "https://manpages.debian.org/unstable/tmate/tmate.1.en.html",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "SSH 중계와 세션 공유",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t10",
+      "title": "Live Share 서비스",
+      "url": "https://visualstudio.microsoft.com/services/live-share/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "실시간 코드 협업",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t11",
+      "title": "Live Share 연결 요구사항",
+      "url": "https://learn.microsoft.com/en-us/visualstudio/liveshare/reference/connectivity",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "계정과 네트워크 조건",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t12",
+      "title": "Live Share 터미널 공유",
+      "url": "https://code.visualstudio.com/blogs/2018/05/07/live-share-public-preview",
+      "type": "공식",
+      "date": "2018-05-07",
+      "note": "읽기 전용 기본 터미널과 초대 승인",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t13",
+      "title": "Zed 협업 개요",
+      "url": "https://zed.dev/docs/collaboration/overview",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "로그인과 파일 공유 경고",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t14",
+      "title": "Zed 채널",
+      "url": "https://zed.dev/docs/collaboration/channels",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "공유 프로젝트, 음성, 메모 및 터미널 제한",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t15",
+      "title": "Tuple 제품 설명",
+      "url": "https://tuple.app/maybe",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "원격 페어 프로그래밍",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t16",
+      "title": "Tuple 보안",
+      "url": "https://tuple.app/security",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "화면 공유 수락과 암호화",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t17",
+      "title": "Atuin History",
+      "url": "https://atuin.sh/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "명령 기록 검색과 동기화",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t18",
+      "title": "Atuin Threads 발표",
+      "url": "https://blog.atuin.sh/threads-agent-sessions/",
+      "type": "공식",
+      "date": "2026-10-27",
+      "note": "18.24 이상 에이전트 세션 검색 및 재개",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t19",
+      "title": "Atuin 비밀정보 제외 안내",
+      "url": "https://docs.atuin.sh/main/guide/excluding-commands/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "비밀 탐지의 한계와 제외 설정",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t20",
+      "title": "Atuin FAQ",
+      "url": "https://github.com/atuinsh/atuin/blob/main/docs/docs/faq.md",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "IDE 셸 훅과 기록 한계",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t21",
+      "title": "tmux 공식 안내",
+      "url": "https://tmux.github.io/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "터미널 다중화 및 재접속",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t22",
+      "title": "tmux-resurrect 저장소",
+      "url": "https://github.com/tmux-plugins/tmux-resurrect",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "재부팅 이후 패널과 일부 프로그램 복원",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t23",
+      "title": "Atuin Desktop 발표",
+      "url": "https://blog.atuin.sh/atuin-desktop-open-source/",
+      "type": "공식",
+      "date": "날짜 미표기",
+      "note": "실행 가능한 문서와 협업 런북",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t24",
+      "title": "Atuin Desktop 유지보수 논의",
+      "url": "https://forum.atuin.sh/t/is-atuin-desktop-orphaned/1513",
+      "type": "사용자 의견",
+      "date": "2026-09-14",
+      "note": "사용자의 지원 우려 및 제작자의 유지보수 축소 답변",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t25",
+      "title": "tmate 연결 실패 보고",
+      "url": "https://github.com/tmate-io/tmate/issues/322",
+      "type": "사용자 의견",
+      "date": "2025-07-17",
+      "note": "한 사용자의 named session 접속 오류",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t26",
+      "title": "Live Share 세션 연결 오류",
+      "url": "https://github.com/microsoft/vscode/issues/317842",
+      "type": "사용자 의견",
+      "date": "날짜 미표기",
+      "note": "특정 환경에서 세션 시작 또는 참여 실패 보고",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t27",
+      "title": "Atuin 기록 속 비밀 제거 질문",
+      "url": "https://forum.atuin.sh/t/how-to-remove-secrets-from-my-history/116",
+      "type": "사용자 의견",
+      "date": "날짜 미표기",
+      "note": "명령 이력에 들어간 비밀 제거 질문",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t28",
+      "title": "코딩 중단 후 다음 단계 상실",
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1rxrqyw/do_you_lose_your_place_when_you_get_interrupted/",
+      "type": "사용자 의견",
+      "date": "날짜 미표기",
+      "note": "다음으로 구현하려던 단계를 잊는다는 개별 진술",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t29",
+      "title": "작업 전환과 간단한 메모",
+      "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1rvuc8m/how_do_you_deal_with_constant_task_switching/",
+      "type": "사용자 의견",
+      "date": "날짜 미표기",
+      "note": "현 위치와 다음 행동을 텍스트 파일에 남기는 사례",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t30",
+      "title": "Resumption strategies for interrupted programming tasks",
+      "url": "https://ieeexplore.ieee.org/document/5090030/",
+      "type": "연구",
+      "date": "2009",
+      "note": "85명 개발자의 프로그래밍 세션을 분석한 탐색 연구",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t31",
+      "title": "TaskSnap: One Task at a Time With Snapshots",
+      "url": "https://hasel.dev/publication/tasksnap-one-task-at-a-time-with-snapshots/",
+      "type": "연구",
+      "date": "2026년 (저자 연구실 확인)",
+      "note": "55명 개발자 대상 통제 실험에서 첫 편집 지연 감소를 보고. Terminal World의 효과나 채택을 입증하지 않음.",
+      "checked": "2026-10-29"
+    },
+    {
+      "id": "t32",
+      "title": "Atuin 릴리스",
+      "url": "https://github.com/atuinsh/atuin/releases",
+      "type": "공식",
+      "date": "2026-10-22",
+      "note": "18.24.2 릴리스 이력",
+      "checked": "2026-10-29"
+    }
+  ],
+  "voices": [
+    {
+      "title": "tmate named session 접속 오류",
+      "observation": "한 사용자가 기존 named session에 접속할 때 내부 오류가 발생했지만 무작위 세션은 연결됐다고 보고했다.",
+      "limit": "2025년 단일 보고이며 근본 원인과 현재 전체 서비스의 가용성은 확인되지 않았다.",
+      "sources": [
+        "t25"
+      ]
+    },
+    {
+      "title": "Live Share 세션 시작·참여 실패",
+      "observation": "한 사용자가 특정 VS Code 환경에서 협업 세션을 만들거나 참여할 수 없다고 보고했다.",
+      "limit": "개별 환경의 보고로 전체 실패율이나 원인을 일반화할 수 없다.",
+      "sources": [
+        "t26"
+      ]
+    },
+    {
+      "title": "셸 이력의 비밀정보",
+      "observation": "Atuin 사용자가 이미 기록된 명령에서 비밀정보를 지우는 방법을 물었다.",
+      "limit": "특정 사용자의 질문이며 비밀 노출이 얼마나 빈번한지는 알 수 없다.",
+      "sources": [
+        "t27"
+      ]
+    },
+    {
+      "title": "유지보수 공백에 대한 우려",
+      "observation": "Atuin Desktop 사용자가 지원과 릴리스 부족을 우려했고 제작자는 향후 유지보수가 어려울 것이라고 답했다.",
+      "limit": "한 제품의 운영 판단이며 기록 도구 전체에 대한 수요를 뜻하지 않는다.",
+      "sources": [
+        "t24"
+      ]
+    },
+    {
+      "title": "방해 후 잃어버린 다음 단계",
+      "observation": "한 개발자는 코딩을 중단한 뒤 구현하려던 구체적 다음 단계를 떠올리기 어렵다고 말했다.",
+      "limit": "익명 자발적 사용자 진술로, 학생 집단 전체를 대표하지 않는다.",
+      "sources": [
+        "t28"
+      ]
+    },
+    {
+      "title": "로컬 메모라는 대안",
+      "observation": "개발자 토론에서 현재 파일과 다음 행동을 짧은 텍스트 파일로 남기는 대안이 언급됐다.",
+      "limit": "자기보고 사례이며 이 방법이나 새 제품의 효과를 측정한 실험은 아니다.",
+      "sources": [
+        "t29"
+      ]
+    }
+  ]
+}

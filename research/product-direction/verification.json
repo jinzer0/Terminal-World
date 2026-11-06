@@ -1,0 +1,150 @@
+{
+  "checked_date": "2026-10-29",
+  "artifact": "index.html",
+  "sha256": "4b973d63b72b635cd08627e5e307c2f30f0c89baa565d98cfa87701453887f0f",
+  "html_bytes": 176389,
+  "content": {
+    "sections": 12,
+    "products": 24,
+    "ideas": 10,
+    "criteria": 9,
+    "sources": 63,
+    "unique_source_urls": 62,
+    "user_evidence_cards": 13
+  },
+  "baseline_top3": [
+    {
+      "name": "작업 재개 데스크",
+      "score": 73.2
+    },
+    {
+      "name": "도움 요청 패킷",
+      "score": 69.6
+    },
+    {
+      "name": "개인 실행 런북",
+      "score": 67.8
+    }
+  ],
+  "static_checks": [
+    "build.py data IDs, source refs, 9 scores and reasons, 12-section order, internal anchors, no external runtime assets",
+    "node --check app.js passed",
+    "Final DOM structural checks passed"
+  ],
+  "browser_checks": [
+    {
+      "test": "market_filters",
+      "status": "passed",
+      "evidence": "All six filters: 24 total; category counts 4,4,4,5,7."
+    },
+    {
+      "test": "market_comparison",
+      "status": "passed",
+      "evidence": "Add, maximum three, filter persistence, remove and clear."
+    },
+    {
+      "test": "idea_filters",
+      "status": "passed",
+      "evidence": "Five categories, three strategy options, combined empty result and recovery."
+    },
+    {
+      "test": "idea_sorting",
+      "status": "passed",
+      "evidence": "Weighted score, problem value, differentiation, and ascending difficulty."
+    },
+    {
+      "test": "idea_comparison",
+      "status": "passed",
+      "evidence": "Add three, reject fourth, comparison dock, remove and clear."
+    },
+    {
+      "test": "score_model",
+      "status": "passed",
+      "evidence": "18 to 30 weight changed resume score 73.2 to 73.9; reset restores baseline."
+    },
+    {
+      "test": "zero_weights",
+      "status": "passed",
+      "evidence": "Setting nine weights to zero restores the defaults and announces the reason."
+    },
+    {
+      "test": "criterion_comparison",
+      "status": "passed",
+      "evidence": "Criterion-specific bars displayed five-point values in descending order."
+    },
+    {
+      "test": "score_dialog",
+      "status": "passed",
+      "evidence": "Score reason opens immediately; close and Escape restore initiating button focus."
+    },
+    {
+      "test": "journey_and_demo",
+      "status": "passed",
+      "evidence": "All six journey steps and all three simulation states rendered correct content."
+    },
+    {
+      "test": "source_search",
+      "status": "passed",
+      "evidence": "42 official, 15 user opinion and 6 research entries; Atuin search 8; empty query case."
+    },
+    {
+      "test": "theme",
+      "status": "passed",
+      "evidence": "System dark/light detection, live system update, manual override and reload persistence."
+    },
+    {
+      "test": "navigation",
+      "status": "passed",
+      "evidence": "Section anchors, active section and mobile menu open/close/select/Escape."
+    },
+    {
+      "test": "keyboard",
+      "status": "passed",
+      "evidence": "Details Enter, range keys, closed mobile menu inert, focus restoration."
+    },
+    {
+      "test": "responsive",
+      "status": "passed",
+      "evidence": "1440x1000, 768x1024 and 360x800 requested viewports; no page horizontal overflow."
+    },
+    {
+      "test": "offline",
+      "status": "passed",
+      "evidence": "Only localhost document requested; filters, sort and theme work under network offline emulation."
+    },
+    {
+      "test": "print",
+      "status": "passed",
+      "evidence": "Generated tagged A4 56-page PDF; all 24 product names, 10 ideas and 63 source IDs present; filters restored."
+    },
+    {
+      "test": "final_dom",
+      "status": "passed",
+      "evidence": "12 sections, 24 product cards, 10 ideas, 63 source cards; no duplicate IDs or unnamed buttons."
+    },
+    {
+      "test": "runtime",
+      "status": "passed",
+      "evidence": "No error or warning logs observed."
+    },
+    {
+      "test": "original_preservation",
+      "status": "passed",
+      "evidence": "30 original file hashes unchanged."
+    }
+  ],
+  "screenshots": [
+    "qa/desktop-dark.jpg",
+    "qa/desktop-light.jpg",
+    "qa/mobile-dark.jpg",
+    "qa/mobile-light.jpg"
+  ],
+  "limitations": [
+    "Browser UI tested on local HTTP; direct file protocol was unavailable in the embedded browser. HTML embeds its CSS, data and JavaScript; no fetch or runtime CDN dependency.",
+    "No potential-customer interviews or adoption pilot conducted. Recommendation and scoring are hypotheses and analysis, not measured retention.",
+    "Product operation evidence is official documentation/repository/web availability; accounts, SSH connectivity, payment and real collaboration were not exercised.",
+    "Print output content and state restoration checked; 56 pages were not individually visually proofread."
+  ],
+  "original_files_checked": 30,
+  "original_files_changed": []
+}

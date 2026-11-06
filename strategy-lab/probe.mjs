@@ -1,0 +1,32 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { createRequire } from 'node:module';
+const require=createRequire(import.meta.url);
+const {chromium}=require('/Users/kjy/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const base=path.dirname(fileURLToPath(import.meta.url));
+fs.mkdirSync(path.join(base,'qa'),{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
+const ctx=await browser.newContext({viewport:{width:1440,height:960},offline:true,reducedMotion:'reduce'});
+const page=await ctx.newPage();
+const errors=[],network=[];
+page.on('pageerror',e=>errors.push(e.message));
+page.on('request',r=>{if(/^https?:/.test(r.url())) network.push(r.url())});
+await page.goto(pathToFileURL(path.join(base,'index.html')).href);
+await page.waitForFunction(()=>document.querySelector('main')?.textContent.length>500);
+const overview=await page.evaluate(()=>({title:document.title,theme:document.documentElement.dataset.theme,sections:[...document.querySelectorAll('main section[id]')].map(s=>({id:s.id,h:s.querySelector('h2,h1')?.textContent})),buttons:[...document.querySelectorAll('button')].map(b=>({id:b.id,text:b.textContent,aria:b.getAttribute('aria-label')})),inputs:[...document.querySelectorAll('input')].map(i=>({id:i.id,type:i.type,aria:i.getAttribute('aria-label')}))}));
+const responsive=[];
+for(const width of [320,375,767,768,1023,1024,1440]){
+ await page.setViewportSize({width,height:960});
+ await page.evaluate(()=>scrollTo(0,0));
+ const result=await page.evaluate(()=>({viewport:innerWidth,doc:document.documentElement.scrollWidth,body:document.body.scrollWidth,overflow:[...document.querySelectorAll('main *')].filter(e=>{const r=e.getBoundingClientRect();return r.width&&r.right>innerWidth+1&&getComputedStyle(e).position!=='fixed'&&!e.closest('.table-scroll,.table-wrap')}).slice(0,12).map(e=>({tag:e.tagName,id:e.id,class:e.className,width:e.getBoundingClientRect().width,right:e.getBoundingClientRect().right}))}));
+ responsive.push(result);
+ if([320,375,768,1440].includes(width))await page.screenshot({path:path.join(base,'qa',`hero-dark-${width}.png`)});
+}
+const anchors=await page.evaluate(()=>[...document.querySelectorAll('a[href^="#"]')].filter(a=>a.hash.length>1&&!document.getElementById(decodeURIComponent(a.hash.slice(1)))).map(a=>a.getAttribute('href')));
+const unnamed=await page.evaluate(()=>[...document.querySelectorAll('button,input[type=range]')].filter(e=>!((e.textContent||'').trim()||e.getAttribute('aria-label')||e.getAttribute('aria-labelledby')||e.labels?.length)).map(e=>e.outerHTML));
+const duplicateIds=await page.evaluate(()=>{const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);return ids.filter((id,i)=>ids.indexOf(id)!==i)});
+const result={browser:await browser.version(),overview,responsive,errors,network,brokenAnchors:anchors,unnamed,duplicateIds};
+fs.writeFileSync(path.join(base,'qa-probe.json'),JSON.stringify(result,null,2));
+console.log(JSON.stringify(result,null,2));
+await browser.close();

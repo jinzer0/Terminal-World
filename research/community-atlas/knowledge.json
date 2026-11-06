@@ -1,0 +1,722 @@
+{
+  "communities": [
+    {
+      "id": "hackernews",
+      "name": "Hacker News",
+      "category": "knowledge",
+      "description": "개발자와 창작자가 신기술을 발견하고 자신이 직접 만든 것을 검증받는다.",
+      "url": "https://news.ycombinator.com/showhn.html",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "개발자와 창작자가 신기술을 발견하고 자신이 직접 만든 것을 검증받는다.",
+      "firstValue": "공개 Ask/Show와 댓글을 읽고 시도 가능한 작품을 즉시 탐색한다.",
+      "repeatLoop": "추론: 새 링크·질문·프로젝트와 그에 대한 답변을 확인하러 돌아올 수 있다.",
+      "exchange": "시연 가능한 개인 작업, 기술 링크, 비평과 답글",
+      "coldStart": "품질 있는 큐레이션과 제출 후 실제 답변자 확보가 필수다.",
+      "friction": "2026년 한 게시자는 신고 이유를 알 수 없다고 호소했고, 답변자들은 반복 게시·새 계정·낮은 노력의 인상 등 서로 다른 해석을 제시했다. 운영자 권한과 소명 경로가 불명확해질 수 있다.",
+      "transfer": "Show 게시물은 직접 시험 가능한 것이라는 구체적 계약을 참고하되 득표와 대규모 독자층을 복제했다고 가정하지 않는다.",
+      "terminalFit": "텍스트 토론과 코드·링크에는 적합하지만 GUI 시연에는 웹 전환이 필요하다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://news.ycombinator.com/showhn.html",
+          "title": "Hacker News 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://news.ycombinator.com/newsfaq.html",
+          "title": "Hacker News FAQ",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "Ask/Show 노출 문턱, 신고와 중재, 정기 채용 스레드를 설명한다."
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49783865",
+          "title": "Show HN 신고 이유를 묻는 사용자 토론",
+          "type": "user",
+          "date": "2026-09 (상대 날짜 기준)",
+          "claim": "게시자가 자신의 게시물 신고 이유를 묻고 참가자들이 서로 다른 이유를 추정한다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "lobsters",
+      "name": "Lobsters",
+      "category": "knowledge",
+      "description": "컴퓨팅에 집중한 독자들이 관련 링크와 관점을 교환한다.",
+      "url": "https://lobste.rs/about",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "컴퓨팅에 집중한 독자들이 관련 링크와 관점을 교환한다.",
+      "firstValue": "가입 전에도 컴퓨팅 중심의 링크, 태그, 토론을 읽을 수 있다.",
+      "repeatLoop": "추론: 관심 태그의 새 링크와 숙련자 논평을 보러 돌아올 수 있다.",
+      "exchange": "기술 링크, 태그, 논평, 신고 사유",
+      "coldStart": "좁은 주제와 선별된 기여자 기반이 필요하며 초대망이 작으면 유입이 막힌다.",
+      "friction": "공식 운영 기록에는 2026-10-24 저장소 직접 링크라는 이유로 게시물을 삭제한 사례와 10-25 LLM 사용 관련 글을 삭제한 사례가 남아 있다. 엄격한 주제 관리가 예측 가능성과 입문 장벽 사이의 긴장을 만든다.",
+      "transfer": "주제별 큐레이션과 신고 이유 공개를 시험한다. 폐쇄 초대제를 그대로 가져오지 않는다.",
+      "terminalFit": "링크와 스레드 중심 토론은 TUI에 어울리나 원문은 대체로 웹에 있다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://lobste.rs/about",
+          "title": "Lobsters 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://lobste.rs/moderations",
+          "title": "Lobsters 공개 모더레이션 기록",
+          "type": "operator",
+          "date": "2026-10-24~25",
+          "claim": "직접 저장소 링크 및 LLM 관련 게시물을 삭제하고 사유를 기록한 사례가 공개되어 있다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "stackoverflow",
+      "name": "Stack Overflow",
+      "category": "knowledge",
+      "description": "개발자가 구체적 프로그래밍 문제의 재현 가능한 해결책을 찾는다.",
+      "url": "https://stackoverflow.com/tour",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "개발자가 구체적 프로그래밍 문제의 재현 가능한 해결책을 찾는다.",
+      "firstValue": "검색으로 기존 질문과 답변을 로그인 없이 열람한다.",
+      "repeatLoop": "추론: 새 기술 문제를 검색하거나 자신의 전문 분야에 답한다.",
+      "exchange": "구체적 질문, 코드, 재현 조건, 답변 및 수정",
+      "coldStart": "초기에 누적된 답변과 자원봉사 검토자가 없으면 검색과 응답 가치가 낮다.",
+      "friction": "2024년 이용자는 질문이 조롱받았다고 보고했고 답변자들은 질문 품질과 초보자 환대의 긴장을 논의했다. 단일 스레드로 전체 경험은 알 수 없다.",
+      "transfer": "문제·시도·예상/실제 결과를 짧게 제공하고 답변을 수정 가능한 자산으로 보존한다. 질책·명성 문턱은 복제하지 않는다.",
+      "terminalFit": "오류와 코드가 이미 터미널에 있어 작성 맥락이 가깝지만, 질문 품질은 UI만으로 해결되지 않는다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://stackoverflow.com/tour",
+          "title": "Stack Overflow 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://www.reddit.com/r/webdev/comments/1cz5827/is_stackoverflow_a_toxic_place_to_ask_questions/",
+          "title": "Stack Overflow 질문 경험에 관한 사용자 토론",
+          "type": "user",
+          "date": "2024-05",
+          "claim": "질문자가 부정적인 반응을 호소하며 참가자들은 초보자 접근성과 질문 품질에 관해 서로 다른 경험을 말한다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "githubcommunity",
+      "name": "GitHub Community Discussions",
+      "category": "knowledge",
+      "description": "GitHub 사용자가 제품 문제·제안을 공유하고 관련 상태를 확인한다.",
+      "url": "https://github.com/orgs/community/discussions",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "GitHub 사용자가 제품 문제·제안을 공유하고 관련 상태를 확인한다.",
+      "firstValue": "기존 질문과 직원 답변 또는 공지를 찾는다.",
+      "repeatLoop": "추론: 제품을 사용하며 생긴 문제나 피드백의 처리 상태를 보러 돌아올 수 있다.",
+      "exchange": "재현 절차, 버그 보고, 제안, 직원 답변, 해결 상태",
+      "coldStart": "담당자의 참여와 중복 검색·분류가 없으면 미답변 게시판이 된다.",
+      "friction": "2026-06-28 사용자들이 검색 입력의 회귀를 보고했고 6월 29일 직원은 롤백을 알렸다. 모든 의견에 답변을 보장하지 않는다고 공식 문서가 밝힌다.",
+      "transfer": "신고나 질문에 상태·소유자·후속 조치를 남긴다. 동일한 직원 응답 능력은 학생 프로젝트에 전제할 수 없다.",
+      "terminalFit": "이슈 URL과 텍스트를 빠르게 공유하기 적합하다. 로그인·저장소 권한 통합은 별도 비용이다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://github.com/orgs/community/discussions",
+          "title": "GitHub Community Discussions 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://github.com/orgs/community/discussions/200255",
+          "title": "검색창 회귀에 관한 Discussion",
+          "type": "user",
+          "date": "2026-06-28",
+          "claim": "사용자가 검색어 편집 문제를 보고했고 직원이 2026-06-29 롤백을 공지했다."
+        },
+        {
+          "url": "https://docs.github.com/en/support/sharing-feedback-with-github",
+          "title": "GitHub 피드백 공유",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "GitHub 팀은 피드백을 검토하지만 모든 토론에 응답을 보장하지 않는다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "learnprogramming",
+      "name": "Reddit r/learnprogramming",
+      "category": "knowledge",
+      "description": "학습자가 막힌 코드와 학습 경로에 관한 도움을 구한다.",
+      "url": "https://www.reddit.com/r/learnprogramming/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "학습자가 막힌 코드와 학습 경로에 관한 도움을 구한다.",
+      "firstValue": "FAQ와 다른 학습자의 구체적 질문 및 답변을 읽는다.",
+      "repeatLoop": "추론: 새 문제가 생기거나 배운 내용을 다른 질문에 적용하려고 방문할 수 있다.",
+      "exchange": "코드 조각, 오류, 참고 링크, 답변, FAQ",
+      "coldStart": "답변할 경험자와 반복 질문을 정리할 봉사자가 있어야 한다.",
+      "friction": "2024년 한 참가자는 반복적인 입문 질문에 피로를 표했고 댓글에서는 초보자에게 공감해야 한다는 반론도 나왔다. 표본 의견이다.",
+      "transfer": "FAQ 먼저 보여주고 구체적 맥락을 요청하며 비난 없이 안내한다. FAQ만으로 개인 질문이 모두 해결되지는 않는다.",
+      "terminalFit": "오류 코드 공유는 유리하지만 초보자는 SSH 자체가 장벽일 수 있다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/learnprogramming/",
+          "title": "Reddit r/learnprogramming 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://www.reddit.com/r/learnprogramming/comments/195br0c/to_all_the_newbies_who_ask_these_questionsmake/",
+          "title": "반복 질문을 둘러싼 토론",
+          "type": "user",
+          "date": "2024-01",
+          "claim": "게시자가 FAQ 중복에 피로를 표했고 댓글에서 초보자 배려를 요구하는 반대 의견도 나타났다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "recurse",
+      "name": "Recurse Center",
+      "category": "knowledge",
+      "description": "개발자가 일정 기간 동료와 배우며 프로그래밍 능력을 기른다.",
+      "url": "https://www.recurse.com/manual",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "개발자가 일정 기간 동료와 배우며 프로그래밍 능력을 기른다.",
+      "firstValue": "정해진 배치에서 참여자와 만남·코드 리뷰·발표를 경험한다.",
+      "repeatLoop": "추론: 공동 기간의 행사와 다른 참여자의 학습 진전을 따라갈 수 있다.",
+      "exchange": "학습 목표, 프로젝트 시연, 코드 리뷰, 동료의 도움",
+      "coldStart": "배치 운영자·참여 약속·신뢰가 필요하고 비동시 접속으로 관계가 만들어지지는 않는다.",
+      "friction": "공식 사회 규칙은 잘난 척, 놀라는 척, 지나친 간섭, 미묘한 차별이 학습을 위축시킬 수 있다고 짚고, 반복적 부적절 행위는 행동강령으로 다룬다.",
+      "transfer": "이미 존재하는 소규모 학습 집단에 정기 시연과 구체적 도움 요청을 제공한다. 선발·진행·문화의 운영비를 없다고 가정하지 않는다.",
+      "terminalFit": "텍스트·코드 토론에는 적합하나 관계 형성과 온보딩은 터미널만으로 대체되지 않는다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://www.recurse.com/manual",
+          "title": "Recurse Center 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://www.recurse.com/blog/167-developing-the-self-directives",
+          "title": "자기 지침을 개발한 이유",
+          "type": "operator",
+          "date": "2022-02-04",
+          "claim": "운영진은 공동체와 관대한 학습을 자기주도 학습의 핵심 요소로 설명한다."
+        },
+        {
+          "url": "https://www.recurse.com/social-rules",
+          "title": "Recurse 사회 규칙",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "학습을 해치는 행동을 네 규칙으로 구체화한다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "devto",
+      "name": "DEV Community",
+      "category": "knowledge",
+      "description": "개발자가 경험과 튜토리얼을 게시하고 의견을 나눈다.",
+      "url": "https://dev.to/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "개발자가 경험과 튜토리얼을 게시하고 의견을 나눈다.",
+      "firstValue": "태그별 글과 토론을 읽는다.",
+      "repeatLoop": "추론: 관심 태그와 저자의 새 글 또는 내 글에 달린 반응을 확인한다.",
+      "exchange": "개발기, 설명, 코드, 댓글",
+      "coldStart": "양질의 필진과 피드 큐레이션이 필요하다.",
+      "friction": "해석: 인기 노출과 홍보·저품질 게시물 검토 부담이 있다.",
+      "transfer": "긴 글을 위한 템플릿보다 검증 가능한 경험과 질 높은 피드백을 장려한다.",
+      "terminalFit": "짧은 초안은 TUI에 맞지만 이미지·긴 글 편집은 웹이 낫다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://dev.to/",
+          "title": "DEV Community 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://dev.to/community-moderation/",
+          "title": "DEV 커뮤니티 모더레이션",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "커뮤니티 기반 모더레이션 안내."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "hashnode",
+      "name": "Hashnode",
+      "category": "knowledge",
+      "description": "개발자가 글을 발행하고 개발 지식을 찾는다.",
+      "url": "https://hashnode.com/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "개발자가 글을 발행하고 개발 지식을 찾는다.",
+      "firstValue": "공개 게시글과 피드를 살펴본다.",
+      "repeatLoop": "추론: 관심 저자의 새 글 및 글에 대한 대화를 확인한다.",
+      "exchange": "기술 블로그, 코드 예제, 독자 피드백",
+      "coldStart": "쓰기와 독자 기반 및 검색 노출이 필요하다.",
+      "friction": "해석: 저자의 자체 블로그와 피드 도달 사이에 의존 관계가 생긴다.",
+      "transfer": "소유 가능한 결과물을 연결하되 블로그 플랫폼을 복제하지 않는다.",
+      "terminalFit": "코드와 텍스트는 친화적이나 장문의 이미지 글은 웹이 편하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://hashnode.com/",
+          "title": "Hashnode 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "indiehackers",
+      "name": "Indie Hackers",
+      "category": "knowledge",
+      "description": "독립 창업자가 구체적 제품 성장·운영 경험을 공유한다.",
+      "url": "https://www.indiehackers.com/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "독립 창업자가 구체적 제품 성장·운영 경험을 공유한다.",
+      "firstValue": "공개 사례와 창업자 대화를 읽는다.",
+      "repeatLoop": "추론: 사업의 다음 단계에서 사례를 찾고 자신의 진척에 대한 의견을 구할 수 있다.",
+      "exchange": "사업 사례, 실행 경험, 질문, 피드백",
+      "coldStart": "사례 제공자와 조언할 유사 경험자가 모두 필요하다.",
+      "friction": "해석: 홍보성 글과 실행 가능한 구체적 근거를 구별하는 운영이 필요하다.",
+      "transfer": "‘내가 시도한 것과 결과’를 중심으로 프로젝트 회고를 유도한다. 매출·성공은 보장하지 않는다.",
+      "terminalFit": "텍스트 사례 탐색에는 적합하나 제품 시연은 외부 링크가 유리하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.indiehackers.com/",
+          "title": "Indie Hackers 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "producthunt",
+      "name": "Product Hunt",
+      "category": "knowledge",
+      "description": "신규 제품을 발굴하거나 출시하는 메이커가 잠재 이용자에게 소개한다.",
+      "url": "https://www.producthunt.com/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "신규 제품을 발굴하거나 출시하는 메이커가 잠재 이용자에게 소개한다.",
+      "firstValue": "당일 출시와 커뮤니티 피드백을 본다.",
+      "repeatLoop": "추론: 신제품 발견과 출시 때 반응 확인을 위해 돌아올 수 있다.",
+      "exchange": "제품 출시, 시연, 사용자 의견",
+      "coldStart": "방문자와 출시자가 동시에 있어야 홍보 및 발견 가치가 크다.",
+      "friction": "해석: 출시 노출 경쟁과 투표 유도가 제품의 지속적 유용성을 보장하지 않는다.",
+      "transfer": "완성된 시연과 무엇을 검토할지 명시하는 습관을 차용한다. 랭킹을 핵심 가치로 삼지 않는다.",
+      "terminalFit": "출시 안내는 가능하지만 스크린샷·비디오 중심 제품은 웹이 유리하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.producthunt.com/",
+          "title": "Product Hunt 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "lesswrong",
+      "name": "LessWrong",
+      "category": "knowledge",
+      "description": "사고 방법과 복잡한 주장에 관심 있는 독자가 논증을 검토한다.",
+      "url": "https://www.lesswrong.com/",
+      "status": "공식 페이지 확인; JavaScript 필요 메시지 확인, 가입 및 전체 기능 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "사고 방법과 복잡한 주장에 관심 있는 독자가 논증을 검토한다.",
+      "firstValue": "장문 논증과 댓글을 읽고 관련 주장들을 비교한다.",
+      "repeatLoop": "추론: 관심 주제의 새 논증과 후속 반론을 확인할 수 있다.",
+      "exchange": "논증, 근거, 반례, 댓글",
+      "coldStart": "긴 글을 생산·검토할 관심 공동체와 규범이 필요하다.",
+      "friction": "해석: 전문 용어와 강한 문화는 신규자의 참여를 어렵게 할 수 있다.",
+      "transfer": "주장과 근거, 반론을 구분해 토론하고 수정 이력을 남긴다.",
+      "terminalFit": "짧은 논증 탐색에는 적합하나 긴 수식과 그림은 제한적이다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.lesswrong.com/",
+          "title": "LessWrong 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "eaforum",
+      "name": "Effective Altruism Forum",
+      "category": "knowledge",
+      "description": "효과적인 기부와 사회 문제 해결에 관심 있는 사람들이 근거와 이견을 논한다.",
+      "url": "https://forum.effectivealtruism.org/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "효과적인 기부와 사회 문제 해결에 관심 있는 사람들이 근거와 이견을 논한다.",
+      "firstValue": "주제별 공개 논의와 기존 자료를 읽는다.",
+      "repeatLoop": "추론: 사안별 새 근거·댓글·이벤트를 확인할 수 있다.",
+      "exchange": "주장, 연구 근거, 비판, 행사 정보",
+      "coldStart": "공통 관심사와 장문 검토·중재 비용이 필요하다.",
+      "friction": "해석: 주제와 세계관이 한정돼 있고 의견 다양성 유지는 운영 과제다.",
+      "transfer": "주제 중심 대화와 반론을 기록하되 그 공동체의 세계관을 수입하지 않는다.",
+      "terminalFit": "텍스트 토론과 검색은 가능하나 문서나 데이터 시각화는 외부 화면이 적합하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://forum.effectivealtruism.org/",
+          "title": "Effective Altruism Forum 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "slashdot",
+      "name": "Slashdot",
+      "category": "knowledge",
+      "description": "기술 뉴스 독자가 기사와 관련 의견을 탐색한다.",
+      "url": "https://slashdot.org/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "기술 뉴스 독자가 기사와 관련 의견을 탐색한다.",
+      "firstValue": "편집된 헤드라인과 대화 스레드를 본다.",
+      "repeatLoop": "추론: 새로운 뉴스 흐름과 이에 대한 반응을 확인한다.",
+      "exchange": "링크, 기사 요약, 댓글",
+      "coldStart": "뉴스 편집과 토론자 기반이 필요하다.",
+      "friction": "해석: 외부 뉴스 링크만 제공하면 기존 뉴스 서비스 대비 이유가 약하다.",
+      "transfer": "소규모 집단의 맥락이 추가된 논평을 중시한다.",
+      "terminalFit": "기사 요약과 댓글은 TUI에 적합하지만 원문 열람은 별도다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://slashdot.org/",
+          "title": "Slashdot 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "hackaday",
+      "name": "Hackaday.io",
+      "category": "knowledge",
+      "description": "하드웨어 제작자가 프로젝트를 기록하고 다른 제작자의 작업에서 배운다.",
+      "url": "https://hackaday.io/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "하드웨어 제작자가 프로젝트를 기록하고 다른 제작자의 작업에서 배운다.",
+      "firstValue": "공개 프로젝트와 진행 로그를 살펴본다.",
+      "repeatLoop": "추론: 제작 단계별 업데이트와 피드백을 확인한다.",
+      "exchange": "제작 로그, 사진, 회로·코드, 댓글",
+      "coldStart": "만드는 사람과 피드백하는 사람이 필요하며 소규모에서는 업로드가 뜸할 수 있다.",
+      "friction": "해석: 이미지와 회로는 텍스트 전용 터미널에서 정보 손실이 크다.",
+      "transfer": "과정·실패·다음 실험을 지속적으로 남기는 프로젝트 로그를 참고한다.",
+      "terminalFit": "소프트웨어 로그는 좋지만 하드웨어 시각 자료에 웹 또는 링크가 필요하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://hackaday.io/",
+          "title": "Hackaday.io 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "codereview",
+      "name": "Code Review Stack Exchange",
+      "category": "knowledge",
+      "description": "작동하는 코드를 더 좋게 만들고 싶은 개발자가 검토를 받는다.",
+      "url": "https://codereview.stackexchange.com/tour",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "작동하는 코드를 더 좋게 만들고 싶은 개발자가 검토를 받는다.",
+      "firstValue": "기존 코드와 구체적인 리뷰를 읽는다.",
+      "repeatLoop": "추론: 새로 완성한 코드에 대한 검토를 요청하거나 다른 코드를 리뷰한다.",
+      "exchange": "작동 코드, 개선 이유, 대안 구현",
+      "coldStart": "리뷰어 시간과 전문 분야의 매칭이 핵심 병목이다.",
+      "friction": "해석: 리뷰를 받기 위한 코드 맥락 정리와 공개 가능 여부가 진입 장벽이다.",
+      "transfer": "코드 공개 범위와 어떤 종류의 피드백을 원하는지 먼저 선택하게 한다.",
+      "terminalFit": "코드 조각 비교는 적합하나 대규모 diff·시각적 문제는 제한적이다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://codereview.stackexchange.com/tour",
+          "title": "Code Review Stack Exchange 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "geeknews",
+      "name": "GeekNews",
+      "category": "knowledge",
+      "description": "한국어 사용자들이 개발·기술 뉴스를 요약과 함께 발견한다.",
+      "url": "https://news.hada.io/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "한국어 사용자들이 개발·기술 뉴스를 요약과 함께 발견한다.",
+      "firstValue": "뉴스 요약, Ask, Show 및 쓰레드를 본다.",
+      "repeatLoop": "추론: 새 기술과 국내 맥락을 얻으려 돌아올 수 있다.",
+      "exchange": "원문 링크, 한국어 요약, 프로젝트, 댓글",
+      "coldStart": "요약의 정확성과 출처 표시를 관리할 큐레이터가 필요하다.",
+      "friction": "해석: 이미 한국어 요약·Ask·Show를 제공하므로 단순 복제는 선택 이유가 없다.",
+      "transfer": "커뮤니티 구성원이 왜 유용한지 자신이 겪은 상황을 붙이는 논평에 집중한다.",
+      "terminalFit": "짧은 한글 요약은 적합하나 폭·폰트와 원문 웹 탐색을 검증해야 한다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://news.hada.io/",
+          "title": "GeekNews 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "okky",
+      "name": "OKKY",
+      "category": "knowledge",
+      "description": "한국 개발자가 기술·경력·일상·프로젝트 조언을 구한다.",
+      "url": "https://okky.kr/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "한국 개발자가 기술·경력·일상·프로젝트 조언을 구한다.",
+      "firstValue": "주제별 실제 글과 피드백을 읽는다.",
+      "repeatLoop": "추론: 업무·경력·기술 관련 새로운 질문에 반응할 수 있다.",
+      "exchange": "경력 질문, 의견, 기술 글, 포트폴리오 피드백",
+      "coldStart": "실무자 참여와 개인정보 보호·유해 게시물 관리가 필요하다.",
+      "friction": "해석: 민감한 경력 상담은 신뢰와 익명성 관리가 중요하며 작은 방에서는 익명성이 약하다.",
+      "transfer": "대상 집단에 맞는 구체적 피드백 교환을 참고한다. 일반 개발자 게시판 복제는 불리하다.",
+      "terminalFit": "대화는 가능하지만 포트폴리오 검토나 채용 문서는 웹이 적합하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://okky.kr/",
+          "title": "OKKY 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "velog",
+      "name": "velog",
+      "category": "knowledge",
+      "description": "한국어 개발자가 학습과 개발 경험을 블로그에 정리하고 찾아본다.",
+      "url": "https://velog.io/",
+      "status": "공식 홈 골격만 확인; 실제 콘텐츠·가입·기능 사용 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "한국어 개발자가 학습과 개발 경험을 블로그에 정리하고 찾아본다.",
+      "firstValue": "트렌딩·최신·피드 탐색 화면을 확인한다.",
+      "repeatLoop": "추론: 새 학습 기록과 관심 있는 작성자의 글을 보러 돌아올 수 있다.",
+      "exchange": "기술 글, 코드, 이미지, 독자 반응",
+      "coldStart": "저자와 독자의 누적 글이 있어야 발견 가치가 있다.",
+      "friction": "공식 홈은 JS 의존성이 있어 현재 검색 도구로 글 내용과 작성 경험을 검증하지 못했다.",
+      "transfer": "게시된 학습 기록에 대한 구체적 질의와 정정만 보완한다. 한국어 블로그 자체를 새로 만들 이유는 불확실하다.",
+      "terminalFit": "짧은 기록에는 적합하지만 본격적인 편집과 이미지 표현은 웹이 낫다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://velog.io/",
+          "title": "velog 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "공식 홈페이지의 트렌딩·추천·최신·피드 메뉴 골격만 확인했다. 게시물 본문은 확인하지 못했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "discoursemeta",
+      "name": "Discourse Meta",
+      "category": "knowledge",
+      "description": "Discourse 관리자와 개발자가 실제 포럼 운영 문제를 해결한다.",
+      "url": "https://meta.discourse.org/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "Discourse 관리자와 개발자가 실제 포럼 운영 문제를 해결한다.",
+      "firstValue": "기존 지원 토론과 운영 가이드를 검색한다.",
+      "repeatLoop": "추론: 운영 중 새 문제가 발생하거나 기존 제안의 답변과 변경 사항을 확인한다.",
+      "exchange": "운영 질문, 재현 절차, 설정 사례, 담당자 답변",
+      "coldStart": "해당 소프트웨어를 운영하는 집단과 응답할 전문 인력이 있어야 한다.",
+      "friction": "해석: 공식 가이드는 신고 처리·주제 분리·속도 제한 등 운영자의 상시 판단을 요구한다.",
+      "transfer": "신고 처리, 맥락 유지, 중재 이유와 이의 제기 경로를 소규모부터 설계한다.",
+      "terminalFit": "텍스트 지원과 로그 공유에 맞지만 실제 운영 관리는 인터페이스로 자동 해결되지 않는다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://meta.discourse.org/",
+          "title": "Discourse Meta 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        },
+        {
+          "url": "https://meta.discourse.org/t/discourse-moderation-guide-part-3-managing-content/406266",
+          "title": "Discourse 콘텐츠 관리 가이드",
+          "type": "operator",
+          "date": "2026-06-27",
+          "claim": "운영자가 신고 큐와 느린 모드 등을 사용해 토론을 관리한다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "sideproject",
+      "name": "Reddit r/SideProject",
+      "category": "knowledge",
+      "description": "개인 제작자가 진행 중이거나 완성한 사이드 프로젝트에 대한 의견을 구한다.",
+      "url": "https://www.reddit.com/r/SideProject/",
+      "status": "공식 공개 페이지 확인; 가입·기능 실사용 및 유지율 미검증",
+      "statusEvidence": "2026-10-30 공식 웹페이지 열람; 페이지 접근성만 확인",
+      "checkedAt": "2026-10-30",
+      "job": "개인 제작자가 진행 중이거나 완성한 사이드 프로젝트에 대한 의견을 구한다.",
+      "firstValue": "다른 프로젝트의 시연과 댓글을 탐색한다.",
+      "repeatLoop": "추론: 진행 상황이나 새 피드백이 필요한 때 방문할 수 있다.",
+      "exchange": "프로젝트 소개, 데모 링크, 질문, 피드백",
+      "coldStart": "프로젝트 게시자만 많고 실제로 써 볼 사람이 없으면 교환이 무너진다.",
+      "friction": "해석: 자기 홍보와 성의 있는 상호 피드백 사이의 균형이 관건이다.",
+      "transfer": "검토받고 싶은 한 가지 질문과 가능한 시연을 제시하게 한다. 답변 보장은 하지 않는다.",
+      "terminalFit": "개발 로그와 코드 공유에는 어울리지만 UI 제품의 실제 시연에는 웹이 필요하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/SideProject/",
+          "title": "Reddit r/SideProject 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "해당 페이지의 공개 콘텐츠 및 커뮤니티 구조를 확인했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    },
+    {
+      "id": "metafilter",
+      "name": "MetaFilter",
+      "category": "knowledge",
+      "description": "회원들이 흥미로운 외부 콘텐츠와 관점을 나눈다.",
+      "url": "https://www.metafilter.com/",
+      "status": "공식 홈페이지 접근 403; 현재 콘텐츠 및 서비스 운영 여부 미확인",
+      "statusEvidence": "공식 홈페이지 요청이 403으로 거부되었다. 공식 콘텐츠와 운영 상태는 확인하지 못했다.",
+      "checkedAt": "2026-10-30",
+      "job": "회원들이 흥미로운 외부 콘텐츠와 관점을 나눈다.",
+      "firstValue": "공개 토론을 읽는 것이 기대되는 사용 가치다.",
+      "repeatLoop": "추론: 새 링크와 익숙한 기여자의 토론을 읽으려 돌아올 수 있다.",
+      "exchange": "외부 링크, 해설, 댓글",
+      "coldStart": "큐레이션과 지속적인 사회적 규범 및 운영자가 필요하다.",
+      "friction": "공식 홈의 조사 도구 접근이 403으로 차단되어 현재 게시물·가입·운영 정책은 검증하지 못했다.",
+      "transfer": "링크 자체보다 커뮤니티의 맥락 있는 논평이 가치를 만들 수 있다는 비교 가설에만 사용한다.",
+      "terminalFit": "텍스트와 링크는 TUI에 어울리지만 사이트 상태 미확인으로 구체적 이전 주장은 유보한다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.metafilter.com/",
+          "title": "MetaFilter 공식 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "공식 홈페이지에 접근을 시도했으나 403으로 거부되어 콘텐츠 구조는 확인하지 못했다."
+        }
+      ],
+      "notes": "공식 화면 관찰과 해석을 분리했다. 개인 의견은 표본이며 대표성·수요·유지율을 입증하지 않는다."
+    }
+  ],
+  "findings": [
+    "사실: HN Show는 직접 사용 가능한 개인 작품을 공유하고, Recurse는 배치와 사회 규칙을 명시한다. 해석: 각 커뮤니티는 빈 공간보다 누가 무엇을 주고받는지의 계약이 명료하다.",
+    "사실: HN 신고 이유에 대한 불만, Reddit 초보자 질문 피로, Stack Overflow 환대 문제는 각 개별 토론에서 관찰된다. 해석: 품질 유지와 신규자 환대의 양립은 운영 설계가 필요한 긴장이며 표본 의견을 전 사용자 경험으로 일반화하지 않는다.",
+    "가설: 기존 소규모 학습 집단에서 코드·오류·작품 및 특정 질문을 게시하고 답변을 회수하는 루프는 범용 채팅보다 검증 가능하다. 인위적으로 이름 붙인 기능 조합 자체는 차별성이 아니다.",
+    "가설: 터미널은 코드와 로그의 복사·공유에 편리할 수 있지만, 시연·이미지·가입·접근성은 웹이 더 유리할 수 있다. SSH가 이점을 주는지는 실제 비교실험이 필요하다.",
+    "사실: GitHub 팀은 모든 토론 응답을 보장하지 않는다. 해석: 답변 약속 없는 빈 질문함을 출시하지 말고 운영자 수용 가능량과 미답변 처리방식을 먼저 정해야 한다."
+  ],
+  "coverage": {
+    "queries": [
+      "Hacker News Show HN FAQ flagged discussions",
+      "Lobsters about invitation moderation",
+      "Stack Overflow tour newcomer complaints",
+      "GitHub community discussions search regression 2026",
+      "r/learnprogramming FAQ repeated question conflict",
+      "Recurse Center manual social rules self-directives",
+      "DEV Hashnode Indie Hackers Product Hunt",
+      "LessWrong EA Forum Slashdot MetaFilter",
+      "Hackaday Code Review GeekNews OKKY velog",
+      "Discourse Meta moderation r/SideProject"
+    ],
+    "exclusions": [
+      "Discord 등 실시간 사교·게임 커뮤니티는 별도 조사 분담을 위해 제외했다.",
+      "서비스 소프트웨어 자체와 구분되지 않는 일반 포럼 도구는 제외하고 실존 커뮤니티인 Discourse Meta만 포함했다.",
+      "전체 웹 커뮤니티 전수조사는 시간과 접근 제약상 불가능하며 대표적 21건의 범위화된 표본이다."
+    ],
+    "limitations": [
+      "공식 공개 페이지 열람은 가입, 유료 기능, 실사용, 동시접속 또는 유지율 확인이 아니다.",
+      "검색 결과와 개별 발언은 대표 표본이 아니며 관측된 시점·정책은 변경될 수 있다.",
+      "MetaFilter는 403으로 운영 상태 미확인, velog는 홈 골격만 확인했고 가입하거나 이용하지 않았다.",
+      "재방문 루프, 초기 가치 및 Terminal World 전이 가능성은 구조를 토대로 한 연구자의 추론이며 실험 전 가설이다."
+    ]
+  }
+}

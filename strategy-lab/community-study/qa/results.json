@@ -1,0 +1,242 @@
+{
+  "checkedAt": "2026-10-29T17:58:19.016Z",
+  "checks": [
+    {
+      "name": "offline standalone sections",
+      "ok": true
+    },
+    {
+      "name": "research coverage",
+      "ok": true,
+      "detail": {
+        "cases": 83,
+        "deep": 29,
+        "ideas": 9,
+        "concepts": 3,
+        "report": 120205,
+        "missing": null
+      }
+    },
+    {
+      "name": "dark default",
+      "ok": true
+    },
+    {
+      "name": "theme persistence",
+      "ok": true
+    },
+    {
+      "name": "all cases via pagination",
+      "ok": true,
+      "detail": 83
+    },
+    {
+      "name": "search",
+      "ok": true
+    },
+    {
+      "name": "deep dive connection",
+      "ok": true
+    },
+    {
+      "name": "empty state",
+      "ok": true
+    },
+    {
+      "name": "lane filters",
+      "ok": true,
+      "detail": 83
+    },
+    {
+      "name": "evidence filter",
+      "ok": true
+    },
+    {
+      "name": "strategy A",
+      "ok": true,
+      "detail": 3
+    },
+    {
+      "name": "strategy B",
+      "ok": true,
+      "detail": 3
+    },
+    {
+      "name": "strategy C",
+      "ok": true,
+      "detail": 3
+    },
+    {
+      "name": "compare controls",
+      "ok": true
+    },
+    {
+      "name": "comparison max three",
+      "ok": true
+    },
+    {
+      "name": "comparison reset",
+      "ok": true
+    },
+    {
+      "name": "concept switch",
+      "ok": true
+    },
+    {
+      "name": "keyboard tabs",
+      "ok": true
+    },
+    {
+      "name": "default score",
+      "ok": true,
+      "detail": "공동 제작 터미널 마을\n기본 전략 추천 · 현재 1위\n74.00/100\n\ntilde의 자유도보다 첫 기여의 명료함, 일반 갤러리보다 실행·변형·공동 반영의 짧은 거리. 모두 비교 실험 대상.\n\nCommons Lab\n대안 후보\n68.00/100\n\n기술 도구보다 초보 참여 설계·운영이 차이. 기존 GitHub로 효과가 같으면 별도 앱을 만들지 않는다.\n\n실제 사용 리뷰 교환 클럽\n대안 후보\n65.00/100\n\n적절한 수신자와 후속 결과가 강점 후보이나 기존 채널 운영으로 충분할 수 있다."
+    },
+    {
+      "name": "zero weights handled",
+      "ok": true
+    },
+    {
+      "name": "tied ranking",
+      "ok": true,
+      "detail": "현재 가중치 공동 1위: 공동 제작 터미널 마을 · 실제 사용 리뷰 교환 클럽 · Commons Lab"
+    },
+    {
+      "name": "weight arithmetic",
+      "ok": true,
+      "detail": {
+        "scores": [
+          {
+            "name": "공동 제작 터미널 마을",
+            "value": "68.33"
+          },
+          {
+            "name": "실제 사용 리뷰 교환 클럽",
+            "value": "67.50"
+          },
+          {
+            "name": "Commons Lab",
+            "value": "70.00"
+          }
+        ],
+        "rankingText": "Commons Lab\n대안 후보 · 현재 1위\n70.00/100\n\n기술 도구보다 초보 참여 설계·운영이 차이. 기존 GitHub로 효과가 같으면 별도 앱을 만들지 않는다.\n\n공동 제작 터미널 마을\n기본 전략 추천\n68.33/100\n\ntilde의 자유도보다 첫 기여의 명료함, 일반 갤러리보다 실행·변형·공동 반영의 짧은 거리. 모두 비교 실험 대상.\n\n실제 사용 리뷰 교환 클럽\n대안 후보\n67.50/100\n\n적절한 수신자와 후속 결과가 강점 후보이나 기존 채널 운영으로 충분할 수 있다."
+      }
+    },
+    {
+      "name": "demo state",
+      "ok": true
+    },
+    {
+      "name": "demo reset",
+      "ok": true
+    },
+    {
+      "name": "embedded Markdown download",
+      "ok": true
+    },
+    {
+      "name": "overflow dark 320",
+      "ok": true,
+      "detail": {
+        "doc": 320,
+        "view": 320
+      }
+    },
+    {
+      "name": "overflow dark 375",
+      "ok": true,
+      "detail": {
+        "doc": 375,
+        "view": 375
+      }
+    },
+    {
+      "name": "overflow dark 768",
+      "ok": true,
+      "detail": {
+        "doc": 768,
+        "view": 768
+      }
+    },
+    {
+      "name": "overflow dark 1024",
+      "ok": true,
+      "detail": {
+        "doc": 1024,
+        "view": 1024
+      }
+    },
+    {
+      "name": "overflow dark 1440",
+      "ok": true,
+      "detail": {
+        "doc": 1440,
+        "view": 1440
+      }
+    },
+    {
+      "name": "overflow light 320",
+      "ok": true,
+      "detail": {
+        "doc": 320,
+        "view": 320
+      }
+    },
+    {
+      "name": "overflow light 375",
+      "ok": true,
+      "detail": {
+        "doc": 375,
+        "view": 375
+      }
+    },
+    {
+      "name": "overflow light 768",
+      "ok": true,
+      "detail": {
+        "doc": 768,
+        "view": 768
+      }
+    },
+    {
+      "name": "overflow light 1024",
+      "ok": true,
+      "detail": {
+        "doc": 1024,
+        "view": 1024
+      }
+    },
+    {
+      "name": "overflow light 1440",
+      "ok": true,
+      "detail": {
+        "doc": 1440,
+        "view": 1440
+      }
+    },
+    {
+      "name": "mobile menu open",
+      "ok": true
+    },
+    {
+      "name": "mobile menu closes via keyboard",
+      "ok": true
+    },
+    {
+      "name": "valid links and local anchors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "no JavaScript errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "no external runtime requests",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

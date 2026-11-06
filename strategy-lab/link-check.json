@@ -1,0 +1,170 @@
+[
+  {
+    "id": "discord",
+    "url": "https://support.discord.com/hc/en-us/articles/6208479917079-Forum-Channels-FAQ",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "slack",
+    "url": "https://slack.com/features",
+    "status": 200,
+    "finalUrl": "https://slack.com/features"
+  },
+  {
+    "id": "github",
+    "url": "https://docs.github.com/en/discussions",
+    "status": 200,
+    "finalUrl": "https://docs.github.com/en/discussions"
+  },
+  {
+    "id": "gather",
+    "url": "https://support.gather.town/articles/2163640255-gather-1-0-vs-gather-2-0",
+    "status": 200,
+    "finalUrl": "https://support.gather.town/articles/2163640255-gather-1-0-vs-gather-2-0"
+  },
+  {
+    "id": "focusmate",
+    "url": "https://www.focusmate.com/how-it-works/",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "obsidian",
+    "url": "https://obsidian.md/help/Plugins/Daily%2Bnotes",
+    "status": 200,
+    "finalUrl": "https://obsidian.md/help/Plugins/Daily%2Bnotes"
+  },
+  {
+    "id": "pieces",
+    "url": "https://docs.pieces.app/products/desktop/timeline",
+    "status": 200,
+    "finalUrl": "https://docs.pieces.app/products/desktop/timeline"
+  },
+  {
+    "id": "sshx",
+    "url": "https://github.com/ekzhang/sshx",
+    "status": 200,
+    "finalUrl": "https://github.com/ekzhang/sshx"
+  },
+  {
+    "id": "sshx-release",
+    "url": "https://github.com/ekzhang/sshx/releases",
+    "status": 200,
+    "finalUrl": "https://github.com/ekzhang/sshx/releases"
+  },
+  {
+    "id": "tmate",
+    "url": "https://github.com/tmate-io/tmate",
+    "status": 200,
+    "finalUrl": "https://github.com/tmate-io/tmate"
+  },
+  {
+    "id": "zellij",
+    "url": "https://zellij.dev/documentation/web-client.html",
+    "status": 200,
+    "finalUrl": "https://zellij.dev/documentation/web-client.html"
+  },
+  {
+    "id": "live",
+    "url": "https://learn.microsoft.com/en-us/visualstudio/liveshare/faq",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/visualstudio/liveshare/faq"
+  },
+  {
+    "id": "live-security",
+    "url": "https://learn.microsoft.com/en-ca/visualstudio/liveshare/reference/security",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-ca/visualstudio/liveshare/reference/security"
+  },
+  {
+    "id": "wakatime",
+    "url": "https://wakatime.com/faq",
+    "status": 200,
+    "finalUrl": "https://wakatime.com/faq"
+  },
+  {
+    "id": "activity",
+    "url": "https://activitywatch.net/",
+    "status": 200,
+    "finalUrl": "https://activitywatch.net/"
+  },
+  {
+    "id": "zulip",
+    "url": "https://docs.zulip.com/slack-alternative/",
+    "status": 200,
+    "finalUrl": "https://docs.zulip.com/slack-alternative/"
+  },
+  {
+    "id": "mylyn",
+    "url": "https://help.eclipse.org/latest/topic/org.eclipse.mylyn.help.ui/Mylyn/FAQ/Task-Focused-UI.html",
+    "status": 200,
+    "finalUrl": "https://help.eclipse.org/latest/topic/org.eclipse.mylyn.help.ui/Mylyn/FAQ/Task-Focused-UI.html"
+  },
+  {
+    "id": "taskbook",
+    "url": "https://taskbook.sh/",
+    "status": 200,
+    "finalUrl": "https://taskbook.sh/"
+  },
+  {
+    "id": "study2009",
+    "url": "https://chrisparnin.me/pdf/parnin-icpc09.pdf",
+    "status": 200,
+    "finalUrl": "https://chrisparnin.me/pdf/parnin-icpc09.pdf"
+  },
+  {
+    "id": "study2010",
+    "url": "https://www.microsoft.com/en-us/research/publication/evaluating-cues-for-resuming-interrupted-programming-tasks/",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "resume-user",
+    "url": "https://www.reddit.com/r/learnprogramming/comments/1rxrqyw/do_you_lose_your_place_when_you_get_interrupted/",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "switch-user",
+    "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1rvuc8m/how_do_you_deal_with_constant_task_switching/",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "notes-cost",
+    "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1suto7c/managing_super_frequent_context_switching/",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "focus-good",
+    "url": "https://www.reddit.com/r/accountability/comments/1i65i8p",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "focus-bad",
+    "url": "https://www.reddit.com/r/productivity/comments/1ogy7zp/focusmate_is_becoming_increasingly_frustrating/",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "pair-user",
+    "url": "https://www.reddit.com/r/devops/comments/1mqelpz/does_anyone_actually_use_collaborative_coding/",
+    "status": 403,
+    "note": "HTTP access restriction or failure; source reading was done separately through web research."
+  },
+  {
+    "id": "sshx-issue",
+    "url": "https://github.com/ekzhang/sshx/issues/72",
+    "status": 200,
+    "finalUrl": "https://github.com/ekzhang/sshx/issues/72"
+  },
+  {
+    "id": "tmate-issue",
+    "url": "https://github.com/tmate-io/tmate/issues/336",
+    "status": 200,
+    "finalUrl": "https://github.com/tmate-io/tmate/issues/336"
+  }
+]

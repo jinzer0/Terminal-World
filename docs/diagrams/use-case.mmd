@@ -1,0 +1,68 @@
+flowchart LR
+    guest["게스트"]
+    member["회원"]
+    admin["관리자"]
+    admin -.->|회원 역할 포함| member
+    host["MCP 호스트"]
+    github["GitHub"]
+    ai["AI 제공자"]
+    subgraph system["Terminal-World 시스템 경계"]
+        uc01(["UC-01 접속 및 공개 정보 둘러보기"])
+        uc02(["UC-02 가입 및 인증 관리"])
+        uc03(["UC-03 공간 탐색 및 방문"])
+        uc04(["UC-04 프로필과 개인 공간 구성"])
+        uc05(["UC-05 방명록 작성·수정·삭제"])
+        uc06(["UC-06 게시글과 댓글 이용"])
+        uc07(["UC-07 실시간 채팅"])
+        uc08(["UC-08 Lobby 조회 및 공지 운영"])
+        uc09(["UC-09 집중 시간 관리"])
+        uc10(["UC-10 자리 비움과 복귀"])
+        uc11(["UC-11 계정 복구 및 복구 코드 재발급"])
+        uc12(["UC-12 회원 탈퇴"])
+        uc13(["UC-13 콘텐츠 신고 및 검토"])
+        uc14(["UC-14 삭제 이력 조회"])
+        uc15(["UC-15 CLI로 커뮤니티 이용"])
+        uc16(["UC-16 MCP로 커뮤니티 이용"])
+        uc17(["UC-17 오픈소스 이슈 탐색"])
+        uc18(["UC-18 프로젝트·공모전 모집 이용"])
+    end
+    guest --- uc01
+    guest --- uc02
+    guest --- uc03
+    guest ---|공개 방명록 조회만| uc05
+    guest ---|공개 조회만| uc06
+    guest ---|공지와 접속자 조회| uc08
+    guest ---|공개 랭킹 조회만| uc09
+    member --- uc01
+    member --- uc02
+    member --- uc03
+    member --- uc04
+    member --- uc05
+    member --- uc06
+    member --- uc07
+    member --- uc08
+    member --- uc09
+    member --- uc10
+    guest ---|분실 계정 복구| uc11
+    member ---|코드 재발급| uc11
+    member --- uc12
+    member ---|사유를 포함한 신고| uc13
+    admin ---|접수된 신고 검토| uc13
+    admin --- uc14
+    admin ---|공지 운영| uc08
+    admin ---|부적절한 글 삭제| uc05
+    admin ---|부적절한 글과 댓글 삭제| uc06
+    admin ---|부적절한 메시지 삭제| uc07
+
+    guest --- uc15
+    member --- uc15
+    guest --- uc16
+    member --- uc16
+    host --- uc16
+    guest --- uc17
+    member --- uc17
+    github --- uc17
+    ai --- uc17
+    guest --- uc18
+    member --- uc18
+    admin --- uc18

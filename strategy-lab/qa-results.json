@@ -1,0 +1,111 @@
+{
+  "testedAt": "2026-10-29",
+  "browser": "156.0.8078.74",
+  "method": "Real desktop Chrome, automated file:// offline tests; viewport emulation, not physical mobile hardware.",
+  "results": [
+    {
+      "name": "Single-file offline startup and content counts",
+      "pass": true
+    },
+    {
+      "name": "Theme toggle persists both light and dark after file reload",
+      "pass": true
+    },
+    {
+      "name": "All competitor filters and reset",
+      "pass": true
+    },
+    {
+      "name": "Health and objection disclosures work by keyboard",
+      "pass": true
+    },
+    {
+      "name": "Seven persona selections render specific JTBD and facts",
+      "pass": true
+    },
+    {
+      "name": "Idea filters, all nine details, cross-filter selection and comparison cap",
+      "pass": true
+    },
+    {
+      "name": "Top 3 tab selection and keyboard roving focus",
+      "pass": true
+    },
+    {
+      "name": "Default score values, normalization, ties, new winner, zero weights and reset",
+      "pass": true
+    },
+    {
+      "name": "Five-step proposed workflow responds to selection",
+      "pass": true
+    },
+    {
+      "name": "No duplicate IDs, broken local anchors, unsafe external anchors or unnamed controls",
+      "pass": true
+    },
+    {
+      "name": "Every expanded disclosure stays within 320px page; wide tables are contained",
+      "pass": true
+    },
+    {
+      "name": "Mobile touch menu, section navigation, escape and light theme",
+      "pass": true
+    },
+    {
+      "name": "Reduced-motion disables smooth scroll",
+      "pass": true
+    },
+    {
+      "name": "Read progress and active navigation track current section",
+      "pass": true
+    },
+    {
+      "name": "Storage denied still permits startup and theme toggle",
+      "pass": true
+    },
+    {
+      "name": "No runtime JS error or external resource request during full interaction suite",
+      "pass": true
+    },
+    {
+      "name": "Touch-emulated phone can use menu, filters, theme and sliders",
+      "pass": true
+    },
+    {
+      "name": "Text contrast in both themes meets WCAG AA ratios for sampled rendered text",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "captures": [
+    "health-dark-1440.png",
+    "why-dark-1440.png",
+    "competitors-dark-1440.png",
+    "targets-dark-1440.png",
+    "ideas-dark-1440.png",
+    "concepts-dark-1440.png",
+    "decision-dark-1440.png",
+    "new-world-dark-1440.png",
+    "roadmap-dark-1440.png",
+    "verdict-dark-1440.png",
+    "sources-dark-1440.png",
+    "health-dark-375.png",
+    "why-dark-375.png",
+    "competitors-dark-375.png",
+    "targets-dark-375.png",
+    "ideas-dark-375.png",
+    "concepts-dark-375.png",
+    "decision-dark-375.png",
+    "new-world-dark-375.png",
+    "roadmap-dark-375.png",
+    "verdict-dark-375.png",
+    "sources-dark-375.png"
+  ],
+  "limitations": [
+    "Safari and Firefox not tested",
+    "Physical mobile hardware and screen-reader software not tested",
+    "Remote source access restrictions recorded separately in link-check.json",
+    "Proposed Checkpoint product and user experiments not implemented by this strategy dashboard"
+  ]
+}

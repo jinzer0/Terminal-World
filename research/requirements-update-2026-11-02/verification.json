@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-02",
+  "functionalRequirements": 30,
+  "useCases": 18,
+  "checks": [
+    "bidirectional FR-UC traceability",
+    "UC required fields",
+    "embedded and standalone Mermaid parity",
+    "Mermaid/PlantUML domain concepts and relationships parity",
+    "diagram UC coverage",
+    "local document links and table structure",
+    "prior decision records unchanged",
+    "source files unchanged",
+    "ZIP integrity and byte parity"
+  ],
+  "sourceFilesUnchanged": 16,
+  "zipFiles": 11,
+  "diagramRendering": "Not performed; model structure and textual parity checked",
+  "sha256": {
+    "docs/2026-10-25.md": "910154e6a198f110c1187a7a051e895563d232664c8401b49ccb826fe7d67138",
+    "docs/2026-10-26.md": "07325b5ec0148a18f03c1f68236bea113c763f060da9f7741629b75094cba32b",
+    "docs/2026-10-27.md": "9aab9227f1c04023158ae54dce80494bb480c0a85a99c14460a64268c84669a3",
+    "docs/2026-11-02.md": "781943c5bbc1375663feb0601ee29859fe54405d54ef5badb53a626d8901f16b",
+    "docs/analysis-deliverables.md": "03492fcee562f4b468eb75d2a0363f7a5a873a29836481cba3b0946a9c7c942f",
+    "docs/analysis-models.md": "6b4bb44a43b5ee5833b609ce8a99ca538b775759f729c9ac4ea99000baba6892",
+    "docs/diagrams/domain-model.mmd": "e04914782b863ebd1e1449346c379a1080158387bf73f0542509c767f577bcea",
+    "docs/diagrams/domain-model.puml": "39daeeaaafaf8ba89da64ec9c018ec5cc2ee9f6569b89d1e0a19f98a4dfa2914",
+    "docs/diagrams/use-case.mmd": "ac7f65424e14ac872666034be69fee03598dcbf78904c97e2f0514388bcc651d",
+    "docs/diagrams/use-case.puml": "1ecfd167eba40fec0a16a439d8a526ebf608ea49c27628c902ea996eb4050b04",
+    "docs/requirements-analysis.md": "4e523159fd4606a3822b8b6c8b6bb2ab52023ef34475fd3001730a4e1b027280"
+  }
+}

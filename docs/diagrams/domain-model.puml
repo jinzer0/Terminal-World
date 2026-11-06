@@ -1,0 +1,144 @@
+@startuml
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide methods
+
+class Member {
+    accountIdentity
+    nickname
+    accountState
+    withdrawnAt
+}
+class RecoveryCredential {
+    validityState
+}
+class Profile {
+    introduction
+    technologyStack
+    currentStatus
+    projectUrl
+}
+class Space {
+    name
+}
+class PersonalSpace {
+    asciiArt
+    colorTheme
+}
+class SharedSpace {
+    purpose
+}
+class GuestbookEntry {
+    text
+    writtenAt
+}
+class Board {
+    topic
+}
+class Post {
+    title
+    body
+    writtenAt
+}
+class Comment {
+    text
+    writtenAt
+}
+class ChatRoom {
+    name
+}
+class ChatMessage {
+    text
+    sentAt
+}
+class Notice {
+    title
+    body
+    publicationState
+}
+class FocusSession {
+    startedAt
+    endedAt
+    countedDuration
+}
+class Presence {
+    connectionState
+    awayState
+}
+class ContentReport {
+    targetKind
+    targetIdentity
+    reason
+    reviewState
+    outcome
+    resolutionReason
+}
+
+Space <|-- PersonalSpace
+Space <|-- SharedSpace
+Member "1" -- "0..1" Profile : has
+Member "1" -- "0..1" PersonalSpace : owns
+Member "1" -- "0..1" RecoveryCredential : uses
+PersonalSpace "0..1" -- "0..*" GuestbookEntry : receives
+Member "0..1" -- "0..*" GuestbookEntry : writes
+SharedSpace "1" -- "0..*" Board : provides
+Board "1" -- "0..*" Post : contains
+Member "0..1" -- "0..*" Post : writes
+Post "1" -- "0..*" Comment : receives
+Member "0..1" -- "0..*" Comment : writes
+SharedSpace "1" -- "0..*" ChatRoom : provides
+ChatRoom "1" -- "0..*" ChatMessage : carries
+Member "0..1" -- "0..*" ChatMessage : sends
+SharedSpace "1" -- "0..*" Notice : announces
+Member "1" -- "0..*" Notice : publishes
+Member "1" -- "0..*" FocusSession : records
+Member "1" -- "0..1" Presence : shows
+    class IntegrationAuthorization {
+        allowedOperations
+        expiresAt
+        revokedAt
+    }
+    class OpenSourceRepository {
+        sourceUrl
+        language
+        selectionEvidence
+        checkedAt
+    }
+    class ExternalIssue {
+        issueNumber
+        title
+        sourceUrl
+        sourceState
+        checkedAt
+    }
+    class IssueExplanation {
+        summary
+        backgroundKnowledge
+        recommendationReason
+        evidenceLinks
+        sourceCheckedAt
+        generatedAt
+        availabilityState
+    }
+    class RecruitmentPost {
+        recruitmentType
+        recruitmentState
+        roles
+        requiredSkills
+        participationPeriod
+        weeklyTime
+        participationMode
+        region
+        contactMethod
+        deadline
+    }
+    class RecruitmentBookmark {
+        savedAt
+    }
+    Post <|-- RecruitmentPost
+    Member "1" -- "0..*" IntegrationAuthorization : authorizes
+    OpenSourceRepository "1" -- "0..*" ExternalIssue : contains
+    ExternalIssue "1" -- "0..*" IssueExplanation : explains
+    Member "1" -- "0..*" RecruitmentBookmark : saves
+    RecruitmentPost "1" -- "0..*" RecruitmentBookmark : references
+@enduml

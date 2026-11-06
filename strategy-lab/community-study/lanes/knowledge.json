@@ -1,0 +1,1005 @@
+{
+  "lane": "knowledge",
+  "checkedAt": "2026-10-30",
+  "communities": [
+    {
+      "id": "hn",
+      "name": "Hacker News",
+      "kind": "community",
+      "category": "개발·링크 토론",
+      "status": "observed-active",
+      "description": "기술 호기심 중심의 링크와 대화; Ask HN과 Show HN은 별개 서비스가 아닌 참여 형식",
+      "audience": "개발자·기술 관심자",
+      "entryHook": "흥미로운 질문과 실행 가능한 새 도구를 읽거나 직접 시험",
+      "returnLoop": "신규 링크와 질문, 창작자 답변을 다시 확인",
+      "memberGives": "링크·질문·실행 가능한 개인 작품·구체적 피드백",
+      "memberGets": "발견·기술 대화·작품 반응",
+      "socialObject": "실행해볼 작품과 그 제작자",
+      "mechanisms": [
+        "Ask HN 질문",
+        "Show HN 시도와 피드백",
+        "최신·상위 노출 구분",
+        "신고와 가이드라인"
+      ],
+      "density": "피드가 흥미로우려면 주기적 제출과 응답 필요; 초기엔 행사 시드가 필요하다는 가설",
+      "operatingCost": "신고 검토, 규칙 해석, 초기 작품 큐레이션",
+      "risk": "제출자가 노출과 신고 사유를 이해하지 못할 수 있음",
+      "terminalTransfer": "정해진 창작 시연에 실행 예시와 질문을 붙이고 제작자가 응답",
+      "doNotCopy": "순위나 자기 홍보만 복사하지 말고 참여 피드백을 보장",
+      "evidenceLevel": "official+participant",
+      "sources": [
+        {
+          "url": "https://news.ycombinator.com/showhn.html",
+          "title": "Show HN Guidelines",
+          "type": "official",
+          "claim": "개인 제작물은 타인이 사용 가능해야 하며 제작자가 토론에 참여; shownew에서 일정 점수 이후 show 노출",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://news.ycombinator.com/newsfaq.html",
+          "title": "HN FAQ",
+          "type": "official",
+          "claim": "Ask HN은 질문·텍스트 제출; Show HN은 개인 작품",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49783865",
+          "title": "표시된 Show HN 작성자의 문의",
+          "type": "participant",
+          "claim": "작성자가 자신의 게시물이 flag 처리된 이유를 질문; 댓글은 추정만 제시",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "lobsters",
+      "name": "Lobsters",
+      "kind": "community",
+      "category": "컴퓨팅 링크 토론",
+      "status": "observed-active",
+      "description": "컴퓨팅 중심 단일 링크·댓글 공간, 태그와 초대·공개 운영 기록",
+      "audience": "컴퓨팅 주제의 독자·작성자",
+      "entryHook": "태그별 기술자료를 읽고 이야기한다",
+      "returnLoop": "단일 피드에서 다양한 분야 토론과 태그 구독",
+      "memberGives": "기술 링크와 설명·비판적 토론·분류",
+      "memberGets": "동료의 맥락·분야 교차 학습",
+      "socialObject": "태그가 있는 하나의 링크와 공유 토론",
+      "mechanisms": [
+        "태그 필터",
+        "초대 트리",
+        "신고 이유 선택",
+        "공개 운영 기록"
+      ],
+      "density": "해당 주제에 함께 읽고 응답할 밀도가 필요; 초대는 유입을 줄일 수 있음",
+      "operatingCost": "자원봉사 운영 판단, 신고 검토, 태그 토론",
+      "risk": "초대 경로가 불명확하고 외부인에게 배타적으로 느껴질 수 있음",
+      "terminalTransfer": "터미널에서 태그별 하나의 시연을 함께 살피고 질문 남기기",
+      "doNotCopy": "초대제를 그대로 모방하거나 큐레이션을 엘리트주의로 미화하지 않기",
+      "evidenceLevel": "official+participant",
+      "sources": [
+        {
+          "url": "https://lobste.rs/about",
+          "title": "About Lobsters",
+          "type": "official",
+          "claim": "초대 트리, 태그, 공개 운영 기록, 표시된 사유 기반 flag",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://lobste.rs/s/yuujbb/clarification_on_lobsters_invite",
+          "title": "초대 요청 해석 논의",
+          "type": "participant",
+          "claim": "참여자가 공개 규칙 간 불일치를 질문하고 운영자가 해석",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://lobste.rs/s/h0eate/updates_site_guidelines_ai_llm_tags",
+          "title": "태그 정책 토론",
+          "type": "participant",
+          "claim": "동일한 태그 규칙 변경을 두고 사용자들이 서로 다른 요구와 불만을 표명",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit",
+      "kind": "network",
+      "category": "관심사별 하위 커뮤니티",
+      "status": "observed-active",
+      "description": "사용자가 만들고 운영하는 다수의 서브레딧을 담는 네트워크",
+      "audience": "관심사 기반 사용자와 자원봉사 운영자",
+      "entryHook": "특정 관심사를 검색하거나 해당 서브레딧 게시물을 읽기",
+      "returnLoop": "각 서브레딧의 새 글과 댓글",
+      "memberGives": "게시·질문·응답·투표·운영",
+      "memberGets": "관심사 사람들과 사례·답변",
+      "socialObject": "주제별 게시물과 코멘트",
+      "mechanisms": [
+        "사용자 운영 하위 커뮤니티",
+        "각기 다른 규칙",
+        "공유 플랫폼"
+      ],
+      "density": "하위 공간별 수요와 운영 인력 필요; 분리하면 밀도 저하 가능",
+      "operatingCost": "각 서브레딧의 큐레이션과 갈등 관리",
+      "risk": "하위 공동체를 하나의 동일한 문화로 오인",
+      "terminalTransfer": "하나의 공통 피드와 명확한 활동 유형에서 시작",
+      "doNotCopy": "빈 방을 여러 개 먼저 만들거나 세 서브레딧을 Reddit 전체의 대표로 삼지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://support.reddithelp.com/hc/en-us/articles/204533569-What-are-communities-or-subreddits",
+          "title": "Subreddits",
+          "type": "official",
+          "claim": "Reddit은 사용자가 생성·관리하는 하위 커뮤니티로 구성",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "askhistorians",
+      "name": "r/AskHistorians",
+      "kind": "community",
+      "category": "역사 전문 질문",
+      "status": "observed-active",
+      "description": "학문 수준의 역사 질의응답을 지향하는 별도 서브레딧",
+      "audience": "역사 질문자·역사 연구자와 숙련 애호가",
+      "entryHook": "쉽게 확인하기 어려운 역사 질문",
+      "returnLoop": "축적된 심층 답변과 새 질문",
+      "memberGives": "질문·근거에 기반한 깊은 답변·운영",
+      "memberGets": "전문가의 맥락 설명과 기여 인정",
+      "socialObject": "검토되는 질문과 깊은 답변",
+      "mechanisms": [
+        "높은 답변 기준",
+        "운영자 검토·삭제",
+        "다이제스트",
+        "전문 분야 정체성"
+      ],
+      "density": "일부 질문에는 답할 전문가가 없을 수 있고 답변은 오랜 시간 필요",
+      "operatingCost": "상시 자원봉사 모더레이션과 전문성 판단",
+      "risk": "높은 기준이 무응답과 삭제만 보이는 인상을 줄 수 있음",
+      "terminalTransfer": "작은 실행 재현과 맥락을 제공하는 기술 답변의 가치를 보호",
+      "doNotCopy": "초기 단계부터 학술적 완성도를 강제하거나 삭제를 충분한 설명 없이 처리하지 않기",
+      "evidenceLevel": "official+participant",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/AskHistorians/wiki/rules/",
+          "title": "AskHistorians rules",
+          "type": "official",
+          "claim": "학술 수준의 역사 답변과 적극적 운영",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.reddit.com/r/AskHistorians/comments/h8aefx/rules_roundtable_xviii_removed_curation_and_why/",
+          "title": "큐레이션과 댓글 삭제 설명",
+          "type": "official",
+          "claim": "운영자는 심층 답변 보호와 검토 비용을 설명",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.reddit.com/r/AskHistorians/comments/1w1m0dl/we_are_the_moderators_of_raskhistorians_ask_us/",
+          "title": "운영진 AMA",
+          "type": "participant",
+          "claim": "참여자와 운영진이 규칙과 일상 운영을 논의",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "cmv",
+      "name": "r/changemyview",
+      "kind": "community",
+      "category": "관점 변화 토론",
+      "status": "observed-active",
+      "description": "실제 보유한 관점과 근거를 쓰고 반대 논의를 받는 서브레딧",
+      "audience": "근거를 검토하고 관점을 바꾸고 싶은 참여자",
+      "entryHook": "내가 가진 견해를 검증받고 싶은 상황",
+      "returnLoop": "답변에 대한 후속 질의와 바뀐 생각 확인",
+      "memberGives": "자신의 근거, 반론과 관점 변화 설명",
+      "memberGets": "다른 관점과 설득이 유효했다는 피드백",
+      "socialObject": "구체적인 주장과 반론, 변화 설명",
+      "mechanisms": [
+        "의견에 열린 자세 요구",
+        "직접 반론",
+        "Delta와 변화 이유",
+        "무의미한 댓글 제한"
+      ],
+      "density": "한 주제에 서로 다른 관점의 대화 상대가 필요",
+      "operatingCost": "규칙 검토와 Delta 오남용 방지",
+      "risk": "평가 압력이나 형식적 Delta 수집으로 게임화 가능",
+      "terminalTransfer": "터미널 해결방법 검토에서 제안자가 무엇을 바꿨는지 구체적으로 회신",
+      "doNotCopy": "설득 승패와 점수 경쟁으로 배움 가치를 대체하지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/changemyview/comments/1v18oz4/please_read_the_rules/",
+          "title": "CMV moderator rules",
+          "type": "official",
+          "claim": "견해의 근거, 열린 태도, delta와 변화 설명 요구",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "unixporn",
+      "name": "r/unixporn",
+      "kind": "community",
+      "category": "터미널·데스크톱 꾸미기",
+      "status": "observed-active",
+      "description": "*nix 사용자 설정물·화면·워크플로를 공유하는 별도 서브레딧",
+      "audience": "유닉스 데스크톱 커스터마이징 사용자",
+      "entryHook": "다른 사람의 설정 결과물을 보고 영감 얻기",
+      "returnLoop": "새 설정 시연, 구성 요소, 의견과 워크숍",
+      "memberGives": "직접 설정한 화면·설정 정보·조언",
+      "memberGets": "아이디어·구성 정보를 얻고 작품을 보여줌",
+      "socialObject": "보이는 설정 결과물과 그 구현",
+      "mechanisms": [
+        "화면과 구성 명시",
+        "유형별 태그",
+        "최소한의 실질적 수정 요구",
+        "주간 워크숍"
+      ],
+      "density": "적은 수라도 구체적 공개 작품과 재현 정보가 있으면 볼 가치 가설",
+      "operatingCost": "제목·태그·설정 품질 검토, 기술지원 분리",
+      "risk": "아름다운 결과가 재현·설치 가능함을 뜻하지 않음; 규칙이 진입 장벽",
+      "terminalTransfer": "텍스트 기반 설정·워크플로 시연과 재현 설명 및 요청을 한 단위로 묶기",
+      "doNotCopy": "터미널 미관만으로 유용성·지속 사용을 입증했다고 주장하지 않기",
+      "evidenceLevel": "official+participant",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/unixporn/about/",
+          "title": "r/unixporn rules",
+          "type": "official",
+          "claim": "실질적 커스터마이징·올바른 태그 요구; 기술지원은 주간 워크숍",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.reddit.com/r/unixporn/comments/1fn6t2p/open_discussion_rules_and_quality_control/",
+          "title": "품질 규칙 논의",
+          "type": "participant",
+          "claim": "입문자 영감과 엄격한 규칙의 상충 논의",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.reddit.com/r/linuxquestions/comments/1vnp5aw/how_do_i_copy_someone_desktop_from_runixporn/",
+          "title": "재현의 어려움 사용자 사례",
+          "type": "participant",
+          "claim": "작성자가 다른 사람의 설정을 따라하기 어렵다고 호소",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "stackoverflow",
+      "name": "Stack Overflow / Stack Exchange",
+      "kind": "community",
+      "category": "실용 개발 질문",
+      "status": "observed-active",
+      "description": "Stack Exchange 네트워크의 프로그래밍 Q&A 사이트; 네트워크와 중복 합산하지 않음",
+      "audience": "특정 프로그래밍 문제를 겪는 질문자와 답변자",
+      "entryHook": "검색으로 구체적 문제의 답 찾기 또는 질문",
+      "returnLoop": "새 질문·태그·기존 답 개선과 기여 인정",
+      "memberGives": "재현 가능한 질문, 정답 후보, 수정",
+      "memberGets": "문제 해결·지식 기여·평판",
+      "socialObject": "질문과 여러 대안 답변",
+      "mechanisms": [
+        "질문·답변 투표",
+        "채택은 질문자에게 유용했다는 의미",
+        "태그",
+        "평판과 권한"
+      ],
+      "density": "답할 전문가 필요; 누적된 기존 답변은 비동기 가치를 남김",
+      "operatingCost": "중복·범위·오답·행동 규칙 검토",
+      "risk": "높은 규격과 폐쇄/중복 표시가 질문자에게 차갑게 느껴질 위험은 검증 필요",
+      "terminalTransfer": "문제 맥락+시도+후속 결과가 남는 대화를 만들고 도움이 된 답변을 인정",
+      "doNotCopy": "채택을 진리 보증으로 취급하거나 불완전한 질문을 즉시 배제하지 않기",
+      "evidenceLevel": "official+participant",
+      "sources": [
+        {
+          "url": "https://stackoverflow.com/tour",
+          "title": "Stack Overflow tour",
+          "type": "official",
+          "claim": "실용적 질문, 답변 투표, 질문자 선택과 태그",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://stackoverflow.com/help/whats-reputation",
+          "title": "Reputation",
+          "type": "official",
+          "claim": "동료 투표에 따라 평판과 권한이 증가",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://meta.stackexchange.com/tour",
+          "title": "Stack Exchange 네트워크",
+          "type": "official",
+          "claim": "Stack Overflow와 다른 주제별 공간의 네트워크",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://meta.stackoverflow.com/questions/388076/is-this-how-we-want-to-treat-newcomers/388077",
+          "title": "Is this how we want to treat newcomers?",
+          "type": "participant",
+          "claim": "작성자는 신규 사용자의 불만 글이 폐쇄·삭제된 처리를 비판하며 다른 사용자의 부담도 인정; 2019년 단일 논의",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "discourse-meta",
+      "name": "Discourse Meta",
+      "kind": "community",
+      "category": "제품 사용자 지원",
+      "status": "observed-active",
+      "description": "Discourse 사용자가 제품 지원·기여·운영을 논의하는 실제 공식 포럼",
+      "audience": "Discourse 설치자·운영자·개발자",
+      "entryHook": "설치·운영 문제를 검색하거나 질문",
+      "returnLoop": "제품 변경, 후속 답변, 커뮤니티 운영 정보",
+      "memberGives": "재현 정보·해법·버그 보고·개선 제안",
+      "memberGets": "문제 해결과 제품 발전 참여",
+      "socialObject": "제품 사용 맥락이 있는 질문과 답",
+      "mechanisms": [
+        "지원·기여·버그 카테고리",
+        "기존 답 검색",
+        "신고·운영",
+        "질문 해결 표시"
+      ],
+      "density": "해당 제품 사용자의 공통 문제와 답변자 필요",
+      "operatingCost": "지원 담당과 자원봉사 응답, 해결 상태 관리",
+      "risk": "해결 표시의 일관성은 실제 논의 중",
+      "terminalTransfer": "실제 명령 오류 재현과 가능한 해법, 시도 결과를 하나로 연결",
+      "doNotCopy": "포럼 소프트웨어인 Discourse와 Meta 공동체를 같은 것으로 세지 않기",
+      "evidenceLevel": "official+participant",
+      "sources": [
+        {
+          "url": "https://meta.discourse.org/categories?tl=en",
+          "title": "Discourse Meta categories",
+          "type": "official",
+          "claim": "지원·버그·기여·문서·커뮤니티 빌딩 구조",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://meta.discourse.org/t/improving-the-experience-in-our-support-categories/397742",
+          "title": "지원 카테고리 개선 토론",
+          "type": "participant",
+          "claim": "질문자·답변자·검색자의 서로 다른 필요 및 해결 표시 불일치 논의",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "dev",
+      "name": "DEV Community",
+      "kind": "community",
+      "category": "개발자 기술 글",
+      "status": "observed-active",
+      "description": "개발자 글·태그·토론 중심 커뮤니티",
+      "audience": "기술 학습자·글 작성자",
+      "entryHook": "관심 태그의 기술 글 또는 입문자 콘텐츠",
+      "returnLoop": "팔로한 주제와 작성자의 새 글·댓글·커뮤니티 캠페인",
+      "memberGives": "경험·튜토리얼·질문·댓글",
+      "memberGets": "배움·피드백·자신의 글 노출",
+      "socialObject": "태그가 붙은 개발 경험 글",
+      "mechanisms": [
+        "태그 팔로우",
+        "댓글 구독",
+        "자원봉사 모더레이터",
+        "주제 캠페인"
+      ],
+      "density": "연관 글과 관련 댓글의 지속적 공급 필요",
+      "operatingCost": "스팸·태그·행동강령을 검토하는 운영 인력",
+      "risk": "일반적인 글 피드는 관심 없는 홍보와 경쟁해야 함(가설)",
+      "terminalTransfer": "실행 예시를 중심으로 짧은 경험 공유와 댓글 후속 결과를 연결",
+      "doNotCopy": "범용 글 피드만으로 차별화했다고 주장하지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://dev.to/help/customizing-your-feed",
+          "title": "DEV feed",
+          "type": "official",
+          "claim": "태그·작성자 팔로우 및 댓글 구독",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://dev.to/community-moderation",
+          "title": "DEV moderation",
+          "type": "official",
+          "claim": "자원봉사 운영자 역할과 품질 분류",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "hashnode",
+      "name": "Hashnode",
+      "kind": "platform",
+      "category": "개발 블로그 출판",
+      "status": "unclear",
+      "description": "개발자와 팀의 기술 블로그 플랫폼; 커뮤니티 교류 분석은 제한",
+      "audience": "기술 글을 발행하는 개발자·팀",
+      "entryHook": "코드에 적합한 글 발행과 독자 도달",
+      "returnLoop": "글 작성·독자 구독 가능성(직접 확인 제한)",
+      "memberGives": "기술 글과 팀 문서",
+      "memberGets": "출판 및 독자에게 설명",
+      "socialObject": "기술 블로그 글",
+      "mechanisms": [
+        "개발자 글 편집",
+        "팀 출판",
+        "GitHub 백업(검색 색인 기준)"
+      ],
+      "density": "글 작성자와 독자 확보 필요; 현재 커뮤니티 내부 활동 직접 확인 제한",
+      "operatingCost": "스팸·독자 관리와 글 발행 운영은 추정",
+      "risk": "공식 페이지 본문 직접 열기 실패로 현재 제공 범위 불확실",
+      "terminalTransfer": "실제로 실행 가능한 짧은 코드 사례에 사람이 질문하는 장을 가설로 검증",
+      "doNotCopy": "블로그 플랫폼을 단일 결속된 커뮤니티로 취급하지 않기",
+      "evidenceLevel": "limited",
+      "sources": [
+        {
+          "url": "https://docs.hashnode.com/blogs/getting-started/introduction",
+          "title": "Hashnode 소개",
+          "type": "search-index",
+          "claim": "공식 문서 검색 색인: 개발자용 글·팀 콘텐츠·GitHub 백업; 본문 열기 502",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "indiehackers",
+      "name": "Indie Hackers",
+      "kind": "community",
+      "category": "독립 창업자",
+      "status": "unclear",
+      "description": "창업과 커뮤니티 운영 관련 사용자들이 게시·질문하는 공간",
+      "audience": "인디 창업자와 제작자",
+      "entryHook": "사업·커뮤니티 운영 경험과 질문",
+      "returnLoop": "제작 경험·사업 관련 질의응답",
+      "memberGives": "경험 공유와 질문·답변",
+      "memberGets": "창업의 구체적 경험과 동료 조언",
+      "socialObject": "사업 경험을 다룬 AMA",
+      "mechanisms": [
+        "경험 기반 AMA",
+        "반복 댓글",
+        "상호 조언"
+      ],
+      "density": "응답할 경험자와 질문 주제가 필요",
+      "operatingCost": "게시물 품질·스팸과 사업 홍보 관리 필요(추론)",
+      "risk": "운영주 공식 About 본문은 접근 제한; 사용자 토론 한 건으로 전체 구조 판단 불가",
+      "terminalTransfer": "제작자의 구체적 시행착오를 두고 동료가 묻고 답하는 회차",
+      "doNotCopy": "공식 서비스 운영 정책이나 규모를 확인된 사실처럼 단정하지 않기",
+      "evidenceLevel": "limited",
+      "sources": [
+        {
+          "url": "https://www.indiehackers.com/post/ask-me-anything-about-community-building-08e033dad5",
+          "title": "커뮤니티 빌딩 AMA",
+          "type": "participant",
+          "claim": "커뮤니티에서 개인이 경험과 질문을 주고받은 사례; 운영사 설명은 아님",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "product-hunt",
+      "name": "Product Hunt",
+      "kind": "community",
+      "category": "제품 출시·발견",
+      "status": "observed-active",
+      "description": "신제품 출시와 커뮤니티 피드백을 중심으로 하는 플랫폼 및 이용자 공간",
+      "audience": "제품 제작자·신제품 탐색자",
+      "entryHook": "매일 공개되는 제품을 찾아보거나 제품을 출시",
+      "returnLoop": "새로운 일일 출시와 제작자 응답",
+      "memberGives": "제품 출시, 사용 후기, 질문과 토론",
+      "memberGets": "가시성·초기 피드백·새 제품 발견",
+      "socialObject": "일정한 시각에 공개되는 제품 출시",
+      "mechanisms": [
+        "일간 출시",
+        "제작자 설명과 답변",
+        "점수 기반 순위",
+        "재출시 가능"
+      ],
+      "density": "출시자와 사용자가 동일 시기에 모여야 함",
+      "operatingCost": "큐레이션과 순위·투표 조작 방지",
+      "risk": "홍보 경쟁과 노출 편차로 진솔한 피드백이 밀릴 가능성",
+      "terminalTransfer": "작은 작업물을 동료가 직접 시험하고 구체적 반응을 남기는 정기 쇼케이스",
+      "doNotCopy": "순위 자체나 인기 보장을 대체 가치로 삼지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://help.producthunt.com/en/articles/17350772-launch-guide",
+          "title": "Launch guide",
+          "type": "official",
+          "claim": "일간 출시, 제작자 댓글, 피드백, 요청된 upvote 금지",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://help.producthunt.com/en/articles/11751186-product-of-the-day-week-month",
+          "title": "Awards",
+          "type": "official",
+          "claim": "투표와 댓글 등 참여 신호로 점수 계산",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "lesswrong",
+      "name": "LessWrong",
+      "kind": "community",
+      "category": "합리성·사고 토론",
+      "status": "observed-active",
+      "description": "사고·의사결정을 주제로 글과 토론, 읽기 시리즈를 쌓는 공동체",
+      "audience": "사고·철학·AI 등 주제에 관심 있는 독자와 기여자",
+      "entryHook": "추천 입문 글과 주제별 글을 읽기",
+      "returnLoop": "후속 글·토론과 큐레이션 모음",
+      "memberGives": "분석 글·댓글·시리즈",
+      "memberGets": "공동 어휘와 누적 토론, 자기 관점 개선",
+      "socialObject": "연결된 글 시리즈와 토론",
+      "mechanisms": [
+        "입문 컬렉션",
+        "관련 개념",
+        "주제 필터",
+        "선별된 시리즈"
+      ],
+      "density": "기존 축적물은 단독 열람 가치를 주지만 새 대화는 기여자 필요",
+      "operatingCost": "질적 큐레이션과 주제 편중 관리",
+      "risk": "공통 용어와 필독 자료가 진입 장벽이 될 수 있음",
+      "terminalTransfer": "함께 다뤄온 기술 문제의 사례를 짧은 연속 회차로 연결",
+      "doNotCopy": "고유 어휘와 긴 필독 자료를 신규 사용자에게 의무화하지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://www.lesswrong.com/posts/bJ2haLkcGeLtTWaD5/welcome-to-lesswrong",
+          "title": "Welcome to LessWrong",
+          "type": "official",
+          "claim": "입문 자료·개념·환영 스레드·주제 필터 안내",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.lesswrong.com/library",
+          "title": "Library",
+          "type": "official",
+          "claim": "시리즈와 연례 회고 컬렉션",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "metafilter",
+      "name": "MetaFilter",
+      "kind": "community",
+      "category": "공동 링크·질문",
+      "status": "unclear",
+      "description": "공동 링크와 Ask/Projects 등으로 구성된 오랜 회원 커뮤니티",
+      "audience": "흥미로운 웹 자료와 사람의 답을 찾는 독자",
+      "entryHook": "다양한 링크와 질문·답변 읽기",
+      "returnLoop": "새로운 링크·질문과 회원 간 토론",
+      "memberGives": "웹 자료 소개·질문·답변·프로젝트",
+      "memberGets": "사람이 고른 자료와 다각적 대화",
+      "socialObject": "맥락을 설명한 링크와 대화",
+      "mechanisms": [
+        "Ask/Projects 등 활동별 구분",
+        "회원 규칙",
+        "유료 운영자"
+      ],
+      "density": "회원의 선택과 토론이 지속적으로 필요",
+      "operatingCost": "유급 운영과 재정 유지 부담",
+      "risk": "공식 본문 직접 열기 403이므로 검색 색인 이상 검증 불가",
+      "terminalTransfer": "타인의 도구를 소개할 때 왜 흥미로운지와 시도 결과를 제시",
+      "doNotCopy": "유료 가입·운영 모델을 현재 확정 상태로 단정하거나 그대로 복사하지 않기",
+      "evidenceLevel": "limited",
+      "sources": [
+        {
+          "url": "https://www.metafilter.com/about.mefi",
+          "title": "About MetaFilter",
+          "type": "search-index",
+          "claim": "공식 색인에 링크, Ask, Projects, 유급 운영 설명; 직접 열기 403",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.metafilter.com/faq.mefi",
+          "title": "MetaFilter FAQ",
+          "type": "search-index",
+          "claim": "공식 색인의 회원 및 게시 규칙; 직접 열기 403",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "wikipedia",
+      "name": "Wikipedia",
+      "kind": "community",
+      "category": "협업 백과사전",
+      "status": "observed-active",
+      "description": "사람들이 공동 편집해 백과사전 문서를 형성하는 공개 협업 공동체",
+      "audience": "독자·주제 지식 기여자",
+      "entryHook": "관심 문서의 오류나 빠진 내용을 발견",
+      "returnLoop": "관심 주제의 개선·다른 편집자의 검토",
+      "memberGives": "근거 확인, 문서 수정, 토론",
+      "memberGets": "공공 지식 개선에 참여, 더 나은 참고 자료",
+      "socialObject": "수정 이력이 남는 공동 문서",
+      "mechanisms": [
+        "공동 편집",
+        "검증가능성과 중립성",
+        "토론·합의",
+        "자유 이용"
+      ],
+      "density": "문서는 읽기만 해도 가치가 있으나 오류 수정과 관리는 기여자 필요",
+      "operatingCost": "인용 검증, 분쟁 중재, 문서 유지",
+      "risk": "중립성·인용 규칙을 익히는 비용과 편집 분쟁",
+      "terminalTransfer": "커뮤니티 행사에서 확인한 유용한 재현법을 검토 가능한 공동 결과로 축적",
+      "doNotCopy": "개인 경험을 검증된 사실로 승격하지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wikipedia:Five_pillars",
+          "title": "Wikipedia Five pillars",
+          "type": "official",
+          "claim": "백과사전, 중립 관점, 자유 콘텐츠, 상호 존중 등 기본 원칙",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "openstreetmap",
+      "name": "OpenStreetMap",
+      "kind": "community",
+      "category": "공동 지도 제작",
+      "status": "observed-active",
+      "description": "누구나 기여하는 지도와 매핑 파티를 만드는 공동체",
+      "audience": "지도 작성자·지역 주민·입문자",
+      "entryHook": "주변 지역을 수정하거나 입문 이벤트 참여",
+      "returnLoop": "관심 지역 개선과 동료 매핑",
+      "memberGives": "현지 지식과 지도 수정·검토",
+      "memberGets": "유용한 공동 지도와 동료 학습",
+      "socialObject": "지역의 검증 가능한 지도 데이터",
+      "mechanisms": [
+        "작은 기여",
+        "검증가능성",
+        "공동 매핑 파티",
+        "기여 검토"
+      ],
+      "density": "혼자 지도 작업 가능; 행사와 검토에는 동시 참여자·현지 맥락 필요",
+      "operatingCost": "오류 검토, 대규모 변경 조율, 행사 조직",
+      "risk": "부정확한 수정과 지역 맥락 무시·대규모 변경 갈등",
+      "terminalTransfer": "한 회차에 참가자들이 사용 가능한 작은 도구·예제를 함께 만들고 리뷰",
+      "doNotCopy": "코드를 실제 검증 없이 자동 누적하거나 참여를 실시간으로 강제하지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://wiki.openstreetmap.org/wiki/How_We_Map",
+          "title": "How We Map",
+          "type": "official",
+          "claim": "검증가능성, 현지 지식, 큰 변경 전 협의",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://wiki.openstreetmap.org/wiki/Mapping_party",
+          "title": "Mapping parties",
+          "type": "official",
+          "claim": "함께 지도 작성·대화·초보자 교육",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "github-discussions",
+      "name": "GitHub Discussions",
+      "kind": "platform",
+      "category": "프로젝트 공동체 도구",
+      "status": "observed-active",
+      "description": "개별 저장소·조직 공동체를 위한 토론 기능; 자체가 단일 커뮤니티는 아님",
+      "audience": "오픈소스 프로젝트 사용자와 유지보수자",
+      "entryHook": "프로젝트 사용 질문과 제안",
+      "returnLoop": "구독한 프로젝트의 답변·공지·개선 논의",
+      "memberGives": "질문·답변·아이디어와 사용자 경험",
+      "memberGets": "프로젝트를 더 잘 쓰고 의사결정 참여",
+      "socialObject": "특정 프로젝트에 연결된 질문과 답",
+      "mechanisms": [
+        "질문과 답변 표시",
+        "저장소 맥락",
+        "고정·잠금",
+        "카테고리"
+      ],
+      "density": "기존 프로젝트와 유지보수자 또는 기여자 응답이 필요",
+      "operatingCost": "유지보수자의 응답·분류·운영",
+      "risk": "프로젝트별 활동 편차를 플랫폼의 효과로 단정할 수 없음",
+      "terminalTransfer": "작동하는 작업물에 질문·응답·시도 결과를 직접 연결",
+      "doNotCopy": "플랫폼 자체를 하나의 공동체나 수요 증거로 계산하지 않기",
+      "evidenceLevel": "official",
+      "sources": [
+        {
+          "url": "https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions",
+          "title": "Moderating GitHub Discussions",
+          "type": "official",
+          "claim": "저장소·조직 토론, 답변 표시와 운영 기능",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    },
+    {
+      "id": "recurse-center",
+      "name": "Recurse Center",
+      "kind": "community",
+      "category": "자기주도 프로그래밍 학습",
+      "status": "observed-active",
+      "description": "자기주도 프로젝트를 동료와 학습하는 6·12주 프로그래밍 리트리트 및 졸업생 공동체",
+      "audience": "다양한 경험의 학습 의지가 있는 프로그래머",
+      "entryHook": "선발된 배치에서 자신의 목표와 프로젝트로 참여",
+      "returnLoop": "동료가 주최하는 체크인·스터디·시연·페어링, 배치 후 관계",
+      "memberGives": "학습 경험·시연·타인에 대한 도움",
+      "memberGets": "개인 성장, 대화, 동료 영감과 관계",
+      "socialObject": "자기 프로젝트와 질문, 동료와의 실제 학습 상호작용",
+      "mechanisms": [
+        "기간이 정해진 배치",
+        "동료가 여는 선택 활동",
+        "사회적 규칙",
+        "동료 승인 공개 작품"
+      ],
+      "density": "동료가 같은 시기에 참여하는 배치와 반복 이벤트가 밀도를 제공",
+      "operatingCost": "선발·온보딩·행사 진행·사회 규칙·모더레이션 부담",
+      "risk": "시간 제한과 선발은 접근성 제약; 시간 투자가 가능한 사람에 치우칠 위험",
+      "terminalTransfer": "작업 중인 작은 결과물을 정기 시연하고 질문·시도·후속 공유로 연결",
+      "doNotCopy": "배지·가상방만 복제하거나 리트리트의 시간·문화적 조건을 무시하지 않기",
+      "evidenceLevel": "official+participant",
+      "sources": [
+        {
+          "url": "https://assets.recurse.com/faq",
+          "title": "Recurse FAQ",
+          "type": "official",
+          "claim": "6/12주 배치, 자율 프로젝트, 선택형 스터디·체크인·발표",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://assets.recurse.com/social-rules",
+          "title": "RC social rules",
+          "type": "official",
+          "claim": "잘난 척 교정·놀라는 척·훈수·미묘한 차별을 지양",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.recurse.com/manual",
+          "title": "RC Manual",
+          "type": "official",
+          "claim": "자기주도적 상호 학습과 배치 운영",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://joy.recurse.com/about",
+          "title": "Joy of Computing",
+          "type": "official",
+          "claim": "Recurser 작품의 동료 승인과 평일에 정기 공개",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://blog.divyendusingh.com/p/recurse-center-return-statement",
+          "title": "Recurse Center Return Statement",
+          "type": "participant",
+          "claim": "한 참가자는 동료 프로젝트와 페어링에서 동기와 막힘 해소를 경험했다고 서술",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.recurse.com/blog/138-what-we-mean-by-self-directed-and-community-driven",
+          "title": "Self-directed and community-driven",
+          "type": "official",
+          "claim": "운영진은 자기주도 결정이 다수 참가자에게 어렵다고 서술",
+          "accessedAt": "2026-10-30"
+        }
+      ],
+      "hypothesis": "첫 참여·재방문 동기 및 TW 전이는 관찰 구조에서 도출한 분석 가설이며 실제 참여율, 인과효과, 수요를 입증하지 않는다."
+    }
+  ],
+  "deepDives": [
+    {
+      "communityId": "hn",
+      "observedDesign": "Ask HN은 질문·본문, Show HN은 남이 써 볼 수 있는 개인 제작물을 중심으로 한다. 공식 규정은 제작자의 대화 참여를 요청한다.",
+      "contributionCycle": "제작자가 공개 → 독자가 직접 시험·질문 → 제작자와 댓글로 논의. 참여 보상은 피드백·발견이라는 해석이다.",
+      "entryAndReturn": "관심작을 시험할 때 들어오고 새 작품과 후속 질문에 재방문할 가능성이 있다. 측정된 재방문율은 없다.",
+      "governance": "기술적 호기심과 예의에 관한 가이드, 신고 및 순위가 발견과 관리에 영향을 준다.",
+      "negativeEvidence": "한 Show HN 작성자는 flag 처리 이유를 몰라 질문했다. 구체적 원인은 확인되지 않았다.",
+      "terminalExperiment": "시연 회차에서 참가자가 직접 만든 실행 예시와 질문을 올리고, 다른 참가자는 안전하게 읽거나 직접 시도한 뒤 질문 하나를 남긴다. 제작자의 응답과 후속 재방문을 관찰한다.",
+      "sources": [
+        {
+          "url": "https://news.ycombinator.com/showhn.html",
+          "title": "Show HN Guidelines",
+          "type": "official",
+          "claim": "개인 제작물은 타인이 사용 가능해야 하며 제작자가 토론에 참여; shownew에서 일정 점수 이후 show 노출",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://news.ycombinator.com/newsfaq.html",
+          "title": "HN FAQ",
+          "type": "official",
+          "claim": "Ask HN은 질문·텍스트 제출; Show HN은 개인 작품",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49783865",
+          "title": "표시된 Show HN 작성자의 문의",
+          "type": "participant",
+          "claim": "작성자가 자신의 게시물이 flag 처리된 이유를 질문; 댓글은 추정만 제시",
+          "accessedAt": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "communityId": "lobsters",
+      "observedDesign": "초대 기반 컴퓨팅 커뮤니티의 태그 달린 링크 및 토론, 공개 운영 로그와 신고 사유를 설명한다.",
+      "contributionCycle": "회원이 의미 있는 자료를 공유 → 분류하고 맥락 토론 → 다른 사람의 전문적 관점이 붙는다.",
+      "entryAndReturn": "기술 자료를 읽고 싶은 필요에서 입장; 각자의 전문 주제를 필터링하고 대화를 따라가려 돌아올 수 있다는 가설.",
+      "governance": "초대 트리, 태그, 신고·운영 기록으로 책임과 규칙을 형성한다.",
+      "negativeEvidence": "초대 요청 규칙 해석에 관한 참가자 질문과 태그·AI 분류 정책 이견이 보인다. 단일 논의로 전체 만족도를 대변할 수 없다.",
+      "terminalExperiment": "초대 장벽 대신 관심 주제별 태그를 단 하나의 공통 피드에 붙이고, 사람별 관점과 질문의 상호작용을 관찰한다.",
+      "sources": [
+        {
+          "url": "https://lobste.rs/about",
+          "title": "About Lobsters",
+          "type": "official",
+          "claim": "초대 트리, 태그, 공개 운영 기록, 표시된 사유 기반 flag",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://lobste.rs/s/yuujbb/clarification_on_lobsters_invite",
+          "title": "초대 요청 해석 논의",
+          "type": "participant",
+          "claim": "참여자가 공개 규칙 간 불일치를 질문하고 운영자가 해석",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://lobste.rs/s/h0eate/updates_site_guidelines_ai_llm_tags",
+          "title": "태그 정책 토론",
+          "type": "participant",
+          "claim": "동일한 태그 규칙 변경을 두고 사용자들이 서로 다른 요구와 불만을 표명",
+          "accessedAt": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "communityId": "stackoverflow",
+      "observedDesign": "기술 질문과 검증 가능한 답변을 누적하는 Q&A 구조, 평판과 공동 편집 및 품질 규칙을 운영한다.",
+      "contributionCycle": "구체적 질문 → 답변 → 투표·채택 및 개선 → 후속 독자가 검색으로 활용한다.",
+      "entryAndReturn": "당장 해결할 문제로 유입; 답변자와 후속 독자는 새로운 질문 및 축적 답변을 활용할 수 있다. 재방문은 가설.",
+      "governance": "평판은 참여 결과를 나타내고 일부 권한을 열며 품질 관리에 공동체가 참여한다.",
+      "negativeEvidence": "2019년 Meta 사용자 한 명은 신규 사용자의 불만 글에 대한 폐쇄·삭제와 어조를 비판했다. 서로 다른 의견이 있는 사례이며 오늘날 전체 사이트를 대표하지 않는다.",
+      "terminalExperiment": "막힌 문제를 짧은 재현과 기대 결과로 제시하고, 답변자가 해결 여부를 함께 확인한다. 응답 실패 시 수정 가능한 구체적 안내를 준다.",
+      "sources": [
+        {
+          "url": "https://stackoverflow.com/tour",
+          "title": "Stack Overflow tour",
+          "type": "official",
+          "claim": "실용적 질문, 답변 투표, 질문자 선택과 태그",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://stackoverflow.com/help/whats-reputation",
+          "title": "Reputation",
+          "type": "official",
+          "claim": "동료 투표에 따라 평판과 권한이 증가",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://meta.stackoverflow.com/questions/388076/is-this-how-we-want-to-treat-newcomers/388077",
+          "title": "Is this how we want to treat newcomers?",
+          "type": "participant",
+          "claim": "작성자는 신규 사용자의 불만 글이 폐쇄·삭제된 처리를 비판하며 다른 사용자의 부담도 인정; 2019년 단일 논의",
+          "accessedAt": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "communityId": "askhistorians",
+      "observedDesign": "역사 질문에 근거와 맥락을 갖춘 깊은 답변을 요구하고, 운영자가 기준을 벗어난 답변을 제거한다.",
+      "contributionCycle": "질문 → 지식 있는 기여자가 조사·답변 → 운영자 검토 → 방문자가 신뢰 가능한 설명을 읽는다.",
+      "entryAndReturn": "막연한 역사 질문에 답을 얻고, 관심 주제의 새로운 깊은 답변을 보려는 계기가 있다. 실제 반복률은 미확인.",
+      "governance": "상세 규칙과 자원봉사 검토로 품질을 보호하지만 많은 답변은 삭제되어 댓글 수와 보이는 내용이 다를 수 있다.",
+      "negativeEvidence": "운영자 글은 삭제된 댓글 때문에 방문자가 답변이 사라졌다고 느낄 수 있다고 설명하며, 충분한 답변을 준비하는 데 시간이 필요하다고 설명한다.",
+      "terminalExperiment": "기술 질문에 재현·관찰·환경을 붙이고 무응답일 때 답변 대기와 기대 시간을 숨기지 않는다. 엄격한 전문성 기준보다 도움과 수정 가이드를 먼저 실험한다.",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/AskHistorians/wiki/rules/",
+          "title": "AskHistorians rules",
+          "type": "official",
+          "claim": "학술 수준의 역사 답변과 적극적 운영",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.reddit.com/r/AskHistorians/comments/h8aefx/rules_roundtable_xviii_removed_curation_and_why/",
+          "title": "큐레이션과 댓글 삭제 설명",
+          "type": "official",
+          "claim": "운영자는 심층 답변 보호와 검토 비용을 설명",
+          "accessedAt": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "communityId": "recurse-center",
+      "observedDesign": "정해진 배치 기간에 프로그래머들이 자기 프로젝트를 진행하면서 발표, 페어링, 체크인과 사회적 규칙을 함께 만든다.",
+      "contributionCycle": "작은 작업이나 막힘 공유 → 동료의 질문·페어링 → 새 시도 → 다시 보여주기. 이 과정의 가치에 대해 한 졸업생의 긍정 후기가 있다.",
+      "entryAndReturn": "프로젝트를 성장시키고 동료를 만날 기회로 시작; 선택 활동, 피드백 관계와 배치 중 반복 행사가 돌아올 계기가 된다는 해석이다.",
+      "governance": "운영자가 선발·온보딩·행사와 환경을 만들고, 구성원이 프로젝트와 협업을 채운다. 놀라는 척이나 훈수 등을 삼가는 사회 규칙이 있다.",
+      "negativeEvidence": "공식 운영진은 자기주도 결정을 처음 하는 것이 어렵다고 설명한다. 공식 매뉴얼은 상당한 시간 투입과 재학·업무 병행의 어려움을 명시한다. 개인 후기의 긍정적 경험을 보편화하면 안 된다.",
+      "terminalExperiment": "학업과 병행 가능한 짧은 공동 시연 기간을 운영하고 각자 현재 시도와 막힘을 보여준 뒤 다른 사람이 질문 또는 도움을 제안한다. 실제 후속 관계와 작업 진행 여부를 살핀다.",
+      "sources": [
+        {
+          "url": "https://www.recurse.com/manual",
+          "title": "RC Manual",
+          "type": "official",
+          "claim": "자기주도적 상호 학습과 배치 운영",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://assets.recurse.com/social-rules",
+          "title": "RC social rules",
+          "type": "official",
+          "claim": "잘난 척 교정·놀라는 척·훈수·미묘한 차별을 지양",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.recurse.com/blog/138-what-we-mean-by-self-directed-and-community-driven",
+          "title": "Self-directed and community-driven",
+          "type": "official",
+          "claim": "운영진은 자기주도 결정이 다수 참가자에게 어렵다고 서술",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://blog.divyendusingh.com/p/recurse-center-return-statement",
+          "title": "Recurse Center Return Statement",
+          "type": "participant",
+          "claim": "한 참가자는 동료 프로젝트와 페어링에서 동기와 막힘 해소를 경험했다고 서술",
+          "accessedAt": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "communityId": "unixporn",
+      "observedDesign": "데스크톱 커스터마이징 결과물을 시각적으로 공유하고 사용하는 구성 요소를 설명하는 커뮤니티.",
+      "contributionCycle": "구성 결과 공유 → 다른 사람이 감상·질문 → 설정 참고 및 응용 → 새 결과물 공유.",
+      "entryAndReturn": "다른 환경의 결과물 구경과 설정 영감으로 유입하고 새 구성과 응용을 보려 돌아올 수 있다. 실제 사용률은 미측정.",
+      "governance": "게시 요건과 내용 품질에 대한 운영 정책이 토론 대상이다.",
+      "negativeEvidence": "한 운영 논의에서 규칙과 품질 관리가 쟁점이 되었고, 다른 곳의 한 사용자는 타인의 구성 재현법을 물었다. 이것은 단편적 관찰이다.",
+      "terminalExperiment": "한 화면의 셸 사용법·도구·설정 맥락을 공유하고 댓글로 재현 조건과 응용을 묻는다. 비밀값과 위험한 자동 실행을 배제한다.",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/unixporn/about/",
+          "title": "r/unixporn rules",
+          "type": "official",
+          "claim": "실질적 커스터마이징·올바른 태그 요구; 기술지원은 주간 워크숍",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.reddit.com/r/unixporn/comments/1fn6t2p/open_discussion_rules_and_quality_control/",
+          "title": "품질 규칙 논의",
+          "type": "participant",
+          "claim": "입문자 영감과 엄격한 규칙의 상충 논의",
+          "accessedAt": "2026-10-30"
+        },
+        {
+          "url": "https://www.reddit.com/r/linuxquestions/comments/1vnp5aw/how_do_i_copy_someone_desktop_from_runixporn/",
+          "title": "재현의 어려움 사용자 사례",
+          "type": "participant",
+          "claim": "작성자가 다른 사람의 설정을 따라하기 어렵다고 호소",
+          "accessedAt": "2026-10-30"
+        }
+      ]
+    }
+  ],
+  "coverageNotes": [
+    "18개 사례 중 15개는 공식 본문을 직접 확인했다. Hashnode와 MetaFilter는 각각 502/403, Indie Hackers 홈페이지는 접근 제한으로 직접 공식 본문을 확인하지 못해 limited로 표기했다. 검색 색인 또는 직접 열린 사용자 게시물에 근거한 잠정 사례이며 지침을 사실 확정으로 취급하지 않는다.",
+    "Reddit은 네트워크이며 AskHistorians·ChangeMyView·unixporn은 그 안에서 규칙과 활동이 다른 각각의 공동체다. Stack Overflow는 Stack Exchange 전체와 동일하게 집계하지 않는다. GitHub Discussions는 플랫폼이며 단일 공동체가 아니다.",
+    "실제 참여자·운영 논의 원문으로 HN flag 질문, Lobsters 초대/태그 논의, Stack Overflow 신규자 논란, AskHistorians 운영 설명, unixporn 규칙 및 재현 질문, Discourse Meta 지원 흐름, Recurse 개인 후기를 확인했다. 일화는 대표 표본이나 인과 관계가 아니다.",
+    "관찰된 설계와 첫 방문·반복 동기, 밀도·운영비 및 Terminal World 전이 가설을 구분한다. 수요, 효과, 유지율, 활성 사용자 수는 실측하지 않았다.",
+    "외부 사이트의 활성 상태는 조사 시점 페이지와 공개 활동 확인에 한정하며 장기적 추세의 증거가 아니다. 직접 열지 못한 공식 자료의 확인 상태는 unclear다."
+  ]
+}

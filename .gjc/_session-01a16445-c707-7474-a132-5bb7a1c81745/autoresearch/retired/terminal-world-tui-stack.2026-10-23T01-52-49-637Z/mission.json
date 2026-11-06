@@ -1,0 +1,15 @@
+{
+  "objective": "확정된 Terminal World 프로토타입에 적합한 TUI 기술 스택과 로컬 저장·검증 전략을 공식 문서로 비교하고 조건부 권장안을 도출한다.",
+  "mode": "web",
+  "deliverables": [
+    "Bubble Tea/Go, Textual/Python, Ratatui/Rust, Ink/TypeScript를 핵심 요구사항에 비추어 비교한다. 한글/IME·문자폭, 마우스/포커스/리사이즈, 패키징, 영속 저장, 테스트에 대한 출처·한계와 구조화된 verdict를 남긴다. 기준 명세: .gjc/_session-01a16445-c707-7474-a132-5bb7a1c81745/specs/deep-interview-terminal-world-prototype.md"
+  ],
+  "constraints": [
+    "web 모드의 연구만 수행. 인터뷰 확정 범위를 변경하지 않는다. 소스·매니페스트·의존성·실험 하네스 수정/설치, 구현, 커밋은 하지 않는다. macOS 로컬·키보드와 마우스·한국어 텍스트·개인화·로컬 프로필/채팅/방명록 보존을 평가한다. 실제 IME나 성능 실험은 수행하지 않고 문서 근거와 현장 검증 필요성을 구분한다."
+  ],
+  "slug": "terminal-world-tui-stack",
+  "intake": "cold",
+  "createdAt": "2026-10-23T01:47:02.145Z",
+  "updatedAt": "2026-10-23T01:47:02.145Z",
+  "state_revision": 1
+}

@@ -1,0 +1,67 @@
+<section id="ideas" class="section" aria-labelledby="ideas-title">
+  <div class="section-head">
+    <div><p class="eyebrow">05 / IDEA EXPLORER</p><h2 id="ideas-title">아이디어를 기능이 아니라 과업으로 비교</h2></div>
+    <p class="section-summary">후보 10개는 서로 다른 사용 이유를 제안한다. 혼자서 첫 가치를 얻는지, 다시 써야 할 일이 생기는지, 기존 대안을 바꿀 만큼 나은지를 함께 보자.</p>
+  </div>
+  <div class="notice"><span class="badge hypothesis">가설</span> 아이디어의 차별성과 지속 사용은 확인된 성과가 아니다. 각 카드를 펼쳐 사용자·시나리오·위험과 평가 근거를 확인할 수 있다.</div>
+  <div class="panel">
+    <div class="three-grid">
+      <label>문제 영역<select id="idea-category"><option value="all">전체 영역</option><option value="개발 생산성">개발 생산성</option><option value="문제 해결">문제 해결</option><option value="집중·학습">집중·학습</option><option value="협업">협업</option><option value="커뮤니티">커뮤니티</option></select></label>
+      <label>변경 범위<select id="idea-strategy"><option value="all">전체 전략</option><option value="기존 유지">기존 유지</option><option value="부분 변경">부분 변경</option><option value="전면 변경">전면 변경</option></select></label>
+      <label>정렬 기준<select id="idea-sort"><option value="score">가중 점수 순</option><option value="value">사용자 문제 점수 순</option><option value="difference">차별성 점수 순</option><option value="easy">구현 난이도 낮은 순</option></select></label>
+    </div>
+    <p id="idea-results" aria-live="polite"></p>
+    <div id="idea-grid" class="card-grid"></div>
+  </div>
+  <div id="idea-compare" class="panel" hidden></div>
+  <div class="two-grid">
+    <div class="detail"><h3>혼자 시작할 수 있는 후보</h3><p>작업 재개, 개인 런북, 학습 기록은 타인의 동시 접속 없이 시험할 수 있다. 다만 기록을 남기는 수고보다 이후에 얻는 이익이 커야 한다.</p></div>
+    <div class="detail"><h3>사람이 있어야 핵심이 작동하는 후보</h3><p>도움 매칭과 실시간 대화는 상대방이 반응해야 가치가 생긴다. 소규모 스터디도 개인 계획은 가능하지만 책임감과 상호 점검에는 구성원이 필요하다.</p></div>
+  </div>
+</section>
+
+<section id="strategy" class="section" aria-labelledby="strategy-title">
+  <div class="section-head">
+    <div><p class="eyebrow">06 / STRATEGY</p><h2 id="strategy-title">제품을 어디까지 바꿀 것인가</h2></div>
+    <p class="section-summary">공간을 개선하는 선택, 핵심 목적을 바꾸는 선택, 인터페이스와 대상을 다시 정하는 선택을 모두 비교했다. 전략의 범위와 구체적인 후보의 점수를 혼동하지 않는다.</p>
+  </div>
+  <div class="three-grid">
+    <article class="panel"><span class="badge inference">전략 1 · 기존 유지</span><h3>공간형 커뮤니티 강화</h3><p><strong>핵심:</strong> 로비와 방 이동을 유지하고 기존 소규모 그룹의 활동을 돕는다.</p><p><strong>기대:</strong> 기존 정체성과 사회적 관계를 살린다. 함께 활동하는 이유가 생기면 공간은 맥락을 제공할 수 있다.</p><p><strong>한계·수요:</strong> 공간과 채팅의 수요는 아직 미확인이다. SSH 채팅과 공유 Unix 공동체는 이미 존재한다. <button type="button" class="source-trigger" data-source="t04">출처</button> <button type="button" class="source-trigger" data-source="t01">출처</button></p><p><strong>차별성·비용:</strong> 분위기는 독특하지만 그 자체로 대체 이유가 되기 어렵다. 채팅·게시판·운영 도구를 함께 유지해야 한다.</p><p><strong>위험:</strong> 동시 이용자가 없으면 첫 경험이 비어 보이고 운영 부담만 남는다.</p></article>
+    <article class="panel"><span class="badge hypothesis">전략 2 · 권고</span><h3>핵심 가치를 작업 재개로 변경</h3><p><strong>핵심:</strong> 중단된 작업의 다음 행동을 찾는 개인 도구를 먼저 만들고 교류는 검증 이후 연결한다.</p><p><strong>기대:</strong> 한 명이 혼자 쓸 수 있으며 사용 중인 프로젝트가 자연스러운 재방문 계기가 된다.</p><p><strong>한계·수요:</strong> 작업 맥락 복구에 관한 연구는 있지만 이 제품을 쓸 수요는 가설이다. <button type="button" class="source-trigger" data-source="c24">출처</button></p><p><strong>차별성·비용:</strong> 직접 남긴 다음 행동과 현재 상태 차이에 초점을 둔다. 텍스트 메모와 Atuin보다 나은지는 실험으로 확인해야 한다.</p><p><strong>위험:</strong> 기록 부담이 이익을 넘으면 반복 사용이 일어나지 않는다.</p></article>
+    <article class="panel"><span class="badge inference">전략 3 · 전면 변경</span><h3>웹 중심 문제 해결 도구</h3><p><strong>핵심:</strong> SSH와 공간 정체성을 내려놓고 도움 요청 또는 특정 작업 문제에 집중한다.</p><p><strong>기대:</strong> 설치 장벽이 낮고 모바일·초보자에게 접근하기 쉽다.</p><p><strong>한계·수요:</strong> 오류를 잘 설명하는 불편은 검토할 가치가 있으나 신규 도구의 사용 의사는 입증되지 않았다.</p><p><strong>차별성·비용:</strong> 선택한 정보의 검토와 전달 흐름에 집중할 수 있지만 이슈 양식과 메신저가 강한 대안이다. 공유 권한과 정보 노출을 설계해야 한다.</p><p><strong>위험:</strong> 또 하나의 양식만 만들면 기존 작업 흐름에 편입되지 않는다.</p></article>
+  </div>
+  <div class="panel"><h3>전략을 대표하는 후보의 비교</h3><p>아래 그래프는 각각 <strong>공간형 커뮤니티</strong>, <strong>작업 재개 데스크</strong>, <strong>도움 요청 패킷</strong>을 대표 사례로 사용한다. 각 전략에서 이 후보가 최선이라는 뜻은 아니며, 전략 전체의 성패를 예측하는 수치도 아니다.</p><div id="strategy-chart"></div><p class="section-summary">9개 기준은 1~5점의 주관적 판단이다. 가중 합계를 100점 만점으로 환산하며, 개발 부담은 <strong>점수가 높을수록 구현하기 쉬움</strong>을 뜻한다. 가중치와 근거는 다음 섹션에서 조정할 수 있다.</p></div>
+</section>
+
+<section id="top3" class="section" aria-labelledby="top3-title">
+  <div class="section-head">
+    <div><p class="eyebrow">07 / DECISION MODEL</p><h2 id="top3-title">상위 후보를 검토하고 기준을 바꿔보기</h2></div>
+    <p class="section-summary">기본 가중치에서 작업 재개, 도움 요청 패킷, 개인 실행 런북 순으로 나타난다. 이 순서는 근거가 제한된 평가자의 모델이며, 실제 채택률이나 성공 확률이 아니다.</p>
+  </div>
+  <div class="notice"><span class="badge inference">분석 판단</span> 수요 증거와 차별성의 확신이 특히 낮다. 이 두 기준의 점수를 한 단계만 달리 판단해도 순서가 바뀔 수 있다. 총점은 탐색의 출발점이며 인터뷰와 행동 실험을 대체하지 않는다.</div>
+  <details class="panel"><summary>평가 기준과 가중치 조정하기</summary><p>기본 배점은 문제 심각·빈도 18, 수요 근거 15, 차별성 15, 첫 가치 10, 반복 사용 14, 콜드스타트 10, 낮은 개발 부담 8, 기술 깊이 6, 확장성 4다. 합계가 달라지면 현재 가중치의 비율로 정규화한다.</p><div id="weight-controls"></div><button id="reset-weights" type="button" class="button secondary">기본 가중치로 되돌리기</button></details>
+  <div class="panel"><h3>전체 후보의 현재 순서</h3><p>기준별 중요도를 바꾸면 점수와 순서가 함께 바뀐다. 숫자는 동일한 1~5 평가를 가중 평균한 뒤 100점 만점으로 변환한 값이다.</p><div id="ranking-chart"></div></div>
+  <div class="panel"><h3>선택 기준별 비교표</h3><p>각 점수의 설명과 불확실성을 함께 읽어야 한다. <strong>낮은 개발 부담</strong>은 5점이 가장 쉽게 구현할 수 있다는 뜻이다.</p><div id="score-matrix" class="responsive-table"></div></div>
+  <div id="top-three" class="three-grid"></div>
+  <div class="callout"><strong>왜 스터디 약속이 기본 상위 3개가 아닌가?</strong><p>점수 차이는 절대적 사실이 아니다. 이 후보의 사회적 효용은 다른 구성원의 참여에 의존하고, 채팅·공유 문서와 구분할 근거가 아직 약해 기본 모델에서는 세 후보보다 낮게 평가했다.</p></div>
+</section>
+
+<section id="recommendation" class="section" aria-labelledby="recommendation-title">
+  <div class="section-head">
+    <div><p class="eyebrow">08 / RECOMMENDATION</p><h2 id="recommendation-title">작업 재개 데스크</h2><p class="section-summary">가칭 · 제품 중심 가치의 변경</p></div>
+    <p class="section-summary">코딩을 하다가 수업이나 다른 과제로 중단한 학생이 <strong>자신이 적어둔 다음 행동이 현재 저장소 상태에서도 유효한지 빠르게 확인</strong>하도록 돕는다. 이것이 검증할 핵심 약속이다.</p>
+  </div>
+  <div class="split">
+    <article class="panel"><p class="eyebrow">BEFORE</p><h3>어디로 갈 것인가</h3><p>방에 들어가 사람을 만나고 게시판·채팅·타이머를 이용한다. 사용자가 없는 첫날과 일주일 뒤의 방문 이유가 불명확하다.</p></article>
+    <article class="panel"><p class="eyebrow">AFTER</p><h3>어디서 다시 시작할 것인가</h3><p>다음 행동과 막힌 지점을 짧게 남긴다. 다시 돌아오면 작성한 메모와 당시 기준 대비 현재 Git 상태의 차이를 보고 스스로 다음 행동을 결정한다.</p></article>
+  </div>
+  <div class="three-grid">
+    <div class="detail"><span class="badge hypothesis">목표 사용자</span><h3>여러 과제를 오가는 학생</h3><p>하나의 개인 프로젝트를 며칠 간격으로 직접 작업하고, 기존 메모 방식이 충분하지 않다고 느끼는 학생을 먼저 찾는다. 모든 개발자를 대상으로 삼지 않는다.</p></div>
+    <div class="detail"><span class="badge inference">첫 방문의 가치</span><h3>기록을 남기는 경험</h3><p>2~5분 안에 프로젝트를 선택하고 다음 행동 한 줄과 선택한 상태 정보를 검토해 저장한다. 이는 캡처 경험이지 재개 효과의 증거가 아니다.</p></div>
+    <div class="detail"><span class="badge hypothesis">반복 가치</span><h3>다시 시작할 때 확인</h3><p>최소 48시간 뒤 실제 과제로 돌아와 본인의 메모와 현재 상태를 확인하고 다음 행동을 선택한다. 짧은 데모와 달리 이때가 진짜 가치 검증이다.</p></div>
+  </div>
+  <div class="panel"><h3>Trigger → Action → Value → Return</h3><div class="four-grid"><div><strong>01 · Trigger</strong><p>수업, 다른 과제, 귀가로 코딩을 멈춘다.</p></div><div><strong>02 · Action</strong><p>다음 행동과 선택한 맥락을 짧게 남긴다.</p></div><div><strong>03 · Value</strong><p>돌아와 메모와 현재 상태의 차이를 읽고 재개한다.</p></div><div><strong>04 · Return</strong><p>다음에 중단할 때도 기록과 재개의 총비용이 이익보다 작다면 다시 쓴다.</p></div></div><p>가치가 생기는 시점은 기록할 때가 아니라 나중에 자신의 작업을 다시 이어갈 때다. 이 반복 구조 자체가 검증 전 가설이다.</p></div>
+  <div class="panel"><div class="section-head"><div><p class="eyebrow">INTERACTIVE JOURNEY</p><h3>학생의 실제 사용 여정</h3></div><p>발견부터 다른 사용자와의 선택적 상호작용까지 각 단계를 눌러 살펴본다.</p></div><div id="journey-buttons" aria-label="사용자 여정 단계"></div><div id="journey-content" aria-live="polite"></div></div>
+  <div class="panel"><div class="section-head"><div><p class="eyebrow">CONCEPT DEMO</p><h3>기록과 재개 흐름 살펴보기</h3></div><p><strong>설명용 시뮬레이션</strong>이다. 이 보고서는 실제 파일을 읽거나 명령을 실행하지 않는다.</p></div><div class="demo-actions"><button type="button" class="button secondary" data-demo="capture">종료 기록</button><button type="button" class="button secondary" data-demo="resume">재개</button><button type="button" class="button secondary" data-demo="drift">브랜치 변경</button></div><pre id="demo-terminal" aria-live="polite"></pre><p id="demo-caption"></p><p>차이 표시는 판단을 돕는 정보이며, 변경의 의미나 다음 행동의 안전성을 자동으로 보증하지 않는다. 사용자가 직접 상태를 확인하고 결정한다.</p></div>
+  <div class="panel"><h3>추천안에 대한 가장 강한 반론</h3><div class="two-grid"><div><h4>“그냥 메모하면 되지 않나?”</h4><p>그럴 수 있다. Markdown 한 줄, Git 이슈, 열린 편집기 탭, tmux 복원은 직접적인 대안이다. 기존 방법보다 종료 기록과 재개를 합친 비용이 낮은지 비교해야 한다. <button type="button" class="source-trigger" data-source="t22">출처</button> <button type="button" class="source-trigger" data-source="t29">출처</button></p></div><div><h4>“에이전트가 맥락을 이어주지 않나?”</h4><p>Atuin Threads는 이미 지원 에이전트의 세션 검색과 기기 간 재개를 제공한다. Copilot 등 기존 에이전트 세션도 강한 대안이므로, 수작업 학생에게 별도의 필요가 있는지 확인해야 한다. <button type="button" class="source-trigger" data-source="t18">출처</button></p></div><div><h4>“아무도 종료 전에 안 쓰면?”</h4><p>핵심 고리 자체가 끊긴다. 기록을 권장하는 문구나 배지가 해결책이 아니며, 실험에서 자발적인 기록과 두 번째 방문이 나타나지 않으면 방향을 바꾸거나 중단한다.</p></div><div><h4>“로컬 개인정보 보호가 차별점 아닌가?”</h4><p>신뢰를 위한 기본 요건이지 독점적 이점은 아니다. 기존 도구도 로컬 사용이나 암호화 옵션을 제공하므로 최소 수집은 필요조건으로 취급한다. <button type="button" class="source-trigger" data-source="t17">출처</button></p></div></div></div>
+</section>

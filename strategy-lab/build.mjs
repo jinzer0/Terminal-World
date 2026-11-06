@@ -1,0 +1,15 @@
+import {readFileSync, writeFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {dirname, join} from 'node:path';
+const dir=dirname(fileURLToPath(import.meta.url));
+const data=JSON.parse(readFileSync(join(dir,'community-study/data.json'),'utf8'));
+data.reportMarkdown=readFileSync(join(dir,'research-report.md'),'utf8');
+const template=readFileSync(join(dir,'community-study/dashboard.template.html'),'utf8');
+const marker='__RESEARCH_JSON__';
+if(template.split(marker).length!==2) throw new Error('Expected one data marker');
+if(data.communities.length!==83||!data.reportMarkdown) throw new Error('Incomplete research');
+const payload=JSON.stringify(data).replace(/</g,'\\u003c');
+writeFileSync(join(dir,'index.html'),template.replace(marker,()=>payload));
+writeFileSync(join(dir,'index.template.html'),template);
+writeFileSync(join(dir,'research-data.json'),JSON.stringify(data,null,2)+'\n');
+console.log('Built standalone community research dashboard');

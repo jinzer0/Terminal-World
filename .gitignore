@@ -25,6 +25,10 @@ __pycache__/
 .venv/
 venv/
 
+# Machine-local agent state and personal overrides
+/.gjc/state/
+/_bmad/config.user.toml
+
 # Execution records stay on disk; approved plans/specs remain source-bound.
 .gjc/_session-*/runtime/
 .gjc/_session-*/token-logs/

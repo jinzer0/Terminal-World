@@ -1,0 +1,36 @@
+{
+  "name": "terminal-world-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local terminal community and personal-space prototype",
+  "type": "module",
+  "bin": {
+    "terminal-world": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/cli.js",
+    "start": "node dist/cli.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc --target ES2022 --module NodeNext --moduleResolution NodeNext --jsx react-jsx --strict --skipLibCheck --esModuleInterop --outDir .test-dist --rootDir . tests/model.test.ts tests/storage.test.ts tests/app.test.tsx tests/ui.test.ts && node --test .test-dist/tests/*.test.js",
+    "test:package": "node --test tests/package.test.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@ink-tools/ink-mouse": "2.1.0",
+    "ink": "8.0.0",
+    "react": "19.3.0",
+    "string-width": "8.3.0",
+    "xterm-mouse": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.6",
+    "@types/react": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}

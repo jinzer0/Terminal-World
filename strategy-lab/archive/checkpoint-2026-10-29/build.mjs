@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const base = path.dirname(fileURLToPath(import.meta.url));
+const data = JSON.parse(fs.readFileSync(path.join(base,'research-data.json'),'utf8'));
+const template = fs.readFileSync(path.join(base,'index.template.html'),'utf8');
+if ((template.match(/__RESEARCH_DATA__/g)||[]).length !== 1) throw new Error('Expected one data insertion marker');
+const encoded = JSON.stringify(data).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
+fs.writeFileSync(path.join(base,'index.html'),template.replace('__RESEARCH_DATA__',encoded));
+console.log('Built self-contained strategy-lab/index.html');

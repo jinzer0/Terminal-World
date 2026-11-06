@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-30",
+  "artifact": "index.html",
+  "sha256": "1dde5912d9f8fe4d7d0450cf7eaf285ad471cb47fbcb8359e82880327ef95fa5",
+  "bytes": 422455,
+  "data": {
+    "cases": 85,
+    "deep": 28,
+    "ideas": 9,
+    "sourceRecords": 145,
+    "uniqueSourceUrls": 144
+  },
+  "passed": [
+    "Python build and source-schema validation",
+    "JavaScript syntax check",
+    "Actual function logic: case filters/search; selection max 3/reset; idea filters/sort; print content and restoration",
+    "Static HTML: unique ids, internal targets, allowed URL schemes, no external runtime assets",
+    "30 baseline product files unchanged"
+  ],
+  "links": {
+    "inlineAnchors": 34,
+    "invalidSchemesOrMissingTargets": [],
+    "remoteLinkAvailability": "Individual research retrieval limits retained in source records; not a fresh full-link crawler audit"
+  },
+  "browser": {
+    "status": "not_run",
+    "reason": "CUA returned: Local browser use is disabled in Work settings",
+    "notVerified": [
+      "desktop/mobile rendered layout",
+      "360px overflow",
+      "keyboard focus and native dialog",
+      "theme persistence in a real browser",
+      "actual print/PDF rendering"
+    ]
+  },
+  "runtimeDependencies": "None. Data/CSS/JS embedded. External sources require internet when opened.",
+  "productSourceChanges": []
+}

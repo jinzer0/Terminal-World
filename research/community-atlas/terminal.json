@@ -1,0 +1,703 @@
+{
+  "communities": [
+    {
+      "id": "terminal-town",
+      "name": "tilde.town",
+      "category": "terminal",
+      "description": "SSH 공유 시스템과 자치 문화를 가진 개별 커뮤니티.",
+      "url": "https://tilde.town/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 위키와 2026년 운영 글 확인; SSH 계정 접속 미검증",
+      "checkedAt": "2026-10-30",
+      "job": "주민으로서 개인 표현·대화·공동 프로젝트에 참여한다.",
+      "firstValue": "위키에서 주민 작품과 IRC·게시판·주간 엽서의 참여 경로를 확인한다.",
+      "repeatLoop": "[해석] 엽서·글 게시 → 다른 주민의 구경과 반응 → 다음 주의 기여와 공동 작업.",
+      "exchange": "주민의 홈페이지·엽서·글·프로그램과 공용 프로젝트의 관리권.",
+      "coldStart": "[해석] 공개 작품을 혼자 보는 것은 가능하지만 답글·공동 운영에는 주민과 운영자 참여가 필요하다.",
+      "friction": "운영 블로그는 2025년 메모리 자원 장애와 2026년 취약점 예방 조치에 따른 접속 제약을 설명한다. 침해가 실제로 발생했다고 확인된 것은 아니다.",
+      "transfer": "[가설] 한 주제의 짧은 텍스트 작품을 올리고 다음 참여자가 방문·후기·변형을 남기는 월간 전시와 공용 공동 관리자를 시험한다.",
+      "terminalFit": "글·명령·작품·공유 디렉터리를 터미널에서 직접 다루는 이용 맥락이 존재하나 SSH가 그 자체로 수요를 입증하지 않는다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://tilde.town/wiki/around-town.html",
+          "title": "Around town",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "IRC·내부 포럼·주간 엽서와 주민 콘텐츠를 설명."
+        },
+        {
+          "url": "https://tilde.town/wiki/town-square.html",
+          "title": "Town Square",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "모든 주민이 쓸 수 있는 공유 프로젝트 디렉터리와 공동 유지관리 목적을 명시."
+        },
+        {
+          "url": "https://tilde.town/blog.html",
+          "title": "운영 블로그",
+          "type": "official",
+          "date": "2026-06",
+          "claim": "2025년 자원 장애 및 2026년 예방적 제한과 엽서 부활을 설명."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-club",
+      "name": "tilde.club",
+      "category": "terminal",
+      "description": "개인 홈페이지와 셸 계정을 중심으로 한 개별 커뮤니티.",
+      "url": "https://tilde.club/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "2026년 시스템 유지보수 공지 확인; 직접 SSH 접속 미검증",
+      "checkedAt": "2026-10-30",
+      "job": "공용 UNIX 서버를 경험하고 개인 공간을 다른 사람과 연결한다.",
+      "firstValue": "회원 홈페이지와 문서를 둘러본다.",
+      "repeatLoop": "[해석] 홈페이지 작성 → 다른 사람의 사이트 방문 → 링크·대화 → 페이지 갱신.",
+      "exchange": "주민 홈페이지와 연결 링크, 공동체 공지.",
+      "coldStart": "[해석] 기존 홈페이지를 혼자 둘러볼 수 있으나 새 이용자의 방문자와 대화는 보장되지 않는다.",
+      "friction": "2026년 3월 운영자는 시스템 업그레이드에 따른 일시 중단과 메일 서비스 조정을 공지했다.",
+      "transfer": "[가설] 개인 공간에 내 작품과 최근 기여를 보여 주고 사람에게 방문할 명확한 이유를 만든다.",
+      "terminalFit": "서버의 실제 셸과 홈 디렉터리가 표현·학습의 매체라 터미널이 기능적이다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://tilde.club/",
+          "title": "tilde.club 홈페이지",
+          "type": "official",
+          "date": "2026-03",
+          "claim": "회원 페이지와 2026-03-21 유지보수 및 업그레이드 완료 공지."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-team",
+      "name": "tilde.team",
+      "category": "terminal",
+      "description": "Tildeverse 목록에 등재된 독립 공동체.",
+      "url": "https://tilde.team/",
+      "status": "목록 등재만 확인; 홈페이지 및 실제 접속 미검증",
+      "statusEvidence": "상위 조사자가 Tildeverse 목록 등재를 확인했고 본 재열람은 접근 제한됨",
+      "checkedAt": "2026-10-30",
+      "job": "공유 셸과 소규모 네트워크의 일원이 된다.",
+      "firstValue": "연합 목록에서 공동체를 발견한다.",
+      "repeatLoop": "[해석] 공용 서비스와 다른 주민 활동을 확인하고 다시 방문한다는 가설만 가능하다.",
+      "exchange": "정확한 현재 서비스와 이용자 산출물은 확인하지 못했다.",
+      "coldStart": "[해석] 공개 목록만으로 혼자 받을 구체적 가치를 판단하기 어렵다.",
+      "friction": "공식 홈페이지 직접 열기가 제한되어 실제 가입과 서비스·활동 상태를 확인하지 못했다.",
+      "transfer": "[가설] 다른 작은 공동체의 목록과 환영 경로를 제공하되 표시 자체를 참여의 증거로 다루지 않는다.",
+      "terminalFit": "셸 정체성 외에 특정 작업 적합성은 확인되지 않았다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://tildeverse.org/members/",
+          "title": "Tildeverse 회원 목록",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "상위 조사자의 목록 등재 확인; 본 조사 도구에서는 접근 제한."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-institute",
+      "name": "tilde.institute",
+      "category": "terminal",
+      "description": "OpenBSD를 사용하는 공개 UNIX 시스템 공동체.",
+      "url": "https://tilde.institute/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "OpenBSD와 다중 사용자 환경을 실험하고 사람들과 지식을 나눈다.",
+      "firstValue": "공식 소개·회원 사이트·Git과 IRC 안내를 읽는다.",
+      "repeatLoop": "[해석] 실험·개인 페이지와 Git 작업 → 질문·공유 → 새 실험.",
+      "exchange": "회원 웹·Gopher 자료와 Git 저장소, 운영 공지.",
+      "coldStart": "[해석] 문서를 혼자 보고 기존 공개 자료를 탐색할 수 있으나 셸 사용은 계정과 운영에 의존한다.",
+      "friction": "공식 안내는 운영자-이용자 간 공지에 메일링리스트를 쓴다고 설명한다. [해석] 운영과 숙련자 도움의 지속성이 중요하다.",
+      "transfer": "[가설] 터미널을 익히는 첫 실험과 타 주민의 짧은 결과물을 연결한다.",
+      "terminalFit": "OpenBSD를 실제 탐색하는 일이 핵심이므로 셸 자체가 직접적인 작업 환경이다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://tilde.institute/",
+          "title": "tilde.institute 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "공용 OpenBSD, 사용자 사이트·Git·IRC 및 운영 메일링리스트 설명."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-envs",
+      "name": "envs.net",
+      "category": "terminal",
+      "description": "비상업적 공유 Linux 시스템과 여러 연계 서비스의 개별 공동체.",
+      "url": "https://envs.net/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 페이지에 2026년 10월 시스템 정보 표시; 각 서비스 실접속 미검증",
+      "checkedAt": "2026-10-30",
+      "job": "Linux·웹·블로그를 실험하고 다른 주민과 소통한다.",
+      "firstValue": "서비스 목록과 공개 시스템 정보를 확인한다.",
+      "repeatLoop": "[해석] 콘솔 실험·웹 작성 → Git·채팅·공개 사이트 공유 → 새 작업.",
+      "exchange": "개인 홈페이지, 블로그, Git 저장소와 협업 문서.",
+      "coldStart": "[해석] 공개 자료 탐색은 혼자 가능하나 셸은 가입과 서버 가용성에 의존한다.",
+      "friction": "2026년 10월 시스템 시간과 서비스가 홈페이지에 표시되지만 각각의 실사용·건강성은 확인되지 않았다.",
+      "transfer": "[가설] 회원이 텍스트로 만든 작은 결과물과 관련 커뮤니티 토론을 직접 연결한다.",
+      "terminalFit": "셸과 Git 작업에 의미가 있으나 웹·협업 문서까지 터미널 전용일 필요는 없다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://envs.net/",
+          "title": "envs.net 소개",
+          "type": "official",
+          "date": "2026-10-29",
+          "claim": "공유 Linux와 웹·Git·채팅 서비스, 2026년 10월 시스템 정보."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-ctrlc",
+      "name": "Ctrl-C.club",
+      "category": "terminal",
+      "description": "개인 페이지와 주민이 만든 명령을 공유하는 셸 커뮤니티.",
+      "url": "https://ctrl-c.club/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 홈페이지 및 2023년 과거 행사 공지 확인; 현재 정기 개최 미확인",
+      "checkedAt": "2026-10-30",
+      "job": "내 웹 공간을 만들고 다른 주민의 작업을 발견한다.",
+      "firstValue": "최근 갱신된 개인 사이트와 주민이 만든 도구를 본다.",
+      "repeatLoop": "[해석] 개인 사이트 수정 → 최근 변경과 주민 도구로 발견 → 방문·대화 → 다음 수정.",
+      "exchange": "개인 웹 페이지, 주민 명령, 사이트 링크와 행사 결과.",
+      "coldStart": "[해석] 기존 자료는 혼자 볼 수 있으나 새 창작자의 노출과 피드백은 참여자에 좌우된다.",
+      "friction": "운영자는 2023년 사이트 정비 Webjam 및 5년 이상 미접속 계정 보관을 안내했다. 현재에도 잼이 정기 개최되는지는 확인되지 않았다.",
+      "transfer": "[가설] 정기 개최를 전제하지 않고 1회 사이트·터미널 작품 정비 모임을 진행하고 참가자 간 방문과 피드백을 운영자가 연결한다.",
+      "terminalFit": "실제 셸 명령과 홈페이지 수정이 주제이며 공간 UI 자체가 핵심 가치는 아니다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://ctrl-c.club/",
+          "title": "Ctrl-C.club 홈페이지",
+          "type": "official",
+          "date": "2023-08",
+          "claim": "2023년 Webjam, 최근 갱신 페이지와 장기 휴면 계정 보관 안내."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-cosmic",
+      "name": "Cosmic Voyage",
+      "category": "terminal",
+      "description": "공동 SF 세계에서 개인 우주선의 로그를 쓰는 SSH 기반 서사 공동체.",
+      "url": "https://cosmic.voyage/",
+      "status": "공개 로그 목록은 상위 조사 확인; 본 도구 재열람·SSH 접속 미검증",
+      "statusEvidence": "상위 조사자의 공식 목록 확인; 본 도구는 해당 주소 접근 제한",
+      "checkedAt": "2026-10-30",
+      "job": "다른 사람의 SF 이야기와 연결되는 자기 이야기를 쓴다.",
+      "firstValue": "공개 승무원·우주선 로그를 읽으며 세계를 발견한다.",
+      "repeatLoop": "[해석] 공유 세계관의 기록 읽기 → 자기 로그 작성 → 다른 저자의 이야기와 연결 → 다음 편.",
+      "exchange": "항해 일지, 가상의 우주선과 상호 참조되는 공동 세계관.",
+      "coldStart": "[해석] 기존 공개 이야기는 혼자 읽을 수 있으나 이야기 교차와 반응에는 작가들이 필요하다.",
+      "friction": "공식 로그 목록은 상위 조사자가 확인했으나 본 도구 재열람은 제한되었고 SSH 로그인·현행 참여도는 검증하지 못했다.",
+      "transfer": "[가설] 주민들이 공동 세계의 한 사건을 짧은 로그로 이어 쓰고 출처와 허락을 남기는 공동 연재를 실험한다.",
+      "terminalFit": "문자 일지·터미널 분위기는 표현과 일치하나 브라우저에서도 열람할 수 있으므로 SSH의 추가 비용을 검증해야 한다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://cosmic.voyage/",
+          "title": "Cosmic Voyage",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "상위 조사자의 공동 SF 로그 목록 확인; 본 도구 재열람은 제한됨."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-sdf",
+      "name": "SDF Public Access UNIX System",
+      "category": "terminal",
+      "description": "공공 접근 UNIX 시스템과 다양한 회원 서비스를 묶은 개별 공동체.",
+      "url": "https://sdf.org/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "공유 UNIX 환경을 배우고 필요한 도움과 동료를 찾는다.",
+      "firstValue": "공식 튜토리얼·셸 도움말과 공개 콘텐츠를 살펴본다.",
+      "repeatLoop": "[해석] 셸 학습 → 도움말과 주민의 팁 확인 → 공유 서비스 활용·질문 → 다음 실험.",
+      "exchange": "회원 웹·튜토리얼·셸 명령과 상호 도움.",
+      "coldStart": "[해석] 기존 튜토리얼은 혼자 읽을 수 있으나 상황별 질문의 답변은 공동체와 운영에 의존한다.",
+      "friction": "공식 도움말은 처음 접하는 셸 명령이 낯설 수 있음을 설명하며 도움과 사회적 명령을 구분한다.",
+      "transfer": "[가설] 신규 주민에게 첫 명령 하나와 그 결과를 남길 장소, 후속 질문을 받을 환영 역할을 제시한다.",
+      "terminalFit": "셸 학습과 도구 사용 자체가 과업인 경우 터미널은 직접적인 인터페이스다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://sdf.org/",
+          "title": "SDF 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "셸·튜토리얼·커뮤니티와 접속 안내를 보여줌."
+        },
+        {
+          "url": "https://wiki.sdf.org/doku.php?id=finding_help",
+          "title": "SDF 도움말",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "명령 설명과 시스템·사회적 도움 경로를 구분."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-anonradio",
+      "name": "aNONradio",
+      "category": "terminal",
+      "description": "회원 DJ·편성과 청취를 연결하는 SDF 관련 라디오 공동체.",
+      "url": "https://anonradio.net/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 편성·아카이브 페이지 확인; 라이브 송출 직접 재생 미검증",
+      "checkedAt": "2026-10-30",
+      "job": "회원이 방송을 만들고 같은 시간에 다른 사람과 듣는다.",
+      "firstValue": "편성표와 기존 방송 아카이브를 찾아본다.",
+      "repeatLoop": "[해석] 회원 DJ가 편성 → 청취·동시 대화 → 방송 아카이브 → 다음 방송에 재회.",
+      "exchange": "방송 편성, 음악·이야기, DJ와 청취자 관계, 아카이브.",
+      "coldStart": "[해석] 아카이브는 혼자 듣지만 실시간 공동 청취와 대화는 일정·참여자에 의존한다.",
+      "friction": "공개 페이지에는 방송·아카이브 메뉴가 있으나 각각의 현재 송출 상태나 저작권 처리 비용은 직접 검증하지 않았다.",
+      "transfer": "[가설] 터미널 텍스트 공연이나 작품 소개를 정해진 시간에 듣고 결과와 후기를 비동기 보관한다.",
+      "terminalFit": "편성과 실시간 텍스트 대화는 TUI에 맞지만 음성 재생을 SSH 화면에 제한할 이유는 없다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://anonradio.net/",
+          "title": "aNONradio 편성표",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "청취, 편성, DJ 및 아카이브 메뉴 제공."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-pico",
+      "name": "pico.sh",
+      "category": "terminal",
+      "description": "SSH·rsync 중심의 게시·전송 도구 묶음; 공동체보다는 제품 비교 대상.",
+      "url": "https://pico.sh/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "로컬 작업 흐름을 떠나지 않고 글이나 정적 파일을 발행한다.",
+      "firstValue": "공개 문서에서 SSH 게시와 pipe·patch 도구를 살펴본다.",
+      "repeatLoop": "[해석] 로컬 글 작성 → SSH로 게시 → 외부 독자의 발견 → 글 갱신.",
+      "exchange": "Markdown 글, 정적 사이트, patch 및 데이터 전송.",
+      "coldStart": "[해석] 작성·발행 자체는 혼자 가능하며 독자와 반응은 별도로 찾아야 한다.",
+      "friction": "공식 문서에 prose 무료 사용은 초대 또는 유료 pico+가 필요하다. 이미 제공되는 SSH 게시 기능을 새 차별점이라고 주장할 수 없다.",
+      "transfer": "[가설] 단순 SSH 게시 대신 주민 사이의 읽기·비평·변형·공동 이벤트가 실제로 일어나는지 검증한다.",
+      "terminalFit": "기존 로컬 파일·SSH 키를 사용하는 배포는 터미널에 직접 맞는다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://pico.sh/",
+          "title": "pico.sh 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "SSH 게시·pipe·patch 서비스 설명."
+        },
+        {
+          "url": "https://pico.sh/prose",
+          "title": "prose 문서",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "Markdown 발행, RSS 및 초대 또는 pico+ 조건 안내."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-tildes",
+      "name": "Tildes.net",
+      "category": "terminal",
+      "description": "Tildeverse와 별개인 웹 기반 토론 플랫폼.",
+      "url": "https://tildes.net/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "특정 관심사에 대한 깊이 있는 글과 대화를 읽는다.",
+      "firstValue": "주제별 토론과 최근 게시물을 살펴본다.",
+      "repeatLoop": "[해석] 주제와 글 게시 → 의견과 토론 축적 → 새 주제와 후속 답변 확인.",
+      "exchange": "주제별 링크·텍스트와 중첩된 토론.",
+      "coldStart": "[해석] 이전 토론을 혼자 읽을 수 있으나 새로운 토론의 가치는 참여자에 의존한다.",
+      "friction": "2019년 제품 철학은 깊이 있는 텍스트 콘텐츠를 우선한다고 명시한다. [해석] 이 철학만으로 현재 토론 품질을 보증할 수 없다.",
+      "transfer": "[가설] 짧은 채팅보다 주민 작품에 대한 맥락 있는 후기를 축적할 경로를 둔다.",
+      "terminalFit": "읽기·쓰기에는 TUI가 적합하지만 이 서비스는 웹이며 이름이 비슷하다고 셸 공동체로 분류하면 안 된다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://tildes.net/",
+          "title": "Tildes 공개 토론",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "공개 주제와 토론 목록 표시."
+        },
+        {
+          "url": "https://docs.tildes.net/philosophy/content",
+          "title": "콘텐츠 철학",
+          "type": "official",
+          "date": "2019-08-08",
+          "claim": "깊이 있는 텍스트와 이용자의 선택을 중시한다고 명시."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-lambdamoo",
+      "name": "LambdaMOO",
+      "category": "terminal",
+      "description": "역사적 텍스트 가상세계 및 그 서버 소스; 현재 공동체 활성 사례와 구분.",
+      "url": "https://github.com/wrog/lambdamoo",
+      "status": "역사·소스 자료 확인; 현행 공동체 접속 미검증",
+      "statusEvidence": "서버 소스 저장소 열람; 현재 특정 세계의 운영 상태는 미확인",
+      "checkedAt": "2026-10-30",
+      "job": "텍스트 세계를 탐색하고 공동으로 객체와 공간을 창조한다.",
+      "firstValue": "공개 소스와 과거 사례를 살펴본다.",
+      "repeatLoop": "[해석] 객체와 공간 생성 → 다른 이용자의 탐색·반응 → 공동 세계의 변화.",
+      "exchange": "가상 공간·객체·공동 저작 및 대화의 흔적.",
+      "coldStart": "[해석] 기존 세계 탐색과 창작은 혼자 일부 가능하지만 공동 문화와 협상은 여러 참여자가 필요하다.",
+      "friction": "소스 저장소 존재가 현재 LambdaMOO 공동체의 접속 가능성이나 활동을 증명하지 않는다.",
+      "transfer": "[가설] 주민이 안전한 제한형 오브젝트와 설명을 공동 전시하는 작은 세계를 시험한다.",
+      "terminalFit": "텍스트 세계 탐색에 적합하지만 자유로운 원격 프로그램 실행을 허용하는 것은 별도의 보안 문제다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://github.com/wrog/lambdamoo",
+          "title": "LambdaMOO 소스",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "공개된 LambdaMOO 서버 소스 저장소."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-moor",
+      "name": "mooR / Timbran Hotel",
+      "category": "terminal",
+      "description": "LambdaMOO 호환 현대 엔진과 데모 링크; 엔진과 개별 커뮤니티는 구분.",
+      "url": "https://github.com/timbran-project/moor",
+      "status": "엔진 저장소 확인; 데모 실사용 미검증",
+      "statusEvidence": "공식 저장소 확인, 실제 데모 접속과 참여자 활동은 미검증",
+      "checkedAt": "2026-10-30",
+      "job": "프로그래밍 가능한 공유 텍스트 공간을 구축한다.",
+      "firstValue": "저장소 문서와 데모 링크를 본다.",
+      "repeatLoop": "[해석] 엔진을 구성하고 객체·공간을 제작 → 다른 사용자가 탐색 → 공동 수정.",
+      "exchange": "프로그램 가능한 방·객체와 작성 코드.",
+      "coldStart": "[해석] 엔진을 홀로 설치해 실험할 수 있으나 실제 데모의 주민 경험은 직접 검증하지 않았다.",
+      "friction": "저장소와 데모 링크가 실제 사용자 커뮤니티의 지속적 이용을 증명하지 않는다. 임의 코드의 격리·권한 관리가 중요하다.",
+      "transfer": "[가설] 자유 프로그래밍 전에 텍스트 오브젝트의 소유·공동 관리와 안전한 템플릿을 검증한다.",
+      "terminalFit": "텍스트 공간과 객체는 터미널과 잘 맞으나 자유 코드 실행은 MVP 범위를 크게 넓힌다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://github.com/timbran-project/moor",
+          "title": "mooR 저장소",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "공유 프로그래밍 공간과 LambdaMOO 호환성을 소개."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-discworld",
+      "name": "Discworld MUD",
+      "category": "terminal",
+      "description": "Discworld 세계관의 텍스트 RPG 개별 게임 공동체.",
+      "url": "https://discworld.starturtle.net/lpc/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 게임 웹사이트·가이드 확인; 게임 서버 접속 미검증",
+      "checkedAt": "2026-10-30",
+      "job": "세계관을 탐험하고 길드·인물·경제에 참여한다.",
+      "firstValue": "가이드와 길드·지역 정보, 웹 클라이언트 안내를 본다.",
+      "repeatLoop": "[해석] 캐릭터 성장·탐험 → 길드와 역할 참여 → 세계의 변화 확인 → 다음 사건.",
+      "exchange": "캐릭터, 길드, 플레이어 모임과 세계 내 물건·서사.",
+      "coldStart": "[해석] 개인 탐험은 가능할 수 있으나 길드 생활·사회적 서사는 사람과 시간이 필요하다.",
+      "friction": "공식 홈페이지는 길드·클럽과 게임 안내를 제공하나 실제 접속과 플레이어 밀도는 측정하지 않았다. [해석] 방대한 게임 디자인과 운영비가 진입 장벽이다.",
+      "transfer": "[가설] 주민이 전시와 리뷰를 담당하는 가벼운 역할을 맡고, 역할이 남기는 구체적 산출물을 먼저 만든다.",
+      "terminalFit": "텍스트 탐험·명령은 본질적인 표현 방식이지만 장르의 재미를 단순 공간 이동으로 복제할 수는 없다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://discworld.starturtle.net/lpc/",
+          "title": "Discworld MUD 홈페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "길드·클럽·플레이·제작 가이드 메뉴 및 클라이언트 안내."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-achaea",
+      "name": "Achaea",
+      "category": "terminal",
+      "description": "플레이어가 도시와 역할을 운영하는 텍스트 RPG 개별 서비스.",
+      "url": "https://www.achaea.com/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "캐릭터로 탐험하고 주민 조직과 도시 역할을 맡는다.",
+      "firstValue": "공식 세계관과 캐릭터·도시 정보를 읽는다.",
+      "repeatLoop": "[해석] 개인 모험 → 도시에 참여해 역할 수행 → 공동체 결정과 세계의 변화 → 재참여.",
+      "exchange": "캐릭터, 길드·도시 직책과 사건·관계.",
+      "coldStart": "[해석] 혼자 탐험할 활동은 있지만 도시 정치와 협력은 플레이어가 필요하다.",
+      "friction": "공식 페이지는 플레이어 운영 도시와 여러 정부 역할을 설명한다. [해석] 역할이 유지되려면 운영 인구와 관리가 필요하다.",
+      "transfer": "[가설] 관리자가 모든 일을 하는 대신 주민이 전시 큐레이터·환영자 역할을 순환하되 실제 부담을 측정한다.",
+      "terminalFit": "텍스트 세계와 역할 수행에 적합하나 실제 코딩 협업의 효용과 같다고 보면 안 된다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.achaea.com/",
+          "title": "Achaea 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "플레이어가 운영하는 도시와 정부 역할 설명."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-discord",
+      "name": "Discord 커뮤니티 서버",
+      "category": "terminal",
+      "description": "채널·역할·온보딩을 제공하는 플랫폼 모델; 개별 커뮤니티와 구분.",
+      "url": "https://discord.com/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "관심사가 같은 사람들이 적절한 대화 공간을 찾도록 돕는다.",
+      "firstValue": "기존 서버에 가입하고 온보딩 질문으로 채널을 고른다.",
+      "repeatLoop": "[해석] 주제 채널 참여 → 답변·행사·관계 → 언급과 다음 대화로 복귀.",
+      "exchange": "채널 대화, 역할, 운영 규칙과 이벤트.",
+      "coldStart": "[해석] 기존 대화는 혼자 읽을 수 있으나 답변·친목은 서버 참여자에 의존한다.",
+      "friction": "공식 문서는 많은 채널로 인한 초보 혼란을 지적한다. 2023년 한 운영자는 온보딩에서 특정 채널이 숨겨진다고 불평했고 다른 사용자는 반대 현상을 보고했다.",
+      "transfer": "[가설] 첫 방문에 모든 방을 나열하지 않고 오늘 볼 작품 하나와 할 수 있는 행동 하나를 제시한다.",
+      "terminalFit": "단순 채팅은 Discord도 이미 제공하므로 SSH만으로 대체 이유가 생기지 않는다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://support.discord.com/hc/en-us/articles/11074987197975-Community-Onboarding-FAQ",
+          "title": "Discord 온보딩 FAQ",
+          "type": "official",
+          "date": "2023-03-31",
+          "claim": "초보자의 채널 과부하와 온보딩 선택을 설명."
+        },
+        {
+          "url": "https://www.reddit.com/r/discordapp/comments/14f26ad/",
+          "title": "서버 운영자의 온보딩 불만",
+          "type": "user",
+          "date": "2023",
+          "claim": "일부 채널 숨김 및 상반된 경험을 보고; 대표성·현재 상태 미확인."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-matrix",
+      "name": "Matrix Spaces",
+      "category": "terminal",
+      "description": "연합형 메시징 프로토콜의 방·공간 모델; 실제 커뮤니티는 각 운영자가 구성.",
+      "url": "https://matrix.org/docs/chat_basics/public-rooms/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "관심 주제의 방을 묶어 찾고 서로 다른 서버의 사람과 대화한다.",
+      "firstValue": "공개 방 목록이나 공유된 Space를 찾는다.",
+      "repeatLoop": "[해석] 방 발견 → 대화·관계 형성 → 새 대화와 공지 확인.",
+      "exchange": "공개 방, 메시지, 공간과 구성원의 역할.",
+      "coldStart": "[해석] 기존 대화는 접근 권한에 따라 읽을 수 있으나 대화는 다른 이용자에 의존한다.",
+      "friction": "공식 문서가 공개 방·공간·역사 표시와 모더레이션을 별도 주제로 다룬다. [해석] 연합 운영과 규칙 조정이 비용이다.",
+      "transfer": "[가설] 작은 주제 공간을 모으더라도 연합 이전에 참여자 보호·신고·내보내기부터 검증한다.",
+      "terminalFit": "텍스트 채팅은 TUI가 가능하지만 프로토콜 자체가 터미널을 필요로 하지는 않는다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://matrix.org/docs/chat_basics/public-rooms/",
+          "title": "Matrix 공개 방",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "공개 방, Space, 기록과 모더레이션 문서의 구조."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-mastodon",
+      "name": "Mastodon 서버 모델",
+      "category": "terminal",
+      "description": "독립 서버들이 연결되는 소셜 플랫폼 모델.",
+      "url": "https://joinmastodon.org/servers",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "소속 서버의 정책 아래 다른 서버의 사람을 팔로우한다.",
+      "firstValue": "공개 서버 소개와 게시물을 보고 서버를 선택한다.",
+      "repeatLoop": "[해석] 프로필·게시 → 다른 서버 사람 팔로우와 반응 → 홈 피드의 새 글 확인.",
+      "exchange": "게시물, 팔로우 관계와 서버별 규칙·운영.",
+      "coldStart": "[해석] 기존 공개 글은 혼자 탐색할 수 있지만 홈 피드의 가치는 관계와 연결된 서버에 의존한다.",
+      "friction": "공식 문서는 서버별 독립 운영과 정책 차이, 관리자의 모더레이션 기능을 설명한다.",
+      "transfer": "[가설] 커뮤니티 소속과 외부 연결을 구분하고 규칙·운영 책임자를 공개한다.",
+      "terminalFit": "터미널 클라이언트가 있을 수 있으나 서버 모델의 핵심은 연합·정책이지 SSH가 아니다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://joinmastodon.org/servers",
+          "title": "Mastodon 서버",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "독립 서버, 서로 다른 정책과 서버 간 팔로우 설명."
+        },
+        {
+          "url": "https://docs.joinmastodon.org/admin/moderation/",
+          "title": "Mastodon 모더레이션",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "서버 운영자의 관리 기능 문서."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-lemmy",
+      "name": "Lemmy",
+      "category": "terminal",
+      "description": "독립 서버와 주제별 커뮤니티가 연결되는 분산 토론 플랫폼.",
+      "url": "https://join-lemmy.org/",
+      "status": "공식 웹 문서 확인; 실제 접속·활성도 미검증",
+      "statusEvidence": "공식 소개 또는 문서 열람 확인",
+      "checkedAt": "2026-10-30",
+      "job": "관심 주제의 글과 댓글을 토론하고 직접 커뮤니티를 운영한다.",
+      "firstValue": "주제 커뮤니티와 공개 토론을 읽는다.",
+      "repeatLoop": "[해석] 게시·댓글 → 토론과 반응 → 관련 주제의 후속 글 확인.",
+      "exchange": "주제별 게시물·댓글·운영 규칙과 모더레이션 기록.",
+      "coldStart": "[해석] 기존 논의를 읽는 것은 혼자 가능하나 신규 공동체의 질문과 답변은 참여자에 의존한다.",
+      "friction": "공식 문서는 인스턴스 관리자와 개별 커뮤니티 모더레이터의 권한을 구분한다.",
+      "transfer": "[가설] 하나의 공통 주제에서 사례와 후기를 축적하고 운영자와 주민 자원봉사자의 권한을 분리한다.",
+      "terminalFit": "텍스트 토론은 TUI에 적합하지만 토론 자체는 터미널에서만 가능한 가치가 아니다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://join-lemmy.org/",
+          "title": "Lemmy 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "분산 커뮤니티·게시·댓글 및 차단 도구 설명."
+        },
+        {
+          "url": "https://join-lemmy.org/docs/users/04-moderation.html",
+          "title": "Lemmy 운영 지침",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "인스턴스 관리자와 공동체 모더레이터 권한을 구분."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    },
+    {
+      "id": "terminal-tildeverse",
+      "name": "Tildeverse",
+      "category": "terminal",
+      "description": "여러 독립 tilde 공동체의 연합·목록; 개별 서버와 구분.",
+      "url": "https://tildeverse.org/",
+      "status": "상위 조사자의 목록 확인; 본 도구 재열람 및 연결 상태 미검증",
+      "statusEvidence": "상위 조사자가 공식 목록을 확인, 본 도구 접근 제한",
+      "checkedAt": "2026-10-30",
+      "job": "소속 셸 공동체 밖에서 다른 비슷한 공동체를 발견한다.",
+      "firstValue": "회원 공동체 목록을 탐색한다.",
+      "repeatLoop": "[해석] 자기 서버에서 작업 → 다른 공동체를 발견·교류 → 다시 자기 공동체에서 공유.",
+      "exchange": "독립 공동체들의 주소·정체성과 연결 경로.",
+      "coldStart": "[해석] 목록은 혼자 볼 수 있으나 실제 교류는 각 서버의 참여와 정책에 달려 있다.",
+      "friction": "상위 조사자는 연합 홈페이지와 목록을 확인했으나 본 도구에서는 직접 재열람이 제한되었다.",
+      "transfer": "[가설] 처음부터 연합 구현보다 외부 공동체의 공개 작품과 행사에 링크하고 상호 방문을 실험한다.",
+      "terminalFit": "여러 셸 공동체의 연결이라는 맥락에는 적합하지만 연합은 SSH 접속을 강제하지 않는다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://tildeverse.org/members/",
+          "title": "Tildeverse 회원 목록",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "상위 조사자 확인의 독립 공동체 목록; 본 도구 재열람 제한."
+        }
+      ],
+      "notes": "반복 사용·콜드스타트·적용은 분석 가설이며 별도 검증이 필요하다."
+    }
+  ],
+  "findings": [
+    {
+      "title": "공간은 활동을 담을 때 의미가 생긴다",
+      "detail": "[관찰] tilde.town은 주간 엽서와 회원들이 함께 관리할 수 있는 공용 프로젝트 공간을 명시한다. [가설] Terminal World도 입장한 사람이 만들고, 다른 사람이 보고 응답할 구체적 작품을 먼저 둔다.",
+      "sources": [
+        "https://tilde.town/wiki/around-town.html",
+        "https://tilde.town/wiki/town-square.html"
+      ]
+    },
+    {
+      "title": "비동기 결과물과 함께하는 일정은 상호 보완적이다",
+      "detail": "[관찰] Cosmic Voyage는 공동 서사 로그, aNONradio는 방송·편성·아카이브라는 서로 다른 매체를 제시한다. [가설] 개인 창작은 비동기로 가능하게 하되 정기 공동 감상과 후기 보관을 시험한다.",
+      "sources": [
+        "https://cosmic.voyage/",
+        "https://anonradio.net/"
+      ]
+    },
+    {
+      "title": "SSH 게시만으로 차별화할 수 없다",
+      "detail": "[관찰] pico.sh는 SSH·rsync로 사이트와 글을 게시하는 기존 대안이다. [가설] Terminal World는 주민 간 발견·의견·변형을 발생시키는 운영 방식으로 평가해야 한다.",
+      "sources": [
+        "https://pico.sh/",
+        "https://pico.sh/prose"
+      ]
+    },
+    {
+      "title": "새 주민 안내와 운영 비용은 핵심 경험이다",
+      "detail": "[관찰] Discord 공식 온보딩은 채널 과부하를 설명하고 운영자의 상반된 불편 경험이 보고됐다. tilde.town은 서비스 자원과 예방적 보안 제한을 공지했다. [가설] 첫 행동 한 개와 운영 인력·접근제어를 함께 설계한다.",
+      "sources": [
+        "https://support.discord.com/hc/en-us/articles/11074987197975-Community-Onboarding-FAQ",
+        "https://www.reddit.com/r/discordapp/comments/14f26ad/",
+        "https://tilde.town/blog.html"
+      ]
+    },
+    {
+      "title": "비교 단위를 분리해야 한다",
+      "detail": "[해석] 개별 주민 공동체, Discord·Matrix 등 플랫폼, Tildeverse 연합, LambdaMOO 역사·mooR 엔진은 서로 다른 비교 단위이다. 운영 중인 사이트나 저장소만으로 실제 활동·유지율을 주장할 수 없다.",
+      "sources": [
+        "https://github.com/timbran-project/moor",
+        "https://joinmastodon.org/servers"
+      ]
+    }
+  ],
+  "coverage": {
+    "queries": [
+      "상위 조사자가 확인한 터미널·MUD·연합형 공동체 20종의 공식 문서 재확인",
+      "tilde.town around-town, town-square, 2025–2026 운영 블로그",
+      "SSH publishing pico.sh prose 초대 조건",
+      "Discord 온보딩 운영자 불만 및 대안",
+      "SDF, aNONradio, Discworld, Achaea, Matrix, Mastodon, Lemmy 공식 자료"
+    ],
+    "exclusions": [
+      "창작·팬덤·취미 공동체는 별도 creative.json에서 조사했다.",
+      "tilde.team은 목록 등재 이상을, Cosmic Voyage와 Tildeverse는 본 조사 도구에서 직접 재열람하지 못했다.",
+      "LambdaMOO 논문 URL은 본 도구에서 502 오류여서 본 파일 근거로 사용하지 않았다."
+    ],
+    "limitations": [
+      "공식 웹 접근, 소스 저장소, 과거 공지는 실시간 SSH 접속·계정 가입·실제 커뮤니티 활성도를 보증하지 않는다.",
+      "2023년 행사와 사용자 불편은 과거 사례이며 현재 반복이나 해결 여부는 미확인이다.",
+      "친밀감, 반복 방문, 실제 반응 발생률과 Terminal World 수요는 직접 조사하지 않았다.",
+      "서비스·프로토콜·소프트웨어·공동체·역사 사례를 동일 단위로 비교하지 않는다."
+    ]
+  }
+}

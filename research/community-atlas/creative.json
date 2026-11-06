@@ -1,0 +1,755 @@
+{
+  "communities": [
+    {
+      "id": "creative-neocities",
+      "name": "Neocities",
+      "category": "creative",
+      "description": "개인이 꾸민 웹사이트를 호스팅하고 다른 사이트의 업데이트를 둘러보는 공간.",
+      "url": "https://neocities.org/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 공개 활동 피드의 사이트 업데이트와 댓글이 검색 결과에 표시됨",
+      "checkedAt": "2026-10-30",
+      "job": "내 취향과 작업을 내 방식으로 표현하고 비슷한 사람을 찾는다.",
+      "firstValue": "기존 사이트의 태그와 업데이트를 보거나 자신의 소개 페이지를 만든다.",
+      "repeatLoop": "[해석] 페이지 추가 → 활동 피드에 노출 → 방문·댓글 → 사이트 간 연결 → 다음 업데이트.",
+      "exchange": "개인 페이지·사이트 버튼·링크·댓글을 교환하고 축적한다.",
+      "coldStart": "[해석] 혼자서 기존 페이지를 탐색하거나 개인 사이트를 만들 수 있으나 방문자·답글은 보장되지 않는다.",
+      "friction": "2024년 이용자는 검색에서 일부 사이트가 보이지 않는다고 보고했다. 규칙 변경 여부나 현재 해결 상태는 확인하지 못했다.",
+      "transfer": "[가설] 로비에 개인 터미널 작품·소개·링크가 있는 방문 가능한 집을 두고, 새 주민에게 기존 주민이 한 줄의 구체적 반응을 남기는 방문 의례를 시험한다.",
+      "terminalFit": "문자 아트, ANSI 색과 짧은 명령 예제는 TUI에 자연스럽지만 임의 HTML 전체 표현은 부적합하다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://neocities.org/activity?tag=websites",
+          "title": "Neocities 활동",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "사이트 업데이트, 댓글 및 사이트 링크가 보이는 공개 활동 피드."
+        },
+        {
+          "url": "https://www.reddit.com/r/neocities/comments/1eq6n9a",
+          "title": "검색 결과 누락 이용자 경험",
+          "type": "user",
+          "date": "2024-08-12",
+          "claim": "이용자가 일부 태그와 최근 업데이트 결과가 누락됐다고 설명; 원인이나 대표성은 확인되지 않음."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-spacehey",
+      "name": "SpaceHey",
+      "category": "creative",
+      "description": "HTML·CSS 프로필과 블로그·게시판을 제공하는 개인 표현형 소셜 공간.",
+      "url": "https://spacehey.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "표준화된 SNS 프로필을 벗어나 취향을 드러내고 친구와 교류한다.",
+      "firstValue": "공개 프로필을 방문하거나 자신의 프로필을 꾸민다.",
+      "repeatLoop": "[해석] 프로필 작성 → 친구 발견 → 게시물과 댓글 → 갱신된 프로필 재방문.",
+      "exchange": "프로필 레이아웃, 블로그 글과 친구 관계가 남는다.",
+      "coldStart": "[해석] 혼자 꾸미는 가치는 있지만 대화와 반응은 기존 관계·노출에 의존한다.",
+      "friction": "[해석] 커스텀 코드의 접근성·유해 콘텐츠 관리와 새 계정의 발견성이 비용이다.",
+      "transfer": "[가설] 터미널 집의 제한된 장식과 방명록을 제공하되, 콘텐츠 없이 프로필 장식만 복제하지 않는다.",
+      "terminalFit": "문자 기반 꾸미기는 적합하나 자유로운 웹 레이아웃은 손실된다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://spacehey.com/about.php",
+          "title": "SpaceHey 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "프로필 HTML·CSS와 블로그·포럼·게시판을 설명."
+        },
+        {
+          "url": "https://spacehey.com/news",
+          "title": "SpaceHey 소식",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "운영자가 기능 업데이트 및 신고 기능을 공지."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-arena",
+      "name": "Are.na",
+      "category": "creative",
+      "description": "이미지·글·링크를 연결해 공개 또는 공동 채널을 만드는 수집 커뮤니티.",
+      "url": "https://www.are.na/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "흥미로운 자료를 정리하고 동료의 자료 사이의 관계를 발견한다.",
+      "firstValue": "공개 채널을 열어 자료 묶음을 탐색한다.",
+      "repeatLoop": "[해석] 발견한 자료 연결 → 채널 확장 → 타인 발견·재연결 → 새 맥락 탐색.",
+      "exchange": "링크, 이미지, 텍스트 블록과 채널의 연결 그래프가 쌓인다.",
+      "coldStart": "[해석] 혼자서 공개 자료를 모을 수 있으나 상호 연결은 작성자와 큐레이션 밀도에 좌우된다.",
+      "friction": "[해석] 맥락 없는 링크 수집은 금세 잡동사니가 되며 저작권과 링크 소멸 관리가 필요하다.",
+      "transfer": "[가설] 주간 주제에 연결되는 짧은 터미널 팁과 원출처를 묶고, 왜 유용한지 타인이 주석을 남긴다.",
+      "terminalFit": "URL·설명·관계는 TUI에 잘 맞지만 이미지 열람은 웹 보조가 낫다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.are.na/about",
+          "title": "Are.na 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "블록·채널, 협업 공개 범위와 내보내기 설명."
+        },
+        {
+          "url": "https://help.are.na/docs/getting-started/connections",
+          "title": "Connections 안내",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "블록과 채널 사이의 연결 기능 설명."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-newgrounds",
+      "name": "Newgrounds",
+      "category": "creative",
+      "description": "게임·애니메이션·음악과 예술을 올리고 평가·리뷰하는 창작 커뮤니티.",
+      "url": "https://www.newgrounds.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "작품을 공개하고 유사 관심 창작자의 반응과 협력자를 찾는다.",
+      "firstValue": "공개 포털의 작품을 감상하고 리뷰를 읽는다.",
+      "repeatLoop": "[해석] 작품 제출 → 감상·비평 → 개선 또는 공동제작 → 새 작품 공개.",
+      "exchange": "게임·영상·음악과 공동 제작자 크레딧, 작품별 리뷰가 남는다.",
+      "coldStart": "[해석] 창작물 감상은 단독으로 가능하지만 공정한 리뷰와 협업은 참여자가 필요하다.",
+      "friction": "포털 운영자에 따르면 심사 단계의 낮은 평가 작품은 자동 제거될 수 있다. [해석] 거친 피드백과 초기 창작자의 위축이 위험이다.",
+      "transfer": "[가설] 실행 가능한 ASCII 작품이나 짧은 텍스트 게임을 전시하고, 재미있던 점과 개선점이 분리된 피드백을 받는다.",
+      "terminalFit": "텍스트 게임·ANSI 아트는 터미널과 맞지만 영상·오디오는 별도 웹이 필요하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.newgrounds.com/bbs/topic/1544355/1",
+          "title": "포털 25주년",
+          "type": "operator",
+          "date": "2025",
+          "claim": "운영자가 제출물 투표·리뷰와 심사 과정을 설명."
+        },
+        {
+          "url": "https://www.newgrounds.com/wiki/help-information/terms-of-use/review-guidelines",
+          "title": "리뷰 지침",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "유용하고 존중하는 비평을 요구."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-itch-jam",
+      "name": "itch.io Game Jams",
+      "category": "creative",
+      "description": "정해진 기간과 주제 아래 게임을 제출하고 평가하거나 감상하는 창작 이벤트.",
+      "url": "https://itch.io/jams",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 잼 문서와 2026년 공개 잼 결과 검색 확인",
+      "checkedAt": "2026-10-30",
+      "job": "작은 작품을 끝내고 동료가 실제로 플레이한 반응을 받는다.",
+      "firstValue": "진행 중인 잼과 이전 제출물을 탐색하고 무료 작품을 플레이한다.",
+      "repeatLoop": "[해석] 주제 발표 → 개인·팀 제작 → 제출 → 다른 작품 플레이·피드백 → 다음 잼과 개선작.",
+      "exchange": "플레이 가능한 작품, 주제, 제출 페이지, 댓글과 선택적 순위가 축적된다.",
+      "coldStart": "[해석] 기존 제출물을 혼자 즐길 수 있지만 새 참가자에게 첫 피드백이 오려면 최소한의 감상자와 운영자가 필요하다.",
+      "friction": "공식 문서는 공개 투표가 다중 계정 조작 및 팔로어 수에 따른 인기 경쟁이 될 수 있다고 경고하며 소규모 잼에서는 평가 큐의 적합성을 따져야 한다고 밝힌다.",
+      "transfer": "[가설] 월간 20분 터미널 미니작품 공개전에서 ASCII 작품·스크립트 설명을 내고 각 참가자가 한 작품에 구체적 피드백을 남긴다. 비순위·운영자 초대 첫 감상자를 우선한다.",
+      "terminalFit": "작품이 ANSI·텍스트·짧은 예제라면 터미널 체험이 자연스럽다. 다른 형식과 긴 설명은 웹 링크로 연결한다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://itch.io/docs/creators/game-jams",
+          "title": "Game jam 운영 지침",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "기간·제출·비순위 잼·댓글과 공개 투표 조작 및 평가 큐 한계를 설명."
+        },
+        {
+          "url": "https://itch.io/jam/jame-gam-59",
+          "title": "Jame Gam 59",
+          "type": "official",
+          "date": "2026-06-21",
+          "claim": "2026년 주제와 기간, 출품 및 평가 단계의 실례."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-ludumdare",
+      "name": "Ludum Dare",
+      "category": "creative",
+      "description": "정기적인 주제 게임 잼과 참가작 피드백을 중심으로 한 제작자 공동체.",
+      "url": "https://ldjam.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "주어진 제약 속에서 짧은 게임을 완성하고 동료에게 보인다.",
+      "firstValue": "과거 잼 작품과 플레이어의 구체적 댓글을 읽는다.",
+      "repeatLoop": "[해석] 주제 제시 → 제한시간 제작 → 제출 → 플레이·댓글 → 후속 이벤트.",
+      "exchange": "짧은 게임, 개발 기록, 작품별 비평이 남는다.",
+      "coldStart": "[해석] 이전 게임은 혼자 감상할 수 있으나 행사 중 반응은 참여자 밀도에 달려 있다.",
+      "friction": "[해석] 시간 제한은 참여를 촉진할 수 있으나 학생의 일정과 번아웃에 부담이다.",
+      "transfer": "[가설] 주간이 아니라 자발적 월간 제작회로 시작하고 완성보다 공유를 장려한다.",
+      "terminalFit": "텍스트 게임 잼이면 적합하나 그래픽 게임을 SSH만으로 제공할 이유는 약하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://ldjam.com/events/ludum-dare/60/road-rage",
+          "title": "Ludum Dare 작품 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "제출작과 실제 이용자의 피드백이 함께 표시됨."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-ao3",
+      "name": "Archive of Our Own",
+      "category": "creative",
+      "description": "팬 작품을 보존하고 자원봉사자가 태그의 동의어와 관계를 정리하는 아카이브.",
+      "url": "https://archiveofourown.org/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 태그 문서 및 2026년 공개 북마크 페이지 확인",
+      "checkedAt": "2026-10-30",
+      "job": "좋아하는 원작과 관계·주제에 맞는 팬 작품을 찾아 읽고 창작물을 공유한다.",
+      "firstValue": "팬덤과 관심 태그를 조합해 이미 쌓인 작품을 읽는다.",
+      "repeatLoop": "[해석] 관심 태그 탐색 → 작품 읽기·북마크·반응 → 작가의 다음 작품 또는 같은 주제의 새 글로 복귀.",
+      "exchange": "팬 작품·태그·북마크와 댓글이 누적되며 각 작품이 검색 가능한 자산이 된다.",
+      "coldStart": "[해석] 작품 저장과 기존 작품 감상은 혼자 가능하지만 새로운 플랫폼에는 기존 작품과 태그 정리자가 없다.",
+      "friction": "2025년 일부 이용자가 원치 않는 태그 필터링을 어려워하며 검색 팁을 따로 공유했다. 개인의 경험으로 전체의 어려움이나 현재 해결 여부를 대표하지 않는다.",
+      "transfer": "[가설] 터미널 작은 작품에 언어·실행환경·난이도 태그와 작성자 의도를 붙이고, 서로의 작품을 명시적 허락 아래 변형해 원작으로 연결한다.",
+      "terminalFit": "텍스트 기반 작품과 검색에는 적합하나 태그 체계의 가치가 SSH 자체에서 생기는 것은 아니다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://archive.transformativeworks.org/faq/tags?language_id=en",
+          "title": "AO3 Tags FAQ",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "작가 태그, 검색, 자원봉사 태그 연결과 동의어 체계를 설명."
+        },
+        {
+          "url": "https://www.reddit.com/r/AO3/comments/1lf3d87",
+          "title": "필터 검색 이용자 가이드",
+          "type": "user",
+          "date": "2025-06-19",
+          "claim": "불필요한 태그 필터링의 어려움을 말하고 동료가 가이드를 공유."
+        },
+        {
+          "url": "https://archive.transformativeworks.org/works/37546678/bookmarks",
+          "title": "AO3 공개 북마크",
+          "type": "official",
+          "date": "2026-05-25",
+          "claim": "2026년 5월 북마크가 표시되는 공개 사례."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-ravelry",
+      "name": "Ravelry",
+      "category": "creative",
+      "description": "뜨개·방직 관련 도안 데이터베이스, 프로젝트 수첩, 모임과 포럼.",
+      "url": "https://www.ravelry.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 소개 페이지 확인. 로그인 및 현재 실사용 기능은 직접 검증하지 않음",
+      "checkedAt": "2026-10-30",
+      "job": "다음 제작에 필요한 도안을 찾고 다른 사람의 실제 제작 경험을 참고한다.",
+      "firstValue": "도안과 그 도안으로 만든 타인의 프로젝트를 찾아본다.",
+      "repeatLoop": "[해석] 도안 선택 → 개인 제작 기록 → 결과와 수정 사항 공개 → 다른 제작자의 참고·질문 → 새 작품.",
+      "exchange": "도안·실·프로젝트와 제작자 노트가 서로 연결되고 질문·답변이 남는다.",
+      "coldStart": "[해석] 이미 있는 도안과 기록을 혼자 탐색할 수 있으나 초기 프로젝트에 유용한 사례와 답변을 채울 사람이 필요하다.",
+      "friction": "2020년 이용자가 새 디자인으로 두통을 경험했다고 보고했고 2024년 다른 이용자도 유사 경험을 말했다. 각 사례는 본인 진술이며 현재 상태를 확정하지 않는다.",
+      "transfer": "[가설] 동일한 터미널 작품에 여러 주민의 변형과 시행착오를 연결해 구경하는 사람에게도 구체적인 배움이 남게 한다.",
+      "terminalFit": "명령 예제와 사용 후기에는 적합하지만 도안 사진이나 시각적 결과는 링크·웹 보조가 필요하다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://detectify.ravelry.com/about",
+          "title": "Ravelry 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "도안·노트·프로젝트와 모임의 연결을 설명."
+        },
+        {
+          "url": "https://www.reddit.com/r/crochet/comments/hh3rh8",
+          "title": "이용자의 화면 불편 보고",
+          "type": "user",
+          "date": "2020-06-27",
+          "claim": "디자인 변경 이후 두통을 보고한 이용자와 다른 의견이 함께 있음."
+        },
+        {
+          "url": "https://www.reddit.com/r/craftsnark/comments/19bfheh",
+          "title": "접근성 논의",
+          "type": "user",
+          "date": "2024-01-20",
+          "claim": "일부 이용자의 두통·접근성 경험과 상반된 주장이 공존."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-letterboxd",
+      "name": "Letterboxd",
+      "category": "creative",
+      "description": "영화 감상 일지와 리뷰·리스트·친구 피드를 연결한 커뮤니티.",
+      "url": "https://letterboxd.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 소개 및 공개 홈 페이지 확인",
+      "checkedAt": "2026-10-30",
+      "job": "영화 감상 경험을 남기고 취향이 맞는 사람의 추천을 찾는다.",
+      "firstValue": "영화 페이지에서 타인의 감상이나 주제별 목록을 본다.",
+      "repeatLoop": "[해석] 영화 감상 → 짧은 기록과 리뷰 → 친구의 반응·추천 → 다음 영화와 새 기록.",
+      "exchange": "영화 일지·리뷰·목록과 친구가 큐레이션한 취향이 남는다.",
+      "coldStart": "[해석] 혼자 일지를 만들고 기존 리뷰를 읽을 수 있지만 신생 서비스에는 비교할 리뷰가 없다.",
+      "friction": "2025년 사용자는 인기순에 농담 리뷰가 많아 감상 이유를 찾기 어렵다고 했으나, 다른 이용자는 그 가벼운 표현을 가치로 여긴다.",
+      "transfer": "[가설] 주민이 터미널 작품을 실제로 해본 뒤 짧은 사용 후기와 한 줄의 구체적 개선 제안을 남긴다. 인기순만이 아니라 최신·미응답 탐색을 제공한다.",
+      "terminalFit": "짧은 후기와 목록은 TUI에 적합하나 작품의 가치는 터미널 자체가 아닌 경험 공유에 있다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://letterboxd.com/about/what-is-letterboxd/",
+          "title": "Letterboxd 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "영화 일지·리뷰·친구·목록과 발견의 공식 설명."
+        },
+        {
+          "url": "https://www.reddit.com/r/Letterboxd/comments/1m1jkjo/worst_review_youve_ever_seen/",
+          "title": "인기 리뷰에 대한 이용자 토론",
+          "type": "user",
+          "date": "2025-07-16",
+          "claim": "일부 사용자가 인기 농담 리뷰가 구체적 영화 평가를 찾는 데 방해라고 주장."
+        },
+        {
+          "url": "https://www.reddit.com/r/Letterboxd/comments/1o3l8p3/i_love_the_aspect_of_people_making_joke_reviews/",
+          "title": "짧은 리뷰를 선호하는 견해",
+          "type": "user",
+          "date": "2025-10-11",
+          "claim": "유머 리뷰를 좋아하는 이용자들의 반대 시각."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-backloggd",
+      "name": "Backloggd",
+      "category": "creative",
+      "description": "게임 진행 기록과 후기·공유 목록·친구 피드를 제공하는 서비스.",
+      "url": "https://backloggd.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "플레이한 게임을 정리하고 친구가 무엇을 했는지 발견한다.",
+      "firstValue": "게임 목록과 리뷰를 읽거나 혼자 플레이 목록을 만든다.",
+      "repeatLoop": "[해석] 플레이 기록 → 후기·목록 공유 → 친구의 감상 발견 → 새 게임 기록.",
+      "exchange": "게임 상태, 리뷰, 취향별 목록과 친구 활동이 축적된다.",
+      "coldStart": "[해석] 개인 기록은 혼자 가능하나 친구 피드와 토론은 관계가 필요하다.",
+      "friction": "공식 변경 기록에 비공개 목록 노출 오류 수정 및 빠른 좋아요·팔로우 경고가 기재되어 있다. 현재 취약점 존재 여부는 알 수 없다.",
+      "transfer": "[가설] 주민이 시도한 공개 터미널 작품의 기록과 추천 목록을 공유하되 비공개와 내보내기를 기본 설계로 검토한다.",
+      "terminalFit": "텍스트 목록과 리뷰에 적합하며 게임 플레이 자체를 터미널로 강제할 필요는 없다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://backloggd.com/changelog/",
+          "title": "Backloggd 변경 기록",
+          "type": "operator",
+          "date": "2026-04-20",
+          "claim": "2026년 이벤트와 리뷰·공개 범위 및 스팸 관련 변경 사항을 기록."
+        },
+        {
+          "url": "https://backloggd.com/",
+          "title": "Backloggd 홈페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "게임 기록, 리뷰와 목록·친구 피드를 소개."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-deviantart",
+      "name": "DeviantArt",
+      "category": "creative",
+      "description": "예술가가 작품을 공개·홍보·판매할 수 있는 창작 공간.",
+      "url": "https://www.deviantart.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "작품을 전시하고 관심이 비슷한 창작자 및 관객을 찾는다.",
+      "firstValue": "공개 작품을 탐색하고 창작자의 전시를 구경한다.",
+      "repeatLoop": "[해석] 작품 제출 → 감상과 작가 팔로우 → 다음 작품 공개·재방문.",
+      "exchange": "작품, 프로필과 작품에 대한 반응이 남는다.",
+      "coldStart": "[해석] 기존 작품 감상은 혼자 되지만 신규 창작자가 첫 관객을 얻을지는 불확실하다.",
+      "friction": "[해석] 이미지와 저작권·유해물 검토, 관객 유입과 저장 비용이 크다.",
+      "transfer": "[가설] ASCII·ANSI라는 터미널에서 직접 볼 수 있는 작은 결과물만 우선 전시하고 작성자와 원작을 명시한다.",
+      "terminalFit": "터미널 문자 예술은 적합하나 이미지 중심 갤러리는 웹이 더 자연스럽다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.deviantart.com/join",
+          "title": "DeviantArt 가입 페이지",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "예술 작품의 전시·공유 및 판매를 소개."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-behance",
+      "name": "Behance",
+      "category": "creative",
+      "description": "시각 디자이너가 프로젝트 형태로 작품과 제작 과정을 전시하는 커뮤니티.",
+      "url": "https://www.behance.net/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "작업의 맥락을 보여주고 다른 디자이너의 작품이나 기회를 발견한다.",
+      "firstValue": "공개 프로젝트와 큐레이션 갤러리를 본다.",
+      "repeatLoop": "[해석] 과정이 담긴 프로젝트 공개 → 팔로우·감상 → 새 프로젝트와 관계 재방문.",
+      "exchange": "프로젝트 페이지와 제작 과정, 팔로우·감상이 쌓인다.",
+      "coldStart": "[해석] 이미 있는 사례 탐색은 혼자 유용하나 신생 포트폴리오의 발견은 관객에 좌우된다.",
+      "friction": "[해석] 완성도 높은 포트폴리오 중심일수록 초보자가 초안을 공유하기 어려울 수 있다.",
+      "transfer": "[가설] 결과물뿐 아니라 시행착오 한 줄을 포함한 미완성 쇼케이스로 참여 문턱을 낮춘다.",
+      "terminalFit": "텍스트 요약에는 적합하나 이미지·영상 포트폴리오는 웹이 유리하다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://help.behance.net/hc/en-us/articles/204483894-What-is-Behance",
+          "title": "Behance 소개",
+          "type": "official",
+          "date": "2026-09-03",
+          "claim": "프로젝트 단위 게시, 팔로우와 큐레이션을 설명."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-dribbble",
+      "name": "Dribbble",
+      "category": "creative",
+      "description": "디자이너의 시각 작업을 공유하고 기회를 찾는 커뮤니티.",
+      "url": "https://dribbble.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "디자인을 선보이고 동료의 작업과 일감을 발견한다.",
+      "firstValue": "기존 디자인 작업을 둘러본다.",
+      "repeatLoop": "[해석] 디자인 게시 → 발견·반응 → 새 작업·관계 확인.",
+      "exchange": "디자인 샷·작가 프로필·업무 기회가 남는다.",
+      "coldStart": "[해석] 갤러리 감상은 혼자 가능하나 피드백과 일감은 수요와 공급 양쪽에 의존한다.",
+      "friction": "공식 지침은 샷의 콘텐츠 및 광고에 제한을 둔다. [해석] 높은 시각 완성도와 발견 경쟁이 신규 참가자에게 부담일 수 있다.",
+      "transfer": "[가설] 완성품 경쟁이 아니라 텍스트 인터페이스의 작은 변화와 선택 이유를 나눠 동료의 개선 제안을 받는다.",
+      "terminalFit": "UI 아이디어의 문자 표현에는 맞지만 시각 디자인 자체의 충실한 전달은 웹이 낫다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://dribbble.com/guidelines",
+          "title": "Dribbble 지침",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "디자인 작업 공유와 샷 내용 제한을 설명."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-pixiv",
+      "name": "pixiv",
+      "category": "creative",
+      "description": "일러스트와 만화·소설을 게시하고 북마크와 이벤트로 교류하는 창작 커뮤니티.",
+      "url": "https://www.pixiv.net/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "자신의 작품을 공유하고 관심 장르의 그림과 작가를 찾는다.",
+      "firstValue": "태그와 장르로 작품을 탐색한다.",
+      "repeatLoop": "[해석] 작품 게시 → 북마크·창작자 탐색 → 관심 분야 이벤트 → 새 작품.",
+      "exchange": "그림·북마크·작가 프로필·태그가 연결된다.",
+      "coldStart": "[해석] 혼자 감상할 수 있으나 초기 작품과 팬덤을 직접 구축해야 한다.",
+      "friction": "공식 도움말은 게시 시 권리, 태그, 연령 제한과 AI 생성 여부 입력을 안내한다. [해석] 명확한 권리·분류 정책이 운영 부담이다.",
+      "transfer": "[가설] 문자 작품에 원작자, 사용 허락, 리믹스 관계를 남겨 작은 창작권 문화를 만든다.",
+      "terminalFit": "문자·ANSI 작품에 적합하나 pixiv의 원래 이미지 감상 경험 전체를 대체하지 못한다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.pixiv.help/hc/en-us/articles/231283788-What-is-pixiv",
+          "title": "pixiv 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "작품과 북마크 중심의 소통 및 이벤트 설명."
+        },
+        {
+          "url": "https://www.pixiv.help/hc/en-us/articles/235584588-How-can-I-post-illustrations-on-pixiv",
+          "title": "게시 안내",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "게시자 권리와 필수 분류 항목 안내."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-instructables",
+      "name": "Instructables",
+      "category": "creative",
+      "description": "제작 과정을 단계별로 공유하고 주제별 공모전을 여는 DIY 커뮤니티.",
+      "url": "https://www.instructables.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "남의 제작 과정을 따라 만들고 자신의 방법을 공유한다.",
+      "firstValue": "이미 공개된 단계별 가이드를 찾아 따라 해본다.",
+      "repeatLoop": "[해석] 만들기 → 재현 가능한 설명 게시 → 따라 만든 사람의 질문·변형 → 다음 제작.",
+      "exchange": "사진·텍스트·파일이 포함된 튜토리얼과 제출작이 남는다.",
+      "coldStart": "[해석] 기존 가이드는 혼자 쓸 수 있으나 초기에 직접 시도할 최소 자료와 운영자가 필요하다.",
+      "friction": "[해석] 위험한 명령이나 잘못된 안내의 검수, 재현 환경과 저작권 문제가 발생한다.",
+      "transfer": "[가설] 무해한 한 줄 명령·실행 전 설명·예상 결과를 묶어 공유하고, 실제로 따라 한 주민이 수정 사항을 남긴다.",
+      "terminalFit": "명령과 결과 예시는 터미널에서 자연스럽지만 자동 실행은 별도 보안 위험이다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.instructables.com/create/",
+          "title": "Instructables 제작 안내",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "제작 과정을 텍스트·사진·파일로 게시하는 방식."
+        },
+        {
+          "url": "https://www.instructables.com/contest/offgrid26/",
+          "title": "2026 Off the Grid 공모전",
+          "type": "official",
+          "date": "2026-07-06",
+          "claim": "실제 주제, 제출 기간과 결과를 확인."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-hackster",
+      "name": "Hackster.io",
+      "category": "creative",
+      "description": "하드웨어·IoT 제작자가 프로젝트와 구현 과정을 공개하는 커뮤니티.",
+      "url": "https://www.hackster.io/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "하드웨어 예제를 찾고 만든 결과물과 제작법을 공유한다.",
+      "firstValue": "공개 프로젝트를 검색해 회로·설명을 본다.",
+      "repeatLoop": "[해석] 하드웨어 제작 → 과정 게시 → 질문·기여 → 확장된 프로젝트.",
+      "exchange": "프로젝트 설명, 부품·코드와 동료 기여가 남는다.",
+      "coldStart": "[해석] 기존 자료 탐색은 단독으로 가능하나 하드웨어 비용과 새 질문에 답할 전문가가 제약이다.",
+      "friction": "공식 지침은 관련 콘텐츠·기여 지침을 제공한다. [해석] 장비 및 하드웨어 재현이 초보자 진입 비용이다.",
+      "transfer": "[가설] 장비 없이 재현 가능한 텍스트 기반 미니 프로젝트를 먼저 전시하고 도움을 주고받는다.",
+      "terminalFit": "코드와 실행 설명은 적합하나 회로 그림은 웹 보조가 더 낫다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.hackster.io/guidelines",
+          "title": "Hackster 콘텐츠 지침",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "하드웨어 프로젝트 공개와 커뮤니티 기여를 안내."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-vrchat",
+      "name": "VRChat",
+      "category": "creative",
+      "description": "이용자가 만든 아바타와 월드에서 모임·행사·놀이를 하는 가상세계.",
+      "url": "https://hello.vrchat.com/",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "자신을 표현하고 관심사가 맞는 사람들과 같은 장소에서 시간을 보낸다.",
+      "firstValue": "기존 월드와 아바타를 탐색하고 공개 그룹을 찾는다.",
+      "repeatLoop": "[해석] 행사·월드 발견 → 함께 체험 → 관계·아바타·월드 축적 → 다음 행사에서 재회.",
+      "exchange": "이용자 제작 월드·아바타·행사·그룹 및 친구 관계를 교환하고 보존한다.",
+      "coldStart": "[해석] 월드는 혼자 탐색 가능하지만 친목이나 행사는 시간대별 인구와 환대하는 기존 집단이 필요하다.",
+      "friction": "공식 FAQ는 이용자 제작 월드와 아바타가 항상 최적화되어 있지 않을 수 있다고 명시한다. 안전 도구와 신고·모더레이션도 필요하다.",
+      "transfer": "[가설] 텍스트 기반 작은 공간에서 실제 동시 참여로만 가능한 공동 ASCII 공연·작품 설명회를 열고, 종료 후 결과물을 아카이브한다.",
+      "terminalFit": "공동 텍스트 공연·작품은 적합하나 3D 공간감과 음성의 가치를 터미널로 재현할 수 없다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://hello.vrchat.com/",
+          "title": "VRChat 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "이용자 제작 월드·그룹·이벤트·아바타를 소개."
+        },
+        {
+          "url": "https://hello.vrchat.com/community-faq",
+          "title": "VRChat FAQ",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "이용자 제작 콘텐츠의 최적화 한계를 설명."
+        },
+        {
+          "url": "https://help.vrchat.com/hc/en-us/articles/28526267258515-Getting-Started-with-VRChat",
+          "title": "시작 가이드",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "탐색, 친구, 안전 설정과 신고 도구 설명."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-minecraft-servers",
+      "name": "Minecraft 커뮤니티 서버",
+      "category": "creative",
+      "description": "주민이 운영하고 건축·미니게임·행사를 주최하는 다수의 독립 월드.",
+      "url": "https://www.minecraft.net/en-us/servers",
+      "status": "공식 페이지 확인; 실제 계정 이용·운영 건강성 미검증",
+      "statusEvidence": "공식 웹 문서 또는 활동 페이지가 검색·열람됨",
+      "checkedAt": "2026-10-30",
+      "job": "공동 월드에서 함께 만들고 남의 창작물을 구경한다.",
+      "firstValue": "기존 서버에 들어가 주민이 만든 월드를 탐색한다.",
+      "repeatLoop": "[해석] 공통 월드 입장 → 함께 건축 → 남의 방문과 기여 → 다음 프로젝트와 행사.",
+      "exchange": "지속되는 건축물·공유 월드·서버 규칙·행사 결과가 쌓인다.",
+      "coldStart": "[해석] 비어 있는 월드에서도 혼자 건축은 가능하지만 공동체의 매력은 지속적 참여자에 달려 있다.",
+      "friction": "서버는 저마다 운영·안전 기준을 관리해야 한다. 공식 이용자 의견에는 커뮤니티 서버의 노출이 낮다는 주장도 있다.",
+      "transfer": "[가설] 주민들이 개인 터미널 작품을 한 지도에 기여하고, 주말에 방문하며 짧은 설명과 피드백을 남기는 공동 전시를 검증한다.",
+      "terminalFit": "지속되는 텍스트 전시물은 적합하나 실제 3D 건축의 가치는 다르다.",
+      "depth": "scan",
+      "sources": [
+        {
+          "url": "https://www.minecraft.net/en-us/servers",
+          "title": "Minecraft 서버 소개",
+          "type": "official",
+          "date": "날짜 미표기",
+          "claim": "커뮤니티 제작 월드, 미니게임과 건축 대회를 소개."
+        },
+        {
+          "url": "https://feedback.minecraft.net/hc/en-us/community/posts/45489632357261-Full-Multiplayer-Support",
+          "title": "서버 탐색 개선 제안",
+          "type": "user",
+          "date": "2026",
+          "claim": "이용자가 커뮤니티 서버 노출의 한계를 주장; 일반화할 수 없음."
+        }
+      ],
+      "notes": "반복 방문과 적용 효과는 사례에서 도출한 해석이며 Terminal World 수요는 별도 검증 필요."
+    },
+    {
+      "id": "creative-cohost",
+      "name": "cohost",
+      "category": "creative",
+      "description": "개인화와 시간순 게시물을 지향했던 소셜 공간. 현재 신규 커뮤니티 운영 사례가 아닌 종료 사례.",
+      "url": "https://cohost.org/",
+      "status": "종료: 공동창업자 사후 글로 확인",
+      "statusEvidence": "공동창업자의 2025년 사후 글은 서비스 종료를 명시. 상태 대시보드 응답은 서비스 재개 근거가 아님.",
+      "checkedAt": "2026-10-30",
+      "job": "광고 피드의 압박을 덜 느끼며 자기 표현과 다른 창작자의 교류를 한다.",
+      "firstValue": "종료 전에는 CSS를 활용한 게시물과 창작자 글을 볼 수 있었다.",
+      "repeatLoop": "[사후 해석] CSS 놀이·게시 → 다른 사람의 변형과 팁 → 커뮤니티 대화 → 다음 창작. 현재는 작동하지 않는다.",
+      "exchange": "CSS 실험·게시물·동료의 팁과 협업이 축적되었으나 종료로 지속 접근에 문제가 생겼다.",
+      "coldStart": "[해석] 작은 집단도 서로 창작물을 통해 친밀해질 수 있으나 운영자 노동과 인프라 비용은 남는다.",
+      "friction": "공동창업자는 서비스 종료를 확인했다. [해석] 종료 시 이용자가 만든 자료와 관계를 보존·이전하는 것은 별도 운영 비용이다.",
+      "transfer": "[가설] 작은 주민 문화와 내보내기·명시적 운영 비용을 처음부터 설계한다. 독특한 기능이나 호감만으로 지속가능하다고 간주하지 않는다.",
+      "terminalFit": "CSS 실험의 대응물로 ANSI·문자 표현을 검토하되 임의 실행 대신 안전한 제한형 콘텐츠를 쓴다.",
+      "depth": "deep",
+      "sources": [
+        {
+          "url": "https://jkap.io/cohost-postmortem/",
+          "title": "공동창업자의 사후 글",
+          "type": "operator",
+          "date": "2025-06-28",
+          "claim": "공동창업자가 서비스 종료를 회고."
+        },
+        {
+          "url": "https://blog.lauramichet.com/goodbye-cohost/",
+          "title": "이용자의 작별 글",
+          "type": "user",
+          "date": "2024-09-30",
+          "claim": "이용자가 개인 통제와 안전을 높이 평가한 사례; 전체 사용자 의견은 아님."
+        },
+        {
+          "url": "https://nullpat.ch/posts/2024/09/cohost/",
+          "title": "이용자의 회고",
+          "type": "user",
+          "date": "2024-09-15",
+          "claim": "CSS 팁과 제작자 협업을 회고."
+        }
+      ],
+      "notes": "공동창업자의 사후 글은 종료를 확인하지만 이 자료만으로 개별 재정적 원인을 확정하지 않는다."
+    }
+  ],
+  "findings": [
+    {
+      "title": "결과물이 소통을 구체화한다",
+      "detail": "[관찰] itch.io의 제출작·댓글, Ravelry의 도안과 프로젝트, AO3의 작품과 태그는 대화의 대상을 남긴다. [가설] Terminal World는 빈 방보다 짧은 텍스트 작품을 직접 체험하고 구체적인 피드백을 교환하는 커뮤니티를 먼저 시험해야 한다.",
+      "sources": [
+        "https://itch.io/docs/creators/game-jams",
+        "https://detectify.ravelry.com/about",
+        "https://archive.transformativeworks.org/faq/tags?language_id=en"
+      ]
+    },
+    {
+      "title": "행사는 시작 신호이고 아카이브가 비동시 가치를 만든다",
+      "detail": "[관찰] 잼은 제출·평가라는 시간적 구조를 가지며, 과거 제출물을 볼 수 있다. [가설] 일회성 월간 공동 제작회와 종료 후 탐색 가능한 작품·후기 아카이브를 결합하고, 운영자가 첫 피드백을 준비한다.",
+      "sources": [
+        "https://itch.io/docs/creators/game-jams",
+        "https://ldjam.com/events/ludum-dare/60/road-rage"
+      ]
+    },
+    {
+      "title": "발견과 공정한 반응은 자동으로 생기지 않는다",
+      "detail": "[관찰] Neocities 검색 불편은 개별 이용자 경험이며 itch.io 운영 문서는 투표 조작과 인기 편향을 경고한다. [가설] 적은 참가자에게는 랭킹보다 미응답 작품 소개와 동의 기반 피드백이 낫다는 가설을 검증한다.",
+      "sources": [
+        "https://www.reddit.com/r/neocities/comments/1eq6n9a",
+        "https://itch.io/docs/creators/game-jams"
+      ]
+    },
+    {
+      "title": "운영·접근성·안전은 공동체 가치의 조건이다",
+      "detail": "[관찰] cohost는 종료되었고 Ravelry 화면에 대한 불편이 보고됐다. [가설] 내보내기, 신고·차단, 저자 허락, 키보드와 화면 읽기 지원, 운영 담당자 확보를 MVP의 비용으로 추정한다.",
+      "sources": [
+        "https://jkap.io/cohost-postmortem/",
+        "https://www.reddit.com/r/crochet/comments/hh3rh8"
+      ]
+    },
+    {
+      "title": "터미널은 창작 재료가 될 때 의미가 있다",
+      "detail": "[가설] 동일한 문자·ANSI 출력이 창작물·전시장·실시간 공연의 매체가 되는 경험은 타당한 방향이다. 웹이 필요한 이미지, 검색 공유와 접근성을 함께 제공할지 검증해야 하며 터미널이라는 이유만으로 차별화는 성립하지 않는다.",
+      "sources": [
+        "https://neocities.org/activity?tag=websites",
+        "https://www.newgrounds.com/wiki/help-information/terms-of-use/review-guidelines"
+      ]
+    }
+  ],
+  "coverage": {
+    "queries": [
+      "Neocities activity search discovery 2024",
+      "itch.io game jams rating queue public voting 2026",
+      "AO3 tags bookmarks filtering 2025",
+      "Ravelry projects notebook accessibility 2020 2024",
+      "Letterboxd diary reviews complaint 2025",
+      "cohost shutdown founder postmortem 2025",
+      "SpaceHey Are.na Newgrounds Ludum Dare",
+      "Backloggd Behance Dribbble Pixiv DeviantArt",
+      "Instructables Hackster VRChat Minecraft community servers"
+    ],
+    "exclusions": [
+      "SSH/tilde/SDF/MUD는 다른 조사자가 담당하여 제외.",
+      "Rate Your Music은 robots.txt 접근 제한으로 공식 근거 확인을 못해 제외.",
+      "Habbo는 본 조사 범위에서 충분한 현재 공식 운영 근거를 확인하지 못해 제외."
+    ],
+    "limitations": [
+      "공식 소개나 검색에 노출된 페이지는 서비스의 존재·기능 정황이며 가입·실시간 사용이나 커뮤니티 건강성의 증거가 아니다.",
+      "개별 불만은 대표 표본이 아니며 당시와 현재 상태가 다를 수 있다.",
+      "사용자 인터뷰, 정량적 유지율, Terminal World에 대한 직접 수요 및 적용 효과는 검증하지 않았다.",
+      "검색 인덱스의 크롤 시점과 발행일은 구분하며 확인된 발행일이 없으면 날짜 미표기로 표시했다."
+    ]
+  }
+}
