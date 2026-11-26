@@ -17,7 +17,7 @@
     "build": "tsc -p tsconfig.json && chmod +x dist/cli.js",
     "start": "node dist/cli.js",
     "typecheck": "tsc --noEmit",
-    "test": "tsc --target ES2022 --module NodeNext --moduleResolution NodeNext --jsx react-jsx --strict --skipLibCheck --esModuleInterop --outDir .test-dist --rootDir . tests/model.test.ts tests/storage.test.ts tests/app.test.tsx tests/ui.test.ts && node --test .test-dist/tests/*.test.js",
+    "test": "tsc --target ES2022 --module NodeNext --moduleResolution NodeNext --jsx react-jsx --strict --skipLibCheck --esModuleInterop --outDir .test-dist --rootDir . tests/model.test.ts tests/storage.test.ts tests/app.test.tsx tests/ui.test.ts tests/service-validation.test.ts && node --test .test-dist/tests/*.test.js",
     "test:package": "node --test tests/package.test.mjs",
     "prepack": "npm run build"
   },
