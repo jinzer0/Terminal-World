@@ -300,12 +300,18 @@ export class GuestbookService {
   }
 
   /**
-   * Soft-deletes a guestbook entry (author or active admin).
-   * Admin moderation deletions also record `moderation_deletions` and a `delete_content` tombstone.
+   * Soft-deletes a guestbook entry (author or active admin when `allowAdmin` is true).
+   * Always appends a `delete_content` tombstone so backup restores cannot resurrect deleted entries.
    */
-  deleteEntry(actorMemberId: string, entryId: string, reason?: unknown): DeleteGuestbookResult {
+  deleteEntry(
+    actorMemberId: string,
+    entryId: string,
+    reason?: unknown,
+    options: { allowAdmin?: boolean } = {},
+  ): DeleteGuestbookResult {
     try {
       const nowIso = this.clock.now().toISOString();
+      const allowAdmin = options.allowAdmin ?? true;
 
       return this.worldDb.transaction(() => {
         const actor = this.worldDb.db.prepare(
@@ -321,7 +327,7 @@ export class GuestbookService {
         }
 
         const isAuthor = existing.author_member_id === actor.id;
-        const isAdmin = actor.role === 'admin';
+        const isAdmin = allowAdmin && actor.role === 'admin';
         if (!isAuthor && !isAdmin) {
           throw new ServiceError('FORBIDDEN', '작성자 또는 관리자만 방명록을 삭제할 수 있어요.');
         }
@@ -338,6 +344,24 @@ export class GuestbookService {
           WHERE id = ?
         `).run(nowIso, nowIso, entryId);
 
+        this.worldDb.appendTombstone({
+          recordedAt: nowIso,
+          kind: 'delete_content',
+          targetKind: 'guestbook',
+          targetId: entryId,
+          payload: byAdmin
+            ? {
+                deletedAt: nowIso,
+                byAdmin: true,
+                adminMemberId: actor.id,
+                reason: effectiveReason,
+              }
+            : {
+                deletedAt: nowIso,
+                byAdmin: false,
+              },
+        });
+
         if (byAdmin) {
           this.worldDb.db.prepare(`
             INSERT INTO moderation_deletions (id, admin_member_id, target_kind, target_id, reason, deleted_at, expires_at)
@@ -350,18 +374,6 @@ export class GuestbookService {
             nowIso,
             addDays(nowIso, 90),
           );
-
-          this.worldDb.appendTombstone({
-            recordedAt: nowIso,
-            kind: 'delete_content',
-            targetKind: 'guestbook',
-            targetId: entryId,
-            payload: {
-              deletedAt: nowIso,
-              adminMemberId: actor.id,
-              reason: effectiveReason,
-            },
-          });
         }
 
         this.worldDb.recordOperationalLog({

@@ -98,6 +98,7 @@ export interface WorldAppProps {
   onRecover?: (input: AccountRecoveryInput) => void;
   onEnterSpace?: (spaceId: string) => void;
   onMoveAvatar?: (x: number, y: number) => void;
+  onSessionOpened?: (sessionId: string | null) => void;
   onExit?: () => void;
 }
 
@@ -132,6 +133,7 @@ export function WorldApp({
   onRecover,
   onEnterSpace,
   onMoveAvatar,
+  onSessionOpened,
   onExit,
 }: WorldAppProps) {
   const { columns, rows } = useWindowSize();
@@ -140,6 +142,43 @@ export function WorldApp({
   const [viewer, setViewer] = useState<SpaceViewer | null>(initialViewer);
   const [screen, setScreen] = useState<ActiveWorldScreen>({ kind: 'world' });
   const [presenceTick, setPresenceTick] = useState(0);
+  const [managedSessionId, setManagedSessionId] = useState<string | null>(null);
+  const effectiveSessionId = sessionId ?? managedSessionId;
+
+  // Open, heartbeat, and cleanly close a persistent SSH user_session when presenceService is wired
+  useEffect(() => {
+    if (!presenceService || sessionId || !viewer) return;
+    const opened = presenceService.openSession({
+      memberId: viewer.isGuest ? null : viewer.memberId,
+      isGuest: viewer.isGuest,
+      channel: 'ssh',
+    });
+    setManagedSessionId(opened.id);
+    onSessionOpened?.(opened.id);
+
+    const timer = setInterval(() => {
+      try {
+        presenceService.heartbeat(opened.id);
+      } catch {
+        // Ignore if session already closed
+      }
+    }, 15_000);
+    timer.unref?.();
+
+    return () => {
+      clearInterval(timer);
+      try {
+        presenceService.closeSession(opened.id, {
+          mode: 'disconnect',
+          reason: 'ssh_disconnect',
+        });
+      } catch {
+        // Already closed
+      }
+      setManagedSessionId(null);
+      onSessionOpened?.(null);
+    };
+  }, [presenceService, sessionId, viewer?.isGuest, viewer?.memberId]);
 
   useEffect(() => {
     if (!realtimeHub) return;
@@ -276,9 +315,9 @@ export function WorldApp({
     setStatusNotice('');
     setScreen(target);
     if (target.kind === 'space') {
-      if (presenceService && sessionId) {
+      if (presenceService && effectiveSessionId) {
         try {
-          presenceService.moveSpace(sessionId, target.spaceId);
+          presenceService.moveSpace(effectiveSessionId, target.spaceId);
         } catch {
           // Ignore stale session during local transitions
         }
@@ -290,9 +329,9 @@ export function WorldApp({
   const handleBackToWorld = () => {
     setScreen({ kind: 'world' });
     setStatusNotice('');
-    if (presenceService && sessionId) {
+    if (presenceService && effectiveSessionId) {
       try {
-        presenceService.moveSpace(sessionId, 'space:lobby');
+        presenceService.moveSpace(effectiveSessionId, 'space:lobby');
       } catch {
         // Ignore stale session during local transitions
       }
@@ -356,9 +395,9 @@ export function WorldApp({
             setCamera(prev =>
               computeCameraViewport(worldMap, nextPos, viewportWidth, viewportHeight, prev),
             );
-            if (presenceService && sessionId) {
+            if (presenceService && effectiveSessionId) {
               try {
-                presenceService.moveAvatar(sessionId, moved.x, moved.y);
+                presenceService.moveAvatar(effectiveSessionId, moved.x, moved.y);
               } catch {
                 // Ignore stale session during local transitions
               }
@@ -618,7 +657,7 @@ export function WorldApp({
             memberId: viewer.memberId,
             nickname: viewer.nickname,
             isGuest: viewer.isGuest,
-            sessionId,
+            sessionId: effectiveSessionId,
           }}
           width={columns}
           height={rows}
@@ -636,7 +675,7 @@ export function WorldApp({
             memberId: viewer.memberId,
             nickname: viewer.nickname,
             isGuest: viewer.isGuest,
-            sessionId,
+            sessionId: effectiveSessionId,
           }}
           width={columns}
           height={rows}
@@ -654,7 +693,7 @@ export function WorldApp({
           moderationService={moderationService}
           memberId={memberId}
           nickname={viewer.nickname}
-          sessionId={sessionId}
+          sessionId={effectiveSessionId}
           width={columns}
           height={rows}
           theme={theme}

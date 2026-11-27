@@ -323,10 +323,13 @@ test('GuestbookService enforces permissions, archived space read-only create blo
     assert.equal(guestbook.listArchivedEntries().length, 0);
 
     const tombstones = worldDb.readTombstoneLog();
-    assert.equal(tombstones.length, 1);
+    assert.equal(tombstones.length, 2);
     assert.equal(tombstones[0]!.kind, 'delete_content');
     assert.equal(tombstones[0]!.targetKind, 'guestbook');
-    assert.equal(tombstones[0]!.targetId, entry2.id);
+    assert.equal(tombstones[0]!.targetId, entry1.id);
+    assert.equal(tombstones[1]!.kind, 'delete_content');
+    assert.equal(tombstones[1]!.targetKind, 'guestbook');
+    assert.equal(tombstones[1]!.targetId, entry2.id);
 
     // Author withdrawal displays WITHDRAWN_AUTHOR_LABEL
     const entry3 = guestbook.createEntry(other.member.id, admin.id, '작성자 탈퇴 테스트');

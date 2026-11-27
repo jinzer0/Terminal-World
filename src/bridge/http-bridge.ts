@@ -452,24 +452,26 @@ export async function startHttpBridgeServer(options: HttpBridgeOptions): Promise
       (method === 'DELETE' && segments[0] === 'auth' && segments[1] === 'grants' && segments[2] && segments.length === 3)
       || (method === 'POST' && segments[0] === 'auth' && segments[1] === 'grants' && segments[2] && segments[3] === 'revoke')
     ) {
-      const auth = requireAuth(req, []);
       const body = method === 'POST' ? await readJsonBody(req) : {};
       const reason = typeof body.reason === 'string' ? body.reason : 'user_revoked';
-      const revoked = options.integrationAuthService.revokeGrant(auth.member.id, segments[2], reason);
+      const revoked = runWrite(req, body, 'auth.revokeGrant', [], auth =>
+        options.integrationAuthService.revokeGrant(auth.member.id, segments[2], reason),
+      );
       sendOk(res, revoked, { checkedAt });
       return;
     }
 
     if (method === 'POST' && pathname === '/auth/change-password') {
       const body = await readJsonBody(req);
-      const auth = requireAuth(req, ['write']);
       const lifecycle = requireHook(options.accountLifecycle, 'AccountLifecycle');
-      const result = lifecycle.changePassword({
-        memberId: auth.member.id,
-        currentPassword: requireString(body.currentPassword, 'currentPassword'),
-        newPassword: requireString(body.newPassword, 'newPassword'),
-        currentSessionId: typeof body.currentSessionId === 'string' ? body.currentSessionId : undefined,
-      });
+      const result = runWrite(req, body, 'auth.changePassword', ['write'], auth =>
+        lifecycle.changePassword({
+          memberId: auth.member.id,
+          currentPassword: requireString(body.currentPassword, 'currentPassword'),
+          newPassword: requireString(body.newPassword, 'newPassword'),
+          currentSessionId: typeof body.currentSessionId === 'string' ? body.currentSessionId : undefined,
+        }),
+      );
       sendOk(res, result, { checkedAt });
       return;
     }
@@ -489,25 +491,27 @@ export async function startHttpBridgeServer(options: HttpBridgeOptions): Promise
 
     if (method === 'POST' && pathname === '/auth/recovery-code/reissue') {
       const body = await readJsonBody(req);
-      const auth = requireAuth(req, ['write']);
       const lifecycle = requireHook(options.accountLifecycle, 'AccountLifecycle');
-      const result = lifecycle.reissueRecoveryCode({
-        memberId: auth.member.id,
-        currentPassword: requireString(body.currentPassword, 'currentPassword'),
-      });
+      const result = runWrite(req, body, 'auth.reissueRecoveryCode', ['write'], auth =>
+        lifecycle.reissueRecoveryCode({
+          memberId: auth.member.id,
+          currentPassword: requireString(body.currentPassword, 'currentPassword'),
+        }),
+      );
       sendOk(res, result, { checkedAt });
       return;
     }
 
     if (method === 'POST' && pathname === '/auth/withdraw') {
       const body = await readJsonBody(req);
-      const auth = requireAuth(req, ['write']);
       const lifecycle = requireHook(options.accountLifecycle, 'AccountLifecycle');
-      const result = lifecycle.withdrawAccount({
-        memberId: auth.member.id,
-        password: requireString(body.password, 'password'),
-        confirm: body.confirm === true,
-      });
+      const result = runWrite(req, body, 'auth.withdraw', ['write'], auth =>
+        lifecycle.withdrawAccount({
+          memberId: auth.member.id,
+          password: requireString(body.password, 'password'),
+          confirm: body.confirm === true,
+        }),
+      );
       sendOk(res, result, { checkedAt });
       return;
     }
@@ -693,6 +697,7 @@ export async function startHttpBridgeServer(options: HttpBridgeOptions): Promise
           auth.member.id,
           segments[2],
           typeof body.reason === 'string' ? body.reason : undefined,
+          { allowAdmin: auth.effectiveScopes.includes('admin') },
         ),
       );
       sendOk(res, deleted, { checkedAt });
@@ -756,6 +761,7 @@ export async function startHttpBridgeServer(options: HttpBridgeOptions): Promise
       const deleted = runWrite(req, body, 'board.deletePost', ['write'], auth =>
         options.boardService.deletePost(auth.member.id, segments[1], {
           reason: typeof body.reason === 'string' ? body.reason : undefined,
+          allowAdmin: auth.effectiveScopes.includes('admin'),
         }),
       );
       sendOk(res, deleted, { checkedAt });
@@ -790,6 +796,7 @@ export async function startHttpBridgeServer(options: HttpBridgeOptions): Promise
       const deleted = runWrite(req, body, 'board.deleteComment', ['write'], auth =>
         options.boardService.deleteComment(auth.member.id, segments[1], {
           reason: typeof body.reason === 'string' ? body.reason : undefined,
+          allowAdmin: auth.effectiveScopes.includes('admin'),
         }),
       );
       sendOk(res, deleted, { checkedAt });
@@ -1128,10 +1135,11 @@ export async function startHttpBridgeServer(options: HttpBridgeOptions): Promise
 
     if (method === 'POST' && pathname === '/admin/backup') {
       const body = await readJsonBody(req);
-      const auth = requireAuth(req, ['admin']);
       const retention = requireHook(options.retention, 'Retention');
-      const result = retention.createDailyBackup(
-        typeof body.backupDir === 'string' ? body.backupDir : undefined,
+      const result = runWrite(req, body, 'admin.backup', ['admin'], () =>
+        retention.createDailyBackup(
+          typeof body.backupDir === 'string' ? body.backupDir : undefined,
+        ),
       );
       sendOk(res, result, { checkedAt });
       return;

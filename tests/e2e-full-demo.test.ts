@@ -396,3 +396,137 @@ test('E2E full demo: single WorldServer exercises UC-01~UC-18 across SSH PTY, CL
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('Review regressions: non-admin grant cannot admin-delete, author guestbook delete writes tombstone, and SSH WorldApp opens/closes presence session', async () => {
+  const dir = mkdtempSync(join(tmpdir(), 'tw-e2e-reg-'));
+  const clock = new FakeClock('2026-11-28T03:00:00.000Z');
+  const server = await startWorldServer({
+    dataDir: dir,
+    clock,
+    enableSsh: false,
+    bridgeHost: '127.0.0.1',
+    bridgePort: 0,
+    enableMcpHttp: false,
+  });
+
+  try {
+    const alice = server.authService.signup({
+      loginId: 'reg_alice',
+      nickname: '회귀앨리스',
+      password: 'Password!23',
+    });
+    const admin = server.authService.signup({
+      loginId: 'reg_admin',
+      nickname: '회귀관리자',
+      password: 'Password!23',
+    });
+    server.authService.setMemberRole(admin.member.id, 'admin');
+
+    // 1. Admin creates a non-admin ['read', 'write'] grant (30-day)
+    const approval = server.integrationAuthService.startApproval({
+      channel: 'cli',
+      scopes: ['read', 'write'],
+      clientLabel: 'admin-write-only',
+    });
+    server.integrationAuthService.approveCode({
+      code: approval.code,
+      loginId: 'reg_admin',
+      password: 'Password!23',
+    });
+    const tokens = server.integrationAuthService.exchangeApprovalCode(approval.code);
+
+    const post = server.boardService.createPost(alice.member.id, {
+      boardId: 'free',
+      title: '앨리스 글',
+      body: '본문',
+    });
+    const gb = server.guestbookService.createEntry(alice.member.id, admin.personalSpace.id, '방명록');
+
+    // Non-admin grant MUST NOT delete Alice's post or guestbook via HTTP Bridge
+    const delPostRes = await fetch(`${server.bridge!.baseUrl}/posts/${post.id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: `Bearer ${tokens.accessToken}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({}),
+    });
+    assert.equal(delPostRes.status, 403);
+
+    const delGbRes = await fetch(`${server.bridge!.baseUrl}/guestbook/entries/${gb.id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: `Bearer ${tokens.accessToken}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({}),
+    });
+    assert.equal(delGbRes.status, 403);
+
+    // 2. Author deletes own guestbook entry -> tombstone recorded -> backup restore keeps it deleted
+    const backup = server.retentionService.createDailyBackup(join(dir, 'backups'));
+    server.guestbookService.deleteEntry(alice.member.id, gb.id);
+    const tombstones = server.worldDb.readTombstoneLog();
+    assert.ok(tombstones.some(t => t.kind === 'delete_content' && t.targetKind === 'guestbook' && t.targetId === gb.id));
+
+    const restoreDir = join(dir, 'restored');
+    const restored = server.retentionService.restoreFromBackup(backup.backupPath, restoreDir, {
+      tombstoneLogPath: join(dir, 'tombstones.log'),
+    });
+    assert.equal(restored.ready, true);
+    const { WorldDatabase } = await import('../src/store/sqlite/database.js');
+    const restoredDb = new WorldDatabase({ dataDir: restoreDir });
+    try {
+      const row = restoredDb.db.prepare('SELECT deleted_at FROM guestbook_entries WHERE id = ?').get(gb.id) as {
+        deleted_at: string | null;
+      };
+      assert.ok(row.deleted_at, 'author-deleted guestbook entry must stay deleted after restore');
+    } finally {
+      restoredDb.close();
+    }
+
+    // 3. WorldApp mounted with presenceService opens an SSH session and closes it on unmount
+    const { render } = await import('ink');
+    const { PassThrough } = await import('node:stream');
+    const { createElement } = await import('react');
+    const { WorldApp } = await import('../src/tui/WorldApp.js');
+    const stdin = new PassThrough() as unknown as NodeJS.ReadStream;
+    Object.assign(stdin, { isTTY: true, setRawMode: () => {}, ref: () => {}, unref: () => {} });
+    const stdout = new PassThrough() as unknown as NodeJS.WriteStream;
+    Object.assign(stdout, { isTTY: true, columns: 120, rows: 30 });
+    stdout.resume();
+
+    let openedSid: string | null = null;
+    const inst = render(
+      createElement(WorldApp, {
+        authService: server.authService,
+        profileService: server.profileService,
+        guestbookService: server.guestbookService,
+        presenceService: server.presenceService,
+        focusService: server.focusService,
+        realtimeHub: server.realtimeHub,
+        initialViewer: {
+          isGuest: false,
+          memberId: alice.member.id,
+          nickname: alice.member.nickname,
+          role: 'member',
+        },
+        onSessionOpened: sid => {
+          if (sid) openedSid = sid;
+        },
+      }),
+      { stdin, stdout, stderr: stdout, patchConsole: false, exitOnCtrlC: false },
+    );
+
+    await new Promise(resolve => setTimeout(resolve, 40));
+    assert.ok(openedSid, 'WorldApp opened persistent SSH session');
+    assert.equal(server.presenceService.getMemberPresence(alice.member.id).status, 'online');
+
+    inst.unmount();
+    await inst.waitUntilExit();
+    assert.equal(server.presenceService.getMemberPresence(alice.member.id).status, 'offline');
+  } finally {
+    await server.stop();
+    rmSync(dir, { recursive: true, force: true });
+  }
+});

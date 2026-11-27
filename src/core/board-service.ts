@@ -88,6 +88,8 @@ export interface UpdatePostInput {
 
 export interface DeleteContentOptions {
   reason?: string;
+  /** When false (e.g. non-admin integration grant), admin override is disabled. Defaults to true. */
+  allowAdmin?: boolean;
 }
 
 export interface CreateCommentInput {
@@ -585,7 +587,8 @@ export class BoardService {
       }
 
       const isAuthor = existing.author_member_id === actor.id;
-      if (!isAuthor && actor.role !== 'admin') {
+      const allowAdmin = options.allowAdmin ?? true;
+      if (!isAuthor && !(allowAdmin && actor.role === 'admin')) {
         throw new ServiceError('FORBIDDEN', '본인이 작성한 글만 삭제할 수 있어요.');
       }
 
@@ -757,7 +760,8 @@ export class BoardService {
       }
 
       const isAuthor = existing.author_member_id === actor.id;
-      if (!isAuthor && actor.role !== 'admin') {
+      const allowAdmin = options.allowAdmin ?? true;
+      if (!isAuthor && !(allowAdmin && actor.role === 'admin')) {
         throw new ServiceError('FORBIDDEN', '본인이 작성한 댓글만 삭제할 수 있어요.');
       }
 

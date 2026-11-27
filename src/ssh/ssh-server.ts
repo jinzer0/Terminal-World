@@ -204,11 +204,24 @@ export async function startSshServer(options: SshServerOptions): Promise<Running
         let cleaned = false;
         let inkInstance: InkInstance | null = null;
         let terminalInput: ReturnType<typeof createTerminalInput> | null = null;
+        let activePresenceSessionId: string | null = null;
 
         const cleanup = () => {
           if (cleaned) return;
           cleaned = true;
           sessionCleanups.delete(cleanup);
+          if (activePresenceSessionId && options.worldAppProps?.presenceService) {
+            const sid = activePresenceSessionId;
+            activePresenceSessionId = null;
+            try {
+              options.worldAppProps.presenceService.closeSession(sid, {
+                mode: 'disconnect',
+                reason: 'ssh_disconnect',
+              });
+            } catch {
+              // ignore if already closed
+            }
+          }
           try {
             inkInstance?.unmount();
           } catch (err) {
@@ -280,6 +293,10 @@ export async function startSshServer(options: SshServerOptions): Promise<Running
                 profileService: options.profileService,
                 guestbookService: options.guestbookService,
                 ...options.worldAppProps,
+                onSessionOpened: (sid: string | null) => {
+                  activePresenceSessionId = sid;
+                  options.worldAppProps?.onSessionOpened?.(sid);
+                },
                 onExit: cleanup,
               });
 

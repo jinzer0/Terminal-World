@@ -627,6 +627,7 @@ export class AccountLifecycleService {
       this.worldDb.db.prepare('UPDATE comments SET author_member_id = NULL WHERE author_member_id = ?').run(row.id);
       this.worldDb.db.prepare('UPDATE guestbook_entries SET author_member_id = NULL WHERE author_member_id = ?').run(row.id);
       this.worldDb.db.prepare('UPDATE chat_messages SET author_member_id = NULL WHERE author_member_id = ?').run(row.id);
+      this.worldDb.db.prepare('UPDATE notices SET author_member_id = NULL WHERE author_member_id = ?').run(row.id);
 
       this.worldDb.appendTombstone({
         recordedAt: nowIso,

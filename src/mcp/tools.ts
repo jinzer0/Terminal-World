@@ -23,6 +23,7 @@ import { ServiceError, toServiceError } from '../core/errors.js';
 import type { FocusService } from '../core/focus-service.js';
 import type { GuestbookService } from '../core/guestbook-service.js';
 import type {
+  AuthenticatedIntegrationContext,
   IntegrationAuthService,
   IntegrationScope,
 } from '../core/integration-auth-service.js';
@@ -336,7 +337,7 @@ class InProcessTokenRunner {
     requiredScopes: readonly IntegrationScope[],
     idempotencyKey: string | undefined,
     requestPayload: unknown,
-    fn: (memberId: string) => T,
+    fn: (memberId: string, auth: AuthenticatedIntegrationContext) => T,
   ): T {
     const creds = this.store.load();
     if (!creds) {
@@ -349,7 +350,7 @@ class InProcessTokenRunner {
         operation,
         idempotencyKey,
         requestPayload,
-        fn: auth => fn(auth.member.id),
+        fn: auth => fn(auth.member.id, auth),
       });
     } catch (error) {
       const err = toServiceError(error);
@@ -361,7 +362,7 @@ class InProcessTokenRunner {
           operation,
           idempotencyKey,
           requestPayload,
-          fn: auth => fn(auth.member.id),
+          fn: auth => fn(auth.member.id, auth),
         });
       }
       throw err;
@@ -933,7 +934,10 @@ export function registerTerminalWorldTools(server: McpServer, deps: McpToolDeps)
           ['write'],
           args.idempotencyKey,
           { entryId: args.entryId, reason: args.reason },
-          memberId => deps.services!.guestbookService.deleteEntry(memberId, args.entryId, args.reason),
+          (memberId, auth) =>
+            deps.services!.guestbookService.deleteEntry(memberId, args.entryId, args.reason, {
+              allowAdmin: auth.effectiveScopes.includes('admin'),
+            }),
         );
         return mcpSuccess(deleted);
       }
@@ -1092,7 +1096,11 @@ export function registerTerminalWorldTools(server: McpServer, deps: McpToolDeps)
           ['write'],
           args.idempotencyKey,
           { postId: args.postId, reason: args.reason },
-          memberId => deps.services!.boardService.deletePost(memberId, args.postId, { reason: args.reason }),
+          (memberId, auth) =>
+            deps.services!.boardService.deletePost(memberId, args.postId, {
+              reason: args.reason,
+              allowAdmin: auth.effectiveScopes.includes('admin'),
+            }),
         );
         return mcpSuccess(deleted);
       }
@@ -1203,7 +1211,11 @@ export function registerTerminalWorldTools(server: McpServer, deps: McpToolDeps)
           ['write'],
           args.idempotencyKey,
           { commentId: args.commentId, reason: args.reason },
-          memberId => deps.services!.boardService.deleteComment(memberId, args.commentId, { reason: args.reason }),
+          (memberId, auth) =>
+            deps.services!.boardService.deleteComment(memberId, args.commentId, {
+              reason: args.reason,
+              allowAdmin: auth.effectiveScopes.includes('admin'),
+            }),
         );
         return mcpSuccess(deleted);
       }
