@@ -1,6 +1,7 @@
 {
   "name": "terminal-world-prototype",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "description": "A local terminal community and personal-space prototype",
   "type": "module",

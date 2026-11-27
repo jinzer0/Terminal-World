@@ -154,7 +154,7 @@ test('one precompiled tarball works in isolated npm/Bun/local/global/npx/bunx co
   const digest = createHash('sha256').update(bytes).digest('hex');
   t.diagnostic(`tarball sha256=${digest}; files=${packed.files.map(file => file.path).join(',')}`);
   assert.ok(packed.files.some(file => file.path === 'dist/cli.js'));
-  assert.ok(packed.files.every(file => file.path === 'package.json' || file.path === 'README.md' || file.path.startsWith('dist/')));
+  assert.ok(packed.files.every(file => file.path === 'package.json' || file.path === 'README.md' || file.path === 'LICENSE' || file.path.startsWith('dist/')));
   assert.ok(packed.files.every(file => !/\.(tsx?|map)$/.test(file.path)));
   assert.equal((await stat(join(repository, 'dist/cli.js'))).mode & 0o111, 0o111);
   const packedBin = packed.files.find(file => file.path === 'dist/cli.js');
