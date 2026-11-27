@@ -1,15 +1,28 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Box, Text, useInput, useWindowSize } from 'ink';
 import type { AuthService, MemberRecord } from '../core/auth-service.js';
+import type { BoardService } from '../core/board-service.js';
+import type { ChatService } from '../core/chat-service.js';
+import type { FocusService } from '../core/focus-service.js';
 import type { GuestbookService } from '../core/guestbook-service.js';
+import type { NoticeService } from '../core/notice-service.js';
+import type { PresenceService } from '../core/presence-service.js';
 import type { ProfileService } from '../core/profile-service.js';
+import type { RealtimeHub } from '../core/realtime-hub.js';
+import type { RecruitmentService } from '../core/recruitment-service.js';
 import type { ServiceTheme } from '../service/validation.js';
 import { getThemePalette } from './components/Themes.js';
 import {
   AuthGateScreen,
   type AccountRecoveryInput,
 } from './screens/AuthGateScreen.js';
+import { CafeScreen } from './screens/CafeScreen.js';
+import { FocusScreen } from './screens/FocusScreen.js';
+import { LivingRoomScreen } from './screens/LivingRoomScreen.js';
+import { LobbyScreen } from './screens/LobbyScreen.js';
 import { PersonalSpaceScreen, type SpaceViewer } from './screens/PersonalSpaceScreen.js';
+import { RecruitmentScreen } from './screens/RecruitmentScreen.js';
+import { RoofTopScreen } from './screens/RoofTopScreen.js';
 import {
   buildWorldMap,
   computeCameraViewport,
@@ -50,6 +63,14 @@ export interface WorldAppProps {
   authService: AuthService;
   profileService: ProfileService;
   guestbookService: GuestbookService;
+  boardService?: BoardService;
+  recruitmentService?: RecruitmentService;
+  noticeService?: NoticeService;
+  presenceService?: PresenceService;
+  chatService?: ChatService;
+  focusService?: FocusService;
+  realtimeHub?: RealtimeHub;
+  sessionId?: string | null;
   initialViewer?: SpaceViewer | null;
   theme?: ServiceTheme;
   onlineAvatars?: readonly RemoteAvatar[];
@@ -77,6 +98,14 @@ export function WorldApp({
   authService,
   profileService,
   guestbookService,
+  boardService,
+  recruitmentService,
+  noticeService,
+  presenceService,
+  chatService,
+  focusService,
+  realtimeHub,
+  sessionId = null,
   initialViewer = null,
   theme = 'dark',
   onlineAvatars = [],
@@ -95,6 +124,50 @@ export function WorldApp({
 
   const [viewer, setViewer] = useState<SpaceViewer | null>(initialViewer);
   const [screen, setScreen] = useState<ActiveWorldScreen>({ kind: 'world' });
+  const [presenceTick, setPresenceTick] = useState(0);
+
+  useEffect(() => {
+    if (!realtimeHub) return;
+    return realtimeHub.subscribeMany(['presence.changed', 'avatar.moved', 'session.ended'], () => {
+      setPresenceTick(t => t + 1);
+    });
+  }, [realtimeHub]);
+
+  const liveOverview = useMemo(() => {
+    if (!presenceService) return null;
+    void presenceTick;
+    return presenceService.getLobbyOverview();
+  }, [presenceService, presenceTick]);
+
+  const effectiveOnlineAvatars: readonly RemoteAvatar[] = useMemo(() => {
+    if (onlineAvatars.length > 0 || !liveOverview) return onlineAvatars;
+    return liveOverview.activeAvatars
+      .filter(a => a.memberId !== null && a.nickname !== null && a.memberId !== viewer?.memberId)
+      .map(a => ({
+        sessionId: a.sessionId,
+        memberId: a.memberId,
+        nickname: a.nickname!,
+        x: a.worldX,
+        y: a.worldY,
+        spaceId: a.spaceId,
+        away: a.status === 'away',
+      }));
+  }, [onlineAvatars, liveOverview, viewer?.memberId]);
+
+  const effectiveOnlineSummary = useMemo(() => {
+    if (onlineSummary) return onlineSummary;
+    if (!liveOverview) return undefined;
+    return {
+      onlineCount: liveOverview.onlineMembers.length,
+      awayCount: liveOverview.awayMembers.length,
+      guestCount: liveOverview.guestCount,
+    };
+  }, [onlineSummary, liveOverview]);
+
+  const currentMemberRecord = useMemo(
+    () => (viewer && !viewer.isGuest && viewer.memberId ? authService.getMemberById(viewer.memberId) : null),
+    [authService, viewer],
+  );
   const [viewMode, setViewMode] = useState<WorldViewMode>(() =>
     resolveResponsiveDefaultMode(columns, rows),
   );
@@ -188,6 +261,13 @@ export function WorldApp({
     setStatusNotice('');
     setScreen(target);
     if (target.kind === 'space') {
+      if (presenceService && sessionId) {
+        try {
+          presenceService.moveSpace(sessionId, target.spaceId);
+        } catch {
+          // Ignore stale session during local transitions
+        }
+      }
       onEnterSpace?.(target.spaceId);
     }
   };
@@ -195,6 +275,13 @@ export function WorldApp({
   const handleBackToWorld = () => {
     setScreen({ kind: 'world' });
     setStatusNotice('');
+    if (presenceService && sessionId) {
+      try {
+        presenceService.moveSpace(sessionId, 'space:lobby');
+      } catch {
+        // Ignore stale session during local transitions
+      }
+    }
     onEnterSpace?.('space:lobby');
   };
 
@@ -254,6 +341,13 @@ export function WorldApp({
             setCamera(prev =>
               computeCameraViewport(worldMap, nextPos, viewportWidth, viewportHeight, prev),
             );
+            if (presenceService && sessionId) {
+              try {
+                presenceService.moveAvatar(sessionId, moved.x, moved.y);
+              } catch {
+                // Ignore stale session during local transitions
+              }
+            }
             onMoveAvatar?.(moved.x, moved.y);
           }
           return;
@@ -294,11 +388,22 @@ export function WorldApp({
     });
   }, [viewer, screen, renderScreen, columns, rows]);
 
+  const hasBuiltInWiredScreen = Boolean(
+    screen.kind === 'space' &&
+      ((screen.spaceId === 'space:lobby' && noticeService) ||
+        (screen.spaceId === 'space:cafe' && boardService) ||
+        (screen.spaceId === 'space:recruitment' && recruitmentService) ||
+        (screen.spaceId === 'space:rooftop' && chatService) ||
+        (screen.spaceId === 'space:focus' && focusService) ||
+        (screen.spaceId === 'space:living' && presenceService)),
+  );
+
   const isFallbackPublicPlaceholder = Boolean(
     viewer &&
       !isTooSmall &&
       screen.kind !== 'world' &&
       !hasCustomScreen &&
+      !hasBuiltInWiredScreen &&
       screen.kind !== 'archived-guestbook' &&
       !(screen.kind === 'space' && screen.spaceId.startsWith('space:member:')),
   );
@@ -405,6 +510,113 @@ export function WorldApp({
       );
     }
 
+    if (screen.kind === 'space' && screen.spaceId === 'space:lobby' && noticeService) {
+      return (
+        <LobbyScreen
+          noticeService={noticeService}
+          currentMember={currentMemberRecord}
+          presence={
+            liveOverview
+              ? {
+                  onlineMembers: liveOverview.onlineMembers.map(m => ({
+                    memberId: m.memberId,
+                    nickname: m.nickname,
+                  })),
+                  awayMembers: liveOverview.awayMembers.map(m => ({
+                    memberId: m.memberId,
+                    nickname: m.nickname,
+                  })),
+                  guestCount: liveOverview.guestCount,
+                }
+              : undefined
+          }
+          theme={theme}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
+    if (screen.kind === 'space' && screen.spaceId === 'space:cafe' && boardService) {
+      return (
+        <CafeScreen
+          boardService={boardService}
+          currentMember={currentMemberRecord}
+          theme={theme}
+          onBack={handleBackToWorld}
+          onOpenRecruitment={
+            recruitmentService
+              ? () => enterTarget({ kind: 'space', spaceId: 'space:recruitment' })
+              : undefined
+          }
+        />
+      );
+    }
+
+    if (screen.kind === 'space' && screen.spaceId === 'space:recruitment' && recruitmentService) {
+      return (
+        <RecruitmentScreen
+          recruitmentService={recruitmentService}
+          currentMember={currentMemberRecord}
+          theme={theme}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
+    if (screen.kind === 'space' && screen.spaceId === 'space:rooftop' && chatService) {
+      return (
+        <RoofTopScreen
+          chatService={chatService}
+          hub={realtimeHub}
+          actor={{
+            memberId: viewer.memberId,
+            nickname: viewer.nickname,
+            role: viewer.role,
+          }}
+          width={columns}
+          height={rows}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
+    if (screen.kind === 'space' && screen.spaceId === 'space:focus' && focusService) {
+      return (
+        <FocusScreen
+          focusService={focusService}
+          hub={realtimeHub}
+          actor={{
+            memberId: viewer.memberId,
+            nickname: viewer.nickname,
+            isGuest: viewer.isGuest,
+            sessionId,
+          }}
+          width={columns}
+          height={rows}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
+    if (screen.kind === 'space' && screen.spaceId === 'space:living' && presenceService) {
+      return (
+        <LivingRoomScreen
+          presenceService={presenceService}
+          hub={realtimeHub}
+          actor={{
+            memberId: viewer.memberId,
+            nickname: viewer.nickname,
+            isGuest: viewer.isGuest,
+            sessionId,
+          }}
+          width={columns}
+          height={rows}
+          onReturnToLobby={handleBackToWorld}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
     const pub = PUBLIC_SPACES.find(s => screen.kind === 'space' && s.id === screen.spaceId);
     return (
       <Box
@@ -437,15 +649,15 @@ export function WorldApp({
           playerX: playerPos.x,
           playerY: playerPos.y,
           playerNickname: viewer.nickname,
-          remoteAvatars: onlineAvatars,
+          remoteAvatars: effectiveOnlineAvatars,
           camera,
           counts: worldCounts,
         })
       : [];
 
-  const summaryText = onlineSummary
-    ? `온라인(${onlineSummary.onlineCount}) · 자리비움(${onlineSummary.awayCount}) · 게스트(${onlineSummary.guestCount})`
-    : `접속 아바타(${onlineAvatars.length + 1})`;
+  const summaryText = effectiveOnlineSummary
+    ? `온라인(${effectiveOnlineSummary.onlineCount}) · 자리비움(${effectiveOnlineSummary.awayCount}) · 게스트(${effectiveOnlineSummary.guestCount})`
+    : `접속 아바타(${effectiveOnlineAvatars.length + 1})`;
 
   const hudLine = adjacent
     ? `인접 공간: [${adjacent.space.label}] ${adjacent.space.title} · ${adjacent.space.description} · Enter로 입장`
