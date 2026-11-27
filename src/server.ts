@@ -7,18 +7,22 @@ import {
   type RetentionHooks,
   type RunningHttpBridge,
 } from './bridge/http-bridge.js';
+import { AccountLifecycleService } from './core/account-lifecycle-service.js';
 import { AuthService } from './core/auth-service.js';
 import { BoardService } from './core/board-service.js';
 import { ChatService } from './core/chat-service.js';
 import { SystemClock, type Clock } from './core/clock.js';
+import { DiscoveryService } from './core/discovery-service.js';
 import { FocusService } from './core/focus-service.js';
 import { GuestbookService } from './core/guestbook-service.js';
 import { IntegrationAuthService } from './core/integration-auth-service.js';
+import { ModerationService, type ReportReviewState } from './core/moderation-service.js';
 import { NoticeService } from './core/notice-service.js';
 import { PresenceService } from './core/presence-service.js';
 import { ProfileService } from './core/profile-service.js';
 import { RealtimeHub } from './core/realtime-hub.js';
 import { RecruitmentService } from './core/recruitment-service.js';
+import { RetentionService } from './core/retention-service.js';
 import { startMcpHttpServer, type RunningMcpHttpServer } from './mcp/http-server.js';
 import { startSshServer, type RunningSshServer, type SshServerOptions } from './ssh/ssh-server.js';
 import { WorldDatabase } from './store/sqlite/database.js';
@@ -91,6 +95,10 @@ export class WorldServer {
   readonly focusService: FocusService;
   readonly presenceService: PresenceService;
   readonly chatService: ChatService;
+  readonly accountLifecycleService: AccountLifecycleService;
+  readonly moderationService: ModerationService;
+  readonly retentionService: RetentionService;
+  readonly discoveryService: DiscoveryService;
   readonly accountLifecycle?: AccountLifecycleHooks;
   readonly moderation?: ModerationHooks;
   readonly retention?: RetentionHooks;
@@ -127,6 +135,60 @@ export class WorldServer {
       },
     });
     this.chatService = new ChatService(this.worldDb, this.clock, this.realtimeHub);
+    this.accountLifecycleService = new AccountLifecycleService(this.worldDb, this.clock, {
+      hub: this.realtimeHub,
+    });
+    this.moderationService = new ModerationService(this.worldDb, this.clock, {
+      hub: this.realtimeHub,
+    });
+    this.retentionService = new RetentionService(this.worldDb, this.clock);
+    this.discoveryService = new DiscoveryService(this.worldDb, {
+      clock: this.clock,
+      autoSeed: true,
+    });
+
+    const defaultAccountLifecycle: AccountLifecycleHooks = {
+      recoverAccount: input => this.accountLifecycleService.recoverAccount(input),
+      changePassword: input => this.accountLifecycleService.changePassword(input),
+      reissueRecoveryCode: input => this.accountLifecycleService.reissueRecoveryCode(input),
+      withdrawAccount: input => this.accountLifecycleService.withdrawAccount(input),
+    };
+    const defaultModeration: ModerationHooks = {
+      createReport: input => this.moderationService.createReport(input),
+      listMyReports: memberId => this.moderationService.listMyReports(memberId),
+      listReportsForAdmin: (adminMemberId, state) =>
+        this.moderationService.listReportsForAdmin(
+          adminMemberId,
+          state === 'received' || state === 'reviewed' ? (state as ReportReviewState) : undefined,
+        ),
+      reviewReport: input => this.moderationService.reviewReport(input),
+      adminDeleteContent: input => this.moderationService.adminDeleteContent(input),
+      listDeletionHistory: adminMemberId => this.moderationService.listDeletionHistory(adminMemberId),
+    };
+    const defaultRetention: RetentionHooks = {
+      createDailyBackup: backupDir =>
+        this.retentionService.createDailyBackup(backupDir ?? join(this.dataDir, 'backups')),
+      restoreFromBackup: (backupPath, targetDataDir) =>
+        this.retentionService.restoreFromBackup(backupPath, targetDataDir ?? this.dataDir),
+    };
+    const defaultDiscovery: DiscoveryHooks = {
+      listPopularRepos: filter =>
+        this.discoveryService.listPopularRepos({
+          language: filter?.language,
+          topic: filter?.topic,
+          query: filter?.q,
+          limit: filter?.limit,
+        }),
+      searchContributionIssues: filter =>
+        this.discoveryService.searchContributionIssues({
+          language: filter?.language,
+          topic: filter?.topic,
+          query: filter?.q,
+          limit: filter?.limit,
+        }),
+      getIssueDetail: issueId => this.discoveryService.getIssueDetail(issueId),
+      explainIssue: issueId => this.discoveryService.explainIssue(issueId),
+    };
 
     const baseServices: WorldServerServices = {
       worldDb: this.worldDb,
@@ -142,12 +204,16 @@ export class WorldServer {
       presenceService: this.presenceService,
       chatService: this.chatService,
       focusService: this.focusService,
+      accountLifecycle: defaultAccountLifecycle,
+      moderation: defaultModeration,
+      retention: defaultRetention,
+      discovery: defaultDiscovery,
     };
     const factoryHooks = options.createHooks?.(baseServices);
-    this.accountLifecycle = options.accountLifecycle ?? factoryHooks?.accountLifecycle;
-    this.moderation = options.moderation ?? factoryHooks?.moderation;
-    this.retention = options.retention ?? factoryHooks?.retention;
-    this.discovery = options.discovery ?? factoryHooks?.discovery;
+    this.accountLifecycle = options.accountLifecycle ?? factoryHooks?.accountLifecycle ?? defaultAccountLifecycle;
+    this.moderation = options.moderation ?? factoryHooks?.moderation ?? defaultModeration;
+    this.retention = options.retention ?? factoryHooks?.retention ?? defaultRetention;
+    this.discovery = options.discovery ?? factoryHooks?.discovery ?? defaultDiscovery;
   }
 
   get services(): WorldServerServices {
@@ -205,6 +271,10 @@ export class WorldServer {
             presenceService: this.presenceService,
             chatService: this.chatService,
             focusService: this.focusService,
+            accountLifecycleService: this.accountLifecycleService,
+            moderationService: this.moderationService,
+            integrationAuthService: this.integrationAuthService,
+            discoveryService: this.discoveryService,
             realtimeHub: this.realtimeHub,
             ...this.options.worldAppProps,
           },

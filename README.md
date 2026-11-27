@@ -23,9 +23,9 @@ Terminal World는 개발자에게 익숙한 터미널 환경에서 **SSH 기반 
 
 | 영역 | 현재 상태 |
 |---|---|
-| 로컬 TUI 프로토타입 (`src/cli.tsx`, `src/App.tsx`, `src/model.ts`, `src/storage.ts`) | Lobby / RoofTop / 내 터미널 / 예시 사용자(Mina·Jun·Sol) 방문, 프로필·ASCII·테마 편집, 로컬 채팅·방명록, JSON 영속 저장 |
+| 로컬 TUI 프로토타입 (`src/cli.tsx`, `src/App.tsx`, `src/model.ts`, `src/storage.ts`) | 무인수 `terminal-world [--no-mouse]` 실행 시 기존 로컬 프로토타입 및 `state.json` 100% 호환 보존 |
 | 공통 입력 검증 (`src/service/validation.ts`) | 계정명·비밀번호·NFC 텍스트 길이·터미널 제어문자 차단·URL·ASCII Art 검증 및 단위 테스트 |
-| 다중 사용자 서버·SSH·CLI·MCP·오픈소스 탐색 | 설계 및 단계별 데모 구현 진행 중 ([`docs/demo-plan.md`](docs/demo-plan.md) 참고) |
+| 다중 사용자 서버·SSH·CLI·MCP·오픈소스 탐색 (`Phase 3~10`) | `node:sqlite` WAL/Tombstone, `ssh2` PTY 2.5D 아바타 맵 TUI, Cafe 7게시판·모집·공지, RoofTop 실시간 채팅·Focus 자정분할/랭킹·Living Room, 복구·탈퇴·신고·관리·보존/백업, 6자리 승인·Access/Refresh 로테이션, 업무 CLI, MCP(`stdio`/`--mcp-http`), 비인증 GitHub 탐색·데모 AI 설명 구현 및 E2E 검증 완료 |
 
 ## 시작하기
 
@@ -56,6 +56,24 @@ node dist/cli.js --no-mouse   # 마우스 입력 비활성화
 - `Ctrl+C`: 종료
 
 > 로컬 프로토타입의 데이터는 macOS 기준 `~/Library/Application Support/Terminal World/state.json`에 저장됩니다.
+
+### 다중 사용자 서버 · SSH TUI · 업무 CLI · MCP 실행
+```bash
+# 1) 통합 서버 기동 (SSH 2222, Bridge 4310, 데이터 ./.terminal-world-data)
+node dist/cli.js serve --ssh-port 2222 --bridge-port 4310 --data-dir ./.terminal-world-data
+# 선택: Streamable HTTP MCP 동시 활성화
+node dist/cli.js serve --mcp-http --mcp-port 4311
+
+# 2) OpenSSH로 2.5D 아바타 맵 TUI 접속 (권장 120×30, 최소 80×24 목록 폴백)
+ssh -p 2222 localhost
+
+# 3) 업무 CLI (JSON 구조화 출력, 종료 코드 0/2/3/4/5/6)
+node dist/cli.js world spaces --json
+node dist/cli.js oss issues --lang TypeScript --json
+
+# 4) MCP 서버 (1차 기본 stdio 전송 — stdout은 JSON-RPC 전용)
+node dist/cli.js mcp --server http://127.0.0.1:4310
+```
 
 ### 타입 체크 및 테스트
 ```bash

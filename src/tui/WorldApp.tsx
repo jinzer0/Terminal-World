@@ -1,10 +1,14 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Box, Text, useInput, useWindowSize } from 'ink';
+import type { AccountLifecycleService } from '../core/account-lifecycle-service.js';
 import type { AuthService, MemberRecord } from '../core/auth-service.js';
 import type { BoardService } from '../core/board-service.js';
 import type { ChatService } from '../core/chat-service.js';
+import type { DiscoveryService } from '../core/discovery-service.js';
 import type { FocusService } from '../core/focus-service.js';
 import type { GuestbookService } from '../core/guestbook-service.js';
+import type { IntegrationAuthService } from '../core/integration-auth-service.js';
+import type { ModerationService } from '../core/moderation-service.js';
 import type { NoticeService } from '../core/notice-service.js';
 import type { PresenceService } from '../core/presence-service.js';
 import type { ProfileService } from '../core/profile-service.js';
@@ -12,6 +16,8 @@ import type { RealtimeHub } from '../core/realtime-hub.js';
 import type { RecruitmentService } from '../core/recruitment-service.js';
 import type { ServiceTheme } from '../service/validation.js';
 import { getThemePalette } from './components/Themes.js';
+import { AccountSecurityScreen } from './screens/AccountSecurityScreen.js';
+import { AdminPanelScreen } from './screens/AdminPanelScreen.js';
 import {
   AuthGateScreen,
   type AccountRecoveryInput,
@@ -20,6 +26,7 @@ import { CafeScreen } from './screens/CafeScreen.js';
 import { FocusScreen } from './screens/FocusScreen.js';
 import { LivingRoomScreen } from './screens/LivingRoomScreen.js';
 import { LobbyScreen } from './screens/LobbyScreen.js';
+import { OssDiscoveryScreen } from './screens/OssDiscoveryScreen.js';
 import { PersonalSpaceScreen, type SpaceViewer } from './screens/PersonalSpaceScreen.js';
 import { RecruitmentScreen } from './screens/RecruitmentScreen.js';
 import { RoofTopScreen } from './screens/RoofTopScreen.js';
@@ -69,6 +76,10 @@ export interface WorldAppProps {
   presenceService?: PresenceService;
   chatService?: ChatService;
   focusService?: FocusService;
+  accountLifecycleService?: AccountLifecycleService;
+  moderationService?: ModerationService;
+  integrationAuthService?: IntegrationAuthService;
+  discoveryService?: DiscoveryService;
   realtimeHub?: RealtimeHub;
   sessionId?: string | null;
   initialViewer?: SpaceViewer | null;
@@ -104,6 +115,10 @@ export function WorldApp({
   presenceService,
   chatService,
   focusService,
+  accountLifecycleService,
+  moderationService,
+  integrationAuthService,
+  discoveryService,
   realtimeHub,
   sessionId = null,
   initialViewer = null,
@@ -389,13 +404,16 @@ export function WorldApp({
   }, [viewer, screen, renderScreen, columns, rows]);
 
   const hasBuiltInWiredScreen = Boolean(
-    screen.kind === 'space' &&
-      ((screen.spaceId === 'space:lobby' && noticeService) ||
-        (screen.spaceId === 'space:cafe' && boardService) ||
-        (screen.spaceId === 'space:recruitment' && recruitmentService) ||
-        (screen.spaceId === 'space:rooftop' && chatService) ||
-        (screen.spaceId === 'space:focus' && focusService) ||
-        (screen.spaceId === 'space:living' && presenceService)),
+    (screen.kind === 'account' && accountLifecycleService && viewer && !viewer.isGuest && viewer.memberId) ||
+      (screen.kind === 'admin' && moderationService && viewer && !viewer.isGuest && viewer.memberId) ||
+      (screen.kind === 'space' &&
+        ((screen.spaceId === 'space:lobby' && noticeService) ||
+          (screen.spaceId === 'space:cafe' && boardService) ||
+          (screen.spaceId === 'space:recruitment' && recruitmentService) ||
+          (screen.spaceId === 'space:rooftop' && chatService) ||
+          (screen.spaceId === 'space:focus' && focusService) ||
+          (screen.spaceId === 'space:living' && presenceService) ||
+          (screen.spaceId === 'space:oss' && discoveryService))),
   );
 
   const isFallbackPublicPlaceholder = Boolean(
@@ -470,7 +488,18 @@ export function WorldApp({
           });
           onGuestEnter?.();
         }}
-        onRecover={onRecover}
+        onRecover={
+          onRecover ??
+          (accountLifecycleService
+            ? input => {
+                accountLifecycleService.recoverAccount({
+                  loginId: input.loginId,
+                  recoveryCode: input.recoveryCode,
+                  newPassword: input.newPassword,
+                });
+              }
+            : undefined)
+        }
         onExit={onExit}
       />
     );
@@ -612,6 +641,81 @@ export function WorldApp({
           width={columns}
           height={rows}
           onReturnToLobby={handleBackToWorld}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
+    if (screen.kind === 'account' && accountLifecycleService && !viewer.isGuest && viewer.memberId) {
+      const memberId = viewer.memberId;
+      return (
+        <AccountSecurityScreen
+          lifecycleService={accountLifecycleService}
+          moderationService={moderationService}
+          memberId={memberId}
+          nickname={viewer.nickname}
+          sessionId={sessionId}
+          width={columns}
+          height={rows}
+          theme={theme}
+          onListGrants={
+            integrationAuthService
+              ? () => integrationAuthService.listGrants(memberId)
+              : undefined
+          }
+          onApproveCode={
+            integrationAuthService && currentMemberRecord
+              ? (code, password) => {
+                  const res = integrationAuthService.approveCode({
+                    code,
+                    loginId: currentMemberRecord.loginId,
+                    password,
+                  });
+                  return {
+                    label: res.grant.label,
+                    scopes: res.grant.scopes,
+                    expiresAt: res.grant.expiresAt,
+                  };
+                }
+              : undefined
+          }
+          onRevokeGrant={
+            integrationAuthService
+              ? grantId => {
+                  integrationAuthService.revokeGrant(memberId, grantId, 'user_revoked_tui');
+                }
+              : undefined
+          }
+          onWithdrawn={() => {
+            setViewer(null);
+            setScreen({ kind: 'world' });
+          }}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
+    if (screen.kind === 'admin' && moderationService && !viewer.isGuest && viewer.memberId) {
+      return (
+        <AdminPanelScreen
+          moderationService={moderationService}
+          adminMemberId={viewer.memberId}
+          adminNickname={viewer.nickname}
+          width={columns}
+          height={rows}
+          theme={theme}
+          onBack={handleBackToWorld}
+        />
+      );
+    }
+
+    if (screen.kind === 'space' && screen.spaceId === 'space:oss' && discoveryService) {
+      return (
+        <OssDiscoveryScreen
+          discoveryService={discoveryService}
+          theme={theme}
+          width={columns}
+          height={rows}
           onBack={handleBackToWorld}
         />
       );

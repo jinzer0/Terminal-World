@@ -4,8 +4,14 @@ import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { render, type RenderOptions } from 'ink';
 import { App } from './App.js';
+import { CLI_SUBCOMMANDS, runCli } from './cli-cmd/router.js';
+import { SystemClock } from './core/clock.js';
+import { RetentionService } from './core/retention-service.js';
+import { startMcpStdioServer } from './mcp/stdio-server.js';
 import type { StateV1 } from './model.js';
+import { startWorldServer } from './server.js';
 import { openStore, type Store } from './storage.js';
+import { WorldDatabase } from './store/sqlite/database.js';
 import { MouseRoot } from './ui/mouse.js';
 import { createTerminalInput, type TerminalInput } from './ui/terminal-input.js';
 
@@ -57,11 +63,106 @@ export async function runApplication(store: Store, options: RenderOptions = {}, 
   if (failure !== undefined) throw failure;
 }
 
+function findSubcommand(args: readonly string[]): string | null {
+  for (let i = 0; i < args.length; i += 1) {
+    const token = args[i]!;
+    if (token === '--server' || token === '--cursor' || token === '--limit' || token === '--idempotency-key' || token === '--data-dir') {
+      i += 1;
+      continue;
+    }
+    if (token.startsWith('-')) continue;
+    return CLI_SUBCOMMANDS.has(token) ? token : null;
+  }
+  return null;
+}
+
+function getFlagValue(args: readonly string[], name: string): string | undefined {
+  const prefix = `--${name}=`;
+  for (let i = 0; i < args.length; i += 1) {
+    const token = args[i]!;
+    if (token.startsWith(prefix)) return token.slice(prefix.length);
+    if (token === `--${name}` && i + 1 < args.length) return args[i + 1];
+  }
+  return undefined;
+}
+
 export async function main(args = process.argv.slice(2)): Promise<void> {
-  if (args.includes('--help')) {
+  const subcommand = findSubcommand(args);
+
+  if (subcommand === 'serve') {
+    const sshPort = Number(getFlagValue(args, 'ssh-port') ?? '2222');
+    const bridgePort = Number(getFlagValue(args, 'bridge-port') ?? '4310');
+    const mcpPort = Number(getFlagValue(args, 'mcp-port') ?? '4311');
+    const dataDir = getFlagValue(args, 'data-dir');
+    const enableMcpHttp = args.includes('--mcp-http');
+    const enableSsh = !args.includes('--no-ssh');
+    const mouse = !args.includes('--no-mouse');
+
+    const server = await startWorldServer({
+      dataDir,
+      sshPort,
+      bridgePort,
+      mcpPort,
+      enableSsh,
+      enableMcpHttp,
+      mouse,
+      installSignalHandlers: true,
+    });
+    const lines = [
+      `Terminal-World 서버 기동 완료 (dataDir: ${server.dataDir})`,
+      server.ssh ? `  SSH TUI : ssh -p ${server.ssh.port} localhost` : '  SSH TUI : 비활성',
+      server.bridge ? `  Bridge  : ${server.bridge.baseUrl}` : '  Bridge  : 비활성',
+      server.mcpHttp ? `  MCP HTTP: ${server.mcpHttp.url}` : '  MCP HTTP: 비활성 (기본 stdio: terminal-world mcp)',
+    ];
+    process.stdout.write(`${lines.join('\n')}\n`);
+    await new Promise<void>(resolve => {
+      const done = () => {
+        void server.stop().finally(resolve);
+      };
+      process.once('SIGINT', done);
+      process.once('SIGTERM', done);
+    });
+    return;
+  }
+
+  if (subcommand === 'mcp') {
+    const serverUrl = getFlagValue(args, 'server');
+    const running = await startMcpStdioServer({ serverUrl });
+    await new Promise<void>(resolve => {
+      const done = () => {
+        void running.close().finally(resolve);
+      };
+      process.once('SIGINT', done);
+      process.once('SIGTERM', done);
+      process.stdin.once('end', done);
+    });
+    return;
+  }
+
+  if (subcommand && subcommand !== 'tui') {
+    const exitCode = await runCli(args, {
+      retentionRestore: (backupPath, targetDataDir) => {
+        const dir = targetDataDir ?? getFlagValue(args, 'data-dir') ?? './.terminal-world-data';
+        const db = new WorldDatabase({ dataDir: dir });
+        try {
+          const retention = new RetentionService(db, new SystemClock());
+          return retention.restoreFromBackup(backupPath, dir);
+        } finally {
+          db.close();
+        }
+      },
+    });
+    process.exitCode = exitCode;
+    return;
+  }
+
+  const localArgs = subcommand === 'tui' ? args.filter(a => a !== 'tui') : args;
+
+  if (localArgs.includes('--help')) {
     process.stdout.write([
-      'Terminal World — macOS 로컬 TUI',
+      'Terminal World — macOS 로컬 TUI & 다중 사용자 서버/CLI/MCP',
       '사용법: terminal-world [--no-mouse] [--help] [--version]',
+      '서브커맨드: serve | mcp | auth | world | profile | guestbook | board | recruit | notice | chat | focus | report | admin | oss',
       'Node.js 22 이상 필요. bunx도 기본적으로 Node shebang을 사용합니다.',
       '로비 / RoofTop / 내 터미널 / Mina·Jun·Sol 예시 터미널',
       '↑↓ 선택 · Enter 열기/전송 · Tab/Shift+Tab 포커스 · Esc 취소/뒤로 · Ctrl+C 종료',
@@ -76,15 +177,15 @@ export async function main(args = process.argv.slice(2)): Promise<void> {
     ].join('\n'));
     return;
   }
-  if (args.includes('--version')) {
+  if (localArgs.includes('--version')) {
     const metadata = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8')) as { version: string };
     process.stdout.write(metadata.version + '\n');
     return;
   }
-  if (args.some(argument => argument !== '--no-mouse')) throw new Error('알 수 없는 옵션입니다. --help를 확인하세요.');
+  if (localArgs.some(argument => argument !== '--no-mouse')) throw new Error('알 수 없는 옵션입니다. --help를 확인하세요.');
   if (!process.stdin.isTTY || !process.stdout.isTTY) throw new Error('대화형 TTY에서 실행해 주세요. --help와 --version은 파이프에서도 사용할 수 있어요.');
   const store = await openStore();
-  await runApplication(store, {}, !args.includes('--no-mouse'));
+  await runApplication(store, {}, !localArgs.includes('--no-mouse'));
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
